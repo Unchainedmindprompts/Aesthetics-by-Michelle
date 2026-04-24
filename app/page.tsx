@@ -275,13 +275,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="flex aspect-[4/5] w-full items-end justify-center overflow-hidden rounded-sm bg-sage/20">
-            <Image
-              src="/images/michelle-studio.png"
-              alt="Michelle Hoffman, licensed esthetician, at her Post Falls studio"
-              width={1200}
-              height={1500}
-              className="h-full w-auto object-contain"
+          <div>
+            {/* Replace with Google Maps embed */}
+            <div
+              className="aspect-video w-full rounded-sm bg-sage/20"
+              aria-label="Studio location map placeholder"
             />
           </div>
         </div>
