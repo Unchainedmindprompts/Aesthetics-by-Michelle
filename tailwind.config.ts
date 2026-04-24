@@ -8,12 +8,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: "#F5F1EA",
-        sage: "#8A9A87",
-        clay: "#C89B7B",
+        cream: "#F7F3EC",
+        ivory: "#FAF7F1",
+        taupe: "#C4B5A4",
+        sage: "#9DA894",
+        gold: "#C9A876",
         charcoal: "#2C2A27",
-        warmGray: "#6B6763",
-        softWhite: "#FAFAF7",
+        warmGray: "#7A7569",
+        softWhite: "#FDFCF8",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Cormorant Garamond", "serif"],

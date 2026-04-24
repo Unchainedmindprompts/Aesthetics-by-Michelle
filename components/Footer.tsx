@@ -11,13 +11,13 @@ export default function Footer() {
             <br />
             Post Falls, ID 83854
             <br />
-            <a href="tel:+14257654116" className="transition-colors hover:text-clay">
+            <a href="tel:+14257654116" className="transition-colors hover:text-gold">
               (425) 765-4116
             </a>
             <br />
             <a
               href="mailto:aestheticsbymichellehoffman@gmail.com"
-              className="transition-colors hover:text-clay"
+              className="transition-colors hover:text-gold"
             >
               aestheticsbymichellehoffman@gmail.com
             </a>
@@ -45,7 +45,7 @@ export default function Footer() {
                 href="https://www.instagram.com/aestheticsbymichellehoffman"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-clay"
+                className="transition-colors hover:text-gold"
               >
                 Instagram
               </a>
@@ -55,7 +55,7 @@ export default function Footer() {
                 href="https://www.facebook.com/profile.php?id=61559290697737"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-clay"
+                className="transition-colors hover:text-gold"
               >
                 Facebook
               </a>
@@ -65,7 +65,7 @@ export default function Footer() {
                 href="https://aestheticsbymichellehoffman.as.me/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-clay"
+                className="transition-colors hover:text-gold"
               >
                 Book Appointment
               </a>
@@ -79,7 +79,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Aesthetics by Michelle. All rights reserved.</p>
           <p>
             Licensed Idaho Esthetician · EST-292960 ·{" "}
-            <Link href="/contact" className="transition-colors hover:text-clay">
+            <Link href="/contact" className="transition-colors hover:text-gold">
               Contact
             </Link>
           </p>

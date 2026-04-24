@@ -166,7 +166,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${inter.variable} scroll-smooth`}>
       <body className="min-h-screen bg-cream font-sans text-charcoal antialiased">
         <Navigation />
         <div className="min-h-[calc(100vh-4rem)]">{children}</div>
