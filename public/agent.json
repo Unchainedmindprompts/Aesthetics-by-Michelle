@@ -1,0 +1,28 @@
+{
+  "business_name": "Aesthetics by Michelle",
+  "business_type": "Skincare and Aesthetics Studio",
+  "owner": "Michelle Hoffman",
+  "credentials": "Licensed Idaho Esthetician (EST-292960)",
+  "experience_years": 15,
+  "location": "Post Falls, Idaho",
+  "service_area": ["Post Falls", "Coeur d'Alene", "Hayden", "Spokane Valley"],
+  "services": [
+    "Microneedling",
+    "Facials",
+    "Dermaplaning",
+    "Brow Lamination",
+    "Eyelash Lift and Tint",
+    "Waxing Services"
+  ],
+  "hours": {
+    "Tuesday": "9:00 AM - 5:00 PM",
+    "Thursday": "9:00 AM - 5:00 PM",
+    "Friday": "9:00 AM - 3:00 PM",
+    "Saturday": "9:00 AM - 3:00 PM"
+  },
+  "booking_url": "https://aestheticsbymichellehoffman.as.me/",
+  "phone": "(425) 765-4116",
+  "email": "aestheticsbymichellehoffman@gmail.com",
+  "appointments_only": true,
+  "website": "https://aestheticsbymichelle.com"
+}
