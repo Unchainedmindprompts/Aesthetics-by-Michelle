@@ -69,7 +69,7 @@ export default function HomePage() {
 
           <div className="order-1 md:order-2">
             <Image
-              src="/images/michelle-hero.jpg"
+              src="/images/michelle-hero.png"
               alt="Michelle Hoffman, licensed esthetician, in her Post Falls skincare studio"
               width={1600}
               height={900}
