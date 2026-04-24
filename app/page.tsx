@@ -275,11 +275,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div>
-            {/* Replace with Google Maps embed */}
-            <div
-              className="aspect-video w-full rounded-sm bg-sage/20"
-              aria-label="Studio location map placeholder"
+          <div className="relative aspect-video w-full overflow-hidden rounded-sm">
+            <Image
+              src="/images/michelle-studio.png"
+              alt="Michelle Hoffman inside her Post Falls skincare studio"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           </div>
         </div>
