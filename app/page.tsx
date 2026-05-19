@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const BOOKING_URL = "https://aestheticsbymichellehoffman.as.me/";
+const BOOKING_URL = "/book";
 
 const services = [
   {
@@ -47,14 +47,12 @@ export default function HomePage() {
               attentive, and built around what your skin actually needs.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
+              <Link
                 href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-block rounded-none bg-charcoal px-8 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
               >
                 Schedule Consultation
-              </a>
+              </Link>
               <a
                 href="#services"
                 className="inline-block rounded-none border border-charcoal bg-transparent px-8 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-cream"
@@ -297,14 +295,12 @@ export default function HomePage() {
             Schedule a consultation with Michelle and let&apos;s build the right
             plan for you.
           </p>
-          <a
+          <Link
             href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="mt-10 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
             Schedule Consultation
-          </a>
+          </Link>
         </div>
       </section>
     </>

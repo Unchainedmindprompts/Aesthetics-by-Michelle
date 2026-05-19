@@ -61,14 +61,9 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href="https://aestheticsbymichellehoffman.as.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-gold"
-              >
+              <Link href="/book" className="transition-colors hover:text-gold">
                 Book Appointment
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
