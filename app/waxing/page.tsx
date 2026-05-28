@@ -1,31 +1,78 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Faq from "@/components/Faq";
 
 const BOOKING_URL = "/book";
+const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
   title: "Waxing Services in Post Falls, Idaho",
   description:
-    "Clean, precise face and underarm waxing in Post Falls, ID. Smooth results that last up to 4 weeks with Michelle Hoffman, Licensed Esthetician.",
+    "Clean, precise facial, brow, and underarm waxing in Post Falls, ID. Done with high-quality wax and a gentle, experienced hand by Michelle Hoffman, Licensed Esthetician.",
   alternates: { canonical: "/waxing" },
 };
 
-const services = [
+const pricing = [
+  { name: "Face Wax (chin, brows, lip)", price: "$40", duration: "60 minutes" },
+  { name: "Under Arm Wax", price: "$25", duration: "15 minutes" },
+];
+
+const faqs = [
   {
-    name: "Face Wax",
-    price: "$40",
-    duration: "60 minutes",
-    description:
-      "Clean, precise, and done right. Michelle removes unwanted hair from the chin, brows, and lips with a gentle waxing technique that keeps your skin smooth for up to 4 weeks. Quick, effective, and way better than doing it yourself at home.",
+    question: "How long does my hair need to be before waxing?",
+    answer:
+      "About a quarter-inch — roughly the length of a grain of rice. If it's shorter, the wax can't grip properly. If you've been shaving, give it about two weeks of growth before your first appointment.",
   },
   {
-    name: "Under Arm Wax",
-    price: "$25",
-    duration: "15 minutes",
-    description:
-      "Fast, clean, and smooth for up to 4 weeks. Michelle makes it as comfortable as possible — in and out in 15 minutes with results that outlast your razor by a long shot.",
+    question: "Will my skin be red afterward?",
+    answer:
+      "A little pink for an hour or two is normal, especially on the upper lip and underarms. Michelle finishes every wax with a soothing post-care product to calm the skin, and the redness usually settles before you've made it to your car.",
+  },
+  {
+    question: "How often should I come in?",
+    answer:
+      "Every three to four weeks is ideal — that's when the hair cycle is in the sweet spot for clean removal. Consistent waxing on that schedule also tends to make the hair grow back finer and sparser over time.",
   },
 ];
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Waxing Services",
+  serviceType: "Waxing",
+  description:
+    "Clean, precise facial, brow, and underarm waxing using high-quality wax and a gentle, experienced hand. Walk out smoother, neater, and with skin that's prepped and soothed.",
+  provider: {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#business`,
+    name: "Aesthetics by Michelle",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Post Falls",
+      addressRegion: "ID",
+      addressCountry: "US",
+    },
+  },
+  areaServed: [
+    { "@type": "City", name: "Post Falls" },
+    { "@type": "City", name: "Coeur d'Alene" },
+    { "@type": "City", name: "Spokane Valley" },
+  ],
+  url: `${SITE_URL}/waxing`,
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 
 export default function WaxingPage() {
   return (
@@ -35,37 +82,72 @@ export default function WaxingPage() {
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
           </p>
-          <h1 className="mt-6 font-serif text-5xl text-charcoal md:text-6xl">
-            Waxing Services
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
+            Clean, Precise, Comfortable Waxing — Done Right the First Time
           </h1>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            Clean, precise waxing for face and underarms.
-          </p>
         </div>
       </section>
 
       <section className="bg-ivory py-20 md:py-28">
-        <div className="mx-auto grid max-w-3xl grid-cols-1 gap-8 px-6 md:px-12">
-          {services.map((service) => (
-            <article
-              key={service.name}
-              className="border-t-4 border-gold bg-softWhite p-8 shadow-sm md:p-12"
-            >
-              <div className="flex flex-col gap-2 md:flex-row md:items-baseline md:justify-between">
-                <h2 className="font-serif text-3xl text-charcoal md:text-4xl">
-                  {service.name}
-                </h2>
-                <p className="font-sans text-warmGray">
-                  <span className="text-xl text-charcoal">{service.price}</span>
-                  <span className="mx-2">•</span>
-                  <span>{service.duration}</span>
-                </p>
-              </div>
-              <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
-                {service.description}
-              </p>
-            </article>
-          ))}
+        <div className="mx-auto max-w-3xl px-6 md:px-12">
+          <div className="space-y-6 font-sans text-lg leading-relaxed text-warmGray">
+            <p>
+              Waxing should be quick, clean, and over before you&apos;ve thought
+              twice about it. Michelle offers precise facial, brow, and
+              underarm waxing using high-quality wax and a gentle, experienced
+              hand. No yanked skin, no missed hairs, no awkward small talk
+              while you wait for someone to come back.
+            </p>
+            <p>
+              You&apos;ll walk out smoother, neater, and with skin that&apos;s
+              prepped and soothed — not red and angry.
+            </p>
+          </div>
+
+          <div className="mt-14 border-l-4 border-gold bg-softWhite p-8">
+            <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
+              Best for
+            </h2>
+            <p className="mt-4 font-sans text-lg leading-relaxed text-charcoal">
+              Brow shaping and clean-up, upper lip, chin, sides of the face,
+              and underarms. Great as a standalone or paired with a facial.
+            </p>
+          </div>
+
+          <div className="mt-14 bg-softWhite p-8">
+            <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
+              Services &amp; pricing
+            </h2>
+            <dl className="mt-6 divide-y divide-taupe/30 font-sans text-warmGray">
+              {pricing.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex flex-col gap-1 py-4 first:pt-0 last:pb-0 md:flex-row md:items-baseline md:justify-between"
+                >
+                  <dt className="font-serif text-xl text-charcoal">
+                    {item.name}
+                  </dt>
+                  <dd>
+                    <span className="text-charcoal">{item.price}</span>
+                    <span className="mx-2">•</span>
+                    <span>{item.duration}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="mt-14">
+            <h2 className="font-serif text-3xl text-charcoal md:text-4xl">
+              Why book with Michelle
+            </h2>
+            <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
+              Speed and precision come from repetition. With 15+ years of
+              waxing under her belt, Michelle works fast, places strips
+              perfectly, and minimizes the part you don&apos;t love about
+              waxing — the part that hurts.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -78,10 +160,30 @@ export default function WaxingPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Schedule with Michelle
+            Book a waxing appointment
           </Link>
         </div>
       </section>
+
+      <section className="bg-cream py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-6 md:px-12">
+          <h2 className="text-center font-serif text-3xl text-charcoal md:text-4xl">
+            Frequently asked
+          </h2>
+          <div className="mt-12">
+            <Faq items={faqs} />
+          </div>
+        </div>
+      </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </>
   );
 }

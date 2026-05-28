@@ -5,26 +5,28 @@ const BOOKING_URL = "/book";
 
 const services = [
   {
-    title: "Facials",
+    title: "Facials Built Around Your Skin Today — Not a Generic Menu",
     description:
-      "Customized facial treatments tailored to your skin type, goals, and season.",
+      "Most facials are a script. Yours shouldn't be.",
     href: "/facials",
   },
   {
-    title: "Dermaplaning",
+    title:
+      "Smoother Skin, Brighter Glow, Better Product Absorption — In Under an Hour",
     description:
-      "Gentle exfoliation that removes dead skin and peach fuzz for a smoother, brighter complexion.",
+      "Dermaplaning is a gentle, deeply satisfying treatment that uses a sterile surgical blade to remove the top layer of dead skin cells and the fine vellus hair on your face. The result is immediate: skin feels remarkably soft and every serum absorbs significantly better.",
     href: "/dermaplaning",
   },
   {
-    title: "Brow & Lash Services",
+    title: "Lifted Lashes, Shaped Brows, Zero Daily Maintenance",
     description:
-      "Brow lamination, eyelash lift and tint, and expert brow shaping — low-maintenance results that last.",
+      "Wake up looking like you already did your makeup. Michelle offers three signature brow and lash services — brow lamination, lash lift and tint, and expert brow shaping — designed to enhance what you already have and save you fifteen minutes every morning.",
     href: "/brow-lash",
   },
   {
-    title: "Waxing Services",
-    description: "Clean, precise waxing for face, brows, and underarms.",
+    title: "Clean, Precise, Comfortable Waxing — Done Right the First Time",
+    description:
+      "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise facial, brow, and underarm waxing using high-quality wax and a gentle, experienced hand.",
     href: "/waxing",
   },
 ];
@@ -127,20 +129,24 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article className="border-t-4 border-gold bg-softWhite p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+            <article className="flex flex-col border-t-4 border-gold bg-softWhite p-8 shadow-sm transition-all duration-300 hover:shadow-md">
               <p className="font-sans text-xs uppercase tracking-widest text-gold">
                 Hero Service
               </p>
-              <h3 className="mt-4 font-serif text-2xl text-charcoal">
-                Microneedling
+              <h3 className="mt-4 font-serif text-2xl leading-tight text-charcoal">
+                Collagen-Building Microneedling for Skin That Looks Like You,
+                Just Better
               </h3>
               <p className="mt-4 font-sans text-warmGray">
-                Collagen induction therapy for smoother texture, refined pores,
-                and visibly healthier skin.
+                Microneedling is the closest thing skincare has to a reset
+                button. Using a precision pen of ultra-fine needles, Michelle
+                creates microscopic channels in the skin that signal your body
+                to flood the area with collagen and elastin — the two things
+                your skin loses as it ages.
               </p>
               <Link
                 href="/microneedling"
-                className="mt-6 inline-block font-sans text-charcoal transition-colors duration-300 hover:text-sage"
+                className="mt-auto pt-6 font-sans text-charcoal transition-colors duration-300 hover:text-sage"
               >
                 Learn more →
               </Link>
@@ -149,9 +155,9 @@ export default function HomePage() {
             {services.map((service) => (
               <article
                 key={service.href}
-                className="bg-softWhite p-8 shadow-sm transition-all duration-300 hover:shadow-md"
+                className="flex flex-col bg-softWhite p-8 shadow-sm transition-all duration-300 hover:shadow-md"
               >
-                <h3 className="font-serif text-2xl text-charcoal">
+                <h3 className="font-serif text-2xl leading-tight text-charcoal">
                   {service.title}
                 </h3>
                 <p className="mt-4 font-sans text-warmGray">
@@ -159,7 +165,7 @@ export default function HomePage() {
                 </p>
                 <Link
                   href={service.href}
-                  className="mt-6 inline-block font-sans text-charcoal transition-colors duration-300 hover:text-sage"
+                  className="mt-auto pt-6 font-sans text-charcoal transition-colors duration-300 hover:text-sage"
                 >
                   Learn more →
                 </Link>
