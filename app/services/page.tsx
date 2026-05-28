@@ -17,13 +17,13 @@ const categories = [
       { name: "Microneedling", href: "/microneedling" },
       { name: "Customized Facial", href: "/facials" },
       { name: "Dermaplaning", href: "/dermaplaning" },
-      { name: "Cryo Facial", href: "/cryo#cryo-facial" },
+      { name: "Cryo Facial", href: "/cryo-facial" },
     ],
   },
   {
     label: "Body",
     items: [
-      { name: "Cryo Body Sculpting", href: "/cryo#cryo-body-sculpting" },
+      { name: "Cryo Body Sculpting", href: "/cryo-body-sculpting" },
       { name: "Face Wax", href: "/waxing" },
       { name: "Under Arm Wax", href: "/waxing" },
     ],

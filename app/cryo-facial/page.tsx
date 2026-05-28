@@ -6,37 +6,37 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Dermaplaning in Post Falls, Idaho",
+  title: "Cryo Facial in Post Falls, Idaho",
   description:
-    "Dermaplaning in Post Falls, ID. Smoother skin, brighter glow, and better product absorption — performed by Michelle Hoffman, Licensed Esthetician.",
-  alternates: { canonical: "/dermaplaning" },
+    "Cryo Facial in Post Falls, ID. Cold therapy that tightens pores, calms redness, reduces puffiness, and brightens skin — performed by Michelle Hoffman, Licensed Esthetician.",
+  alternates: { canonical: "/cryo-facial" },
 };
 
 const faqs = [
   {
-    question: "Will my peach fuzz grow back darker or thicker?",
+    question: "Is a Cryo Facial uncomfortable?",
     answer:
-      "No — this is the most common dermaplaning myth. The vellus hair on your face is genetically programmed to grow back exactly as it was. Cutting it at the surface doesn't change the follicle, the color, or the thickness.",
+      "It's cold — that's the whole point — but it's not painful. The cooling is moved continuously across the skin, so no single area gets overexposed. Most clients describe it as refreshing and a little invigorating, similar to splashing cold water on your face for ten minutes straight.",
   },
   {
     question: "How long do the results last?",
     answer:
-      "The smoothness and glow last about three to four weeks. Most clients book dermaplaning monthly, or right before a wedding, photo session, or event where they want their makeup to sit flawlessly.",
+      "The tightening and de-puffing effect is visible immediately and typically lasts five to seven days. With monthly sessions, the cumulative effect on skin tone, redness, and pore size builds noticeably over time.",
   },
   {
-    question: "Is dermaplaning safe for sensitive skin?",
+    question: "Can I combine a Cryo Facial with other treatments?",
     answer:
-      "For most sensitive skin, yes — it's actually gentler than many chemical exfoliants because there's no acid or active ingredient involved. Michelle will assess your skin during consultation and skip dermaplaning if you have active acne, cold sores, or certain skin conditions where it isn't appropriate.",
+      "Yes — and many clients do. Cryo pairs beautifully after a dermaplaning or customized facial for an extra dose of tightening. Michelle will recommend the right sequence based on what your skin is working on at the moment.",
   },
 ];
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Dermaplaning",
-  serviceType: "Dermaplaning",
+  name: "Cryo Facial",
+  serviceType: "Cryo Facial",
   description:
-    "Dermaplaning is a gentle treatment that uses a sterile surgical blade to remove dead skin cells and fine vellus hair, leaving skin remarkably soft with a polished, lit-from-within finish.",
+    "A Cryo Facial uses precisely controlled cold therapy — vaporized cooling delivered across your face, neck, and décolleté — to shock the skin in the best possible way. The cold constricts blood vessels on contact, then triggers a rush of fresh, oxygen-rich blood as your skin rewarms.",
   provider: {
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#business`,
@@ -53,7 +53,7 @@ const serviceJsonLd = {
     { "@type": "City", name: "Coeur d'Alene" },
     { "@type": "City", name: "Spokane Valley" },
   ],
-  url: `${SITE_URL}/dermaplaning`,
+  url: `${SITE_URL}/cryo-facial`,
 };
 
 const faqJsonLd = {
@@ -69,7 +69,7 @@ const faqJsonLd = {
   })),
 };
 
-export default function DermaplaningPage() {
+export default function CryoFacialPage() {
   return (
     <>
       <section className="bg-sage py-20 md:py-28">
@@ -78,11 +78,10 @@ export default function DermaplaningPage() {
             Services
           </p>
           <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
-            Smoother Skin, Brighter Glow, Better Product Absorption — In Under
-            an Hour
+            Cryo Facial — Cold Therapy for Tighter, Brighter, Calmer Skin
           </h1>
           <p className="mt-8 font-sans text-cream/80">
-            <span className="text-xl text-cream">$40</span>
+            <span className="text-xl text-cream">$100</span>
             <span className="mx-2">•</span>
             <span>60 minutes</span>
           </p>
@@ -93,18 +92,22 @@ export default function DermaplaningPage() {
         <div className="mx-auto max-w-3xl px-6 md:px-12">
           <div className="space-y-6 font-sans text-lg leading-relaxed text-warmGray">
             <p>
-              Dermaplaning is a gentle, deeply satisfying treatment that uses a
-              sterile surgical blade to remove the top layer of dead skin cells
-              and the fine vellus hair (peach fuzz) on your face. The result is
-              immediate: skin feels remarkably soft, makeup glides on like
-              it&apos;s airbrushed, and every serum and moisturizer you use
-              afterward absorbs significantly better.
+              A Cryo Facial uses precisely controlled cold therapy — vaporized
+              cooling delivered across your face, neck, and décolleté — to
+              shock the skin in the best possible way. The cold constricts
+              blood vessels on contact, then triggers a rush of fresh,
+              oxygen-rich blood as your skin rewarms. That single cycle does a
+              lot at once: it tightens pores, calms inflammation, reduces
+              puffiness, brightens dull skin, and gives you an immediate,
+              lit-from-within glow that lasts for days.
             </p>
             <p>
-              There&apos;s no downtime, no redness, no peeling — just a
-              polished, lit-from-within finish you can see the second you sit
-              up. Many clients add dermaplaning before a facial or microneedling
-              session for an even deeper result.
+              It&apos;s the kind of treatment you&apos;ll feel working in real
+              time. The cold is bracing but not uncomfortable, there&apos;s
+              zero downtime, and you walk out looking like you slept ten hours
+              and drank a gallon of water. Many clients book a Cryo Facial
+              before weddings, photoshoots, big events — or as a regular
+              monthly upgrade alongside their other treatments.
             </p>
           </div>
 
@@ -113,9 +116,10 @@ export default function DermaplaningPage() {
               Best for
             </h2>
             <p className="mt-4 font-sans text-lg leading-relaxed text-charcoal">
-              Dull or flaky skin, makeup that looks cakey, peach fuzz you&apos;d
-              rather not see, special events, and anyone whose products feel
-              like they&apos;re &ldquo;sitting on top&rdquo; of their skin.
+              Puffiness and morning swelling, redness and sensitivity, dull or
+              tired-looking skin, enlarged pores, post-workout flushing, jet
+              lag, and anyone wanting an instant glow without needles or
+              peels.
             </p>
           </div>
 
@@ -124,10 +128,12 @@ export default function DermaplaningPage() {
               Why book with Michelle
             </h2>
             <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
-              Dermaplaning is all about hand pressure, blade angle, and knowing
-              exactly when to stop. With 15+ years behind the treatment chair,
-              Michelle delivers a flawless finish — safely, comfortably, and
-              without irritating your barrier.
+              Cold therapy is about technique — how close, how long, how to
+              move. Done wrong, it&apos;s a gimmick. Done right, it&apos;s one
+              of the most effective non-invasive tightening and brightening
+              treatments available. Michelle pairs 15+ years of esthetic
+              experience with proper cryo protocol to deliver the result you
+              came in for.
             </p>
           </div>
         </div>
@@ -136,13 +142,13 @@ export default function DermaplaningPage() {
       <section className="bg-sage">
         <div className="mx-auto max-w-2xl px-6 py-20 text-center md:px-12">
           <h2 className="font-serif text-3xl text-cream md:text-4xl">
-            Ready for that fresh-start glow?
+            Ready for the cryo glow?
           </h2>
           <Link
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book a dermaplaning session
+            Book a cryo facial
           </Link>
         </div>
       </section>
