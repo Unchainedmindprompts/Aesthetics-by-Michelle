@@ -6,11 +6,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/microneedling", label: "Microneedling" },
-  { href: "/facials", label: "Facials" },
-  { href: "/dermaplaning", label: "Dermaplaning" },
-  { href: "/brow-lash", label: "Brow & Lash" },
-  { href: "/waxing", label: "Waxing" },
+  { href: "/services", label: "Services" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
