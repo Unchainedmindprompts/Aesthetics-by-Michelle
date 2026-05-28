@@ -5,13 +5,16 @@ const SITE_URL = "https://aestheticsbymichelle.com";
 const routes = [
   "",
   "/about",
+  "/services",
   "/microneedling",
   "/facials",
   "/dermaplaning",
+  "/cryo",
   "/brow-lash",
   "/waxing",
   "/contact",
   "/blog",
+  "/book",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

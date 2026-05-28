@@ -6,16 +6,12 @@ import { useState } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/microneedling", label: "Microneedling" },
-  { href: "/facials", label: "Facials" },
-  { href: "/dermaplaning", label: "Dermaplaning" },
-  { href: "/brow-lash", label: "Brow & Lash" },
-  { href: "/waxing", label: "Waxing" },
+  { href: "/services", label: "Services" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
-const BOOKING_URL = "https://aestheticsbymichellehoffman.as.me/";
+const BOOKING_URL = "/book";
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -44,14 +40,12 @@ export default function Navigation() {
           ))}
         </ul>
 
-        <a
+        <Link
           href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           className="hidden rounded-full bg-sage px-5 py-2 font-sans text-sm text-softWhite transition-colors hover:bg-charcoal lg:inline-block"
         >
           Book Now
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -102,14 +96,13 @@ export default function Navigation() {
               </li>
             ))}
             <li className="mt-2">
-              <a
+              <Link
                 href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
                 className="inline-block rounded-full bg-sage px-5 py-2 text-sm text-softWhite transition-colors hover:bg-charcoal"
               >
                 Book Now
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

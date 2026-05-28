@@ -1,31 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const BOOKING_URL = "https://aestheticsbymichellehoffman.as.me/";
+const BOOKING_URL = "/book";
 
 const services = [
   {
-    title: "Facials",
+    title: "Facials Built Around Your Skin Today — Not a Generic Menu",
     description:
-      "Customized facial treatments tailored to your skin type, goals, and season.",
+      "Most facials are a script. Yours shouldn't be. Every facial at Aesthetics by Michelle starts with a real conversation and a close look at what your skin is doing right now — because the skin you walked in with last spring isn't the skin you have today.",
     href: "/facials",
   },
   {
-    title: "Dermaplaning",
+    title:
+      "Smoother Skin, Brighter Glow, Better Product Absorption — In Under an Hour",
     description:
-      "Gentle exfoliation that removes dead skin and peach fuzz for a smoother, brighter complexion.",
+      "Dermaplaning is a gentle, deeply satisfying treatment that uses a sterile surgical blade to remove the top layer of dead skin cells and the fine vellus hair on your face. The result is immediate: skin feels remarkably soft and every serum absorbs significantly better.",
     href: "/dermaplaning",
   },
   {
-    title: "Brow & Lash Services",
+    title: "Lifted Lashes, Shaped Brows, Zero Daily Maintenance",
     description:
-      "Brow lamination, eyelash lift and tint, and expert brow shaping — low-maintenance results that last.",
+      "Wake up looking like you already did your makeup. Michelle offers three signature brow and lash services — brow lamination, lash lift and tint, and expert brow shaping — designed to enhance what you already have and save you fifteen minutes every morning.",
     href: "/brow-lash",
   },
   {
-    title: "Waxing Services",
-    description: "Clean, precise waxing for face, brows, and underarms.",
+    title: "Clean, Precise, Comfortable Waxing — Done Right the First Time",
+    description:
+      "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise facial, brow, and underarm waxing using high-quality wax and a gentle, experienced hand.",
     href: "/waxing",
+  },
+  {
+    title: "Cold-Powered Body Sculpting for the Spots That Don't Budge",
+    description:
+      "Controlled thermal shock applied to targeted areas naturally reduces the presence of adipose fat cells — without damaging the surrounding tissue. Non-invasive, no needles, no downtime.",
+    href: "/cryo#cryo-body-sculpting",
+  },
+  {
+    title: "Sub-Zero Cryo Facial for Tightening, De-Puffing, and Real Glow",
+    description:
+      "Sub-zero temperatures rapidly stimulate blood flow and oxygenation in the face. A non-invasive treatment that reduces puffiness, tightens pores, and leaves your skin looking visibly refreshed.",
+    href: "/cryo#cryo-facial",
   },
 ];
 
@@ -47,14 +61,12 @@ export default function HomePage() {
               attentive, and built around what your skin actually needs.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
+              <Link
                 href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-block rounded-none bg-charcoal px-8 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
               >
                 Schedule Consultation
-              </a>
+              </Link>
               <a
                 href="#services"
                 className="inline-block rounded-none border border-charcoal bg-transparent px-8 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-cream"
@@ -112,7 +124,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 3: SERVICES OVERVIEW */}
-      <section id="services" className="bg-ivory py-20 md:py-28">
+      <section id="services" className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
@@ -129,20 +141,24 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article className="border-t-4 border-gold bg-softWhite p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+            <article className="flex flex-col border-t-4 border-gold bg-sage p-8 shadow-sm transition-all duration-300 hover:shadow-md">
               <p className="font-sans text-xs uppercase tracking-widest text-gold">
                 Hero Service
               </p>
-              <h3 className="mt-4 font-serif text-2xl text-charcoal">
-                Microneedling
+              <h3 className="mt-4 font-serif text-2xl leading-tight text-cream">
+                Collagen-Building Microneedling for Skin That Looks Like You,
+                Just Better
               </h3>
-              <p className="mt-4 font-sans text-warmGray">
-                Collagen induction therapy for smoother texture, refined pores,
-                and visibly healthier skin.
+              <p className="mt-4 font-sans text-cream/80">
+                Microneedling is the closest thing skincare has to a reset
+                button. Using a precision pen of ultra-fine needles, Michelle
+                creates microscopic channels in the skin that signal your body
+                to flood the area with collagen and elastin — the two things
+                your skin loses as it ages.
               </p>
               <Link
                 href="/microneedling"
-                className="mt-6 inline-block font-sans text-charcoal transition-colors duration-300 hover:text-sage"
+                className="mt-auto pt-6 font-sans text-cream transition-colors duration-300 hover:text-gold"
               >
                 Learn more →
               </Link>
@@ -151,17 +167,17 @@ export default function HomePage() {
             {services.map((service) => (
               <article
                 key={service.href}
-                className="bg-softWhite p-8 shadow-sm transition-all duration-300 hover:shadow-md"
+                className="flex flex-col bg-sage p-8 shadow-sm transition-all duration-300 hover:shadow-md"
               >
-                <h3 className="font-serif text-2xl text-charcoal">
+                <h3 className="font-serif text-2xl leading-tight text-cream">
                   {service.title}
                 </h3>
-                <p className="mt-4 font-sans text-warmGray">
+                <p className="mt-4 font-sans text-cream/80">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="mt-6 inline-block font-sans text-charcoal transition-colors duration-300 hover:text-sage"
+                  className="mt-auto pt-6 font-sans text-cream transition-colors duration-300 hover:text-gold"
                 >
                   Learn more →
                 </Link>
@@ -275,11 +291,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div>
-            {/* Replace with Google Maps embed */}
-            <div
-              className="aspect-video w-full rounded-sm bg-sage/20"
-              aria-label="Studio location map placeholder"
+          <div className="relative aspect-video w-full overflow-hidden rounded-sm">
+            <Image
+              src="/images/michelle-studio.png"
+              alt="Michelle Hoffman inside her Post Falls skincare studio"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           </div>
         </div>
@@ -295,14 +313,12 @@ export default function HomePage() {
             Schedule a consultation with Michelle and let&apos;s build the right
             plan for you.
           </p>
-          <a
+          <Link
             href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="mt-10 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
             Schedule Consultation
-          </a>
+          </Link>
         </div>
       </section>
     </>

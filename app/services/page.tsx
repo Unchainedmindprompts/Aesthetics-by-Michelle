@@ -1,0 +1,104 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+const BOOKING_URL = "/book";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Skin, body, and brow & lash services from Michelle Hoffman, Licensed Idaho Esthetician, in Post Falls. Microneedling, facials, dermaplaning, cryo, waxing, and brow & lash.",
+  alternates: { canonical: "/services" },
+};
+
+const categories = [
+  {
+    label: "Skin",
+    items: [
+      { name: "Microneedling", href: "/microneedling" },
+      { name: "Customized Facial", href: "/facials" },
+      { name: "Dermaplaning", href: "/dermaplaning" },
+      { name: "Cryo Facial", href: "/cryo#cryo-facial" },
+    ],
+  },
+  {
+    label: "Body",
+    items: [
+      { name: "Cryo Body Sculpting", href: "/cryo#cryo-body-sculpting" },
+      { name: "Face Wax", href: "/waxing" },
+      { name: "Under Arm Wax", href: "/waxing" },
+    ],
+  },
+  {
+    label: "Brow & Lash",
+    items: [
+      { name: "Brow Lamination", href: "/brow-lash" },
+      { name: "Lash Lift & Tint", href: "/brow-lash" },
+      { name: "Brow Wax & Shape", href: "/brow-lash" },
+    ],
+  },
+];
+
+export default function ServicesIndexPage() {
+  return (
+    <>
+      <section className="bg-cream py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
+          <p className="font-sans text-sm uppercase tracking-widest text-gold">
+            Services
+          </p>
+          <h1 className="mt-6 font-serif text-5xl text-charcoal md:text-6xl">
+            Treatments built around your skin.
+          </h1>
+          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
+            Personalized skin, body, and brow & lash services — every
+            appointment one-on-one with Michelle.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-sage py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6 md:px-12">
+          <div className="grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-16">
+            {categories.map((category) => (
+              <div key={category.label}>
+                <p className="font-sans text-sm uppercase tracking-widest text-cream/80">
+                  {category.label}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {category.items.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="block font-serif text-3xl leading-tight text-cream transition-colors duration-300 hover:text-gold md:text-4xl"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-cream">
+        <div className="mx-auto max-w-2xl px-6 py-20 text-center md:px-12">
+          <h2 className="font-serif text-3xl text-charcoal md:text-4xl">
+            Not sure where to start?
+          </h2>
+          <p className="mt-6 font-sans text-lg text-warmGray">
+            Book a consultation and Michelle will recommend the right treatment
+            for what your skin actually needs.
+          </p>
+          <Link
+            href={BOOKING_URL}
+            className="mt-10 inline-block bg-charcoal px-10 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
+          >
+            Schedule a Consultation
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
