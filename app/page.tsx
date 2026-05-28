@@ -7,7 +7,7 @@ const services = [
   {
     title: "Facials Built Around Your Skin Today — Not a Generic Menu",
     description:
-      "Most facials are a script. Yours shouldn't be.",
+      "Most facials are a script. Yours shouldn't be. Every facial at Aesthetics by Michelle starts with a real conversation and a close look at what your skin is doing right now — because the skin you walked in with last spring isn't the skin you have today.",
     href: "/facials",
   },
   {
