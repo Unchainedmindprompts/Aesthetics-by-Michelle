@@ -112,16 +112,16 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 3: SERVICES OVERVIEW */}
-      <section id="services" className="bg-sage py-20 md:py-28">
+      <section id="services" className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
               Services
             </p>
-            <h2 className="mt-6 font-serif text-4xl text-cream md:text-5xl">
+            <h2 className="mt-6 font-serif text-4xl text-charcoal md:text-5xl">
               Treatments built around your skin.
             </h2>
-            <p className="mt-8 font-sans text-lg leading-relaxed text-cream/80">
+            <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
               Every treatment at Aesthetics by Michelle starts with listening —
               to your goals, your concerns, and what your skin is telling us.
               Then we build the right plan from there.
@@ -129,15 +129,15 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article className="flex flex-col border-t-4 border-gold bg-softWhite p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+            <article className="flex flex-col border-t-4 border-gold bg-sage p-8 shadow-sm transition-all duration-300 hover:shadow-md">
               <p className="font-sans text-xs uppercase tracking-widest text-gold">
                 Hero Service
               </p>
-              <h3 className="mt-4 font-serif text-2xl leading-tight text-charcoal">
+              <h3 className="mt-4 font-serif text-2xl leading-tight text-cream">
                 Collagen-Building Microneedling for Skin That Looks Like You,
                 Just Better
               </h3>
-              <p className="mt-4 font-sans text-warmGray">
+              <p className="mt-4 font-sans text-cream/80">
                 Microneedling is the closest thing skincare has to a reset
                 button. Using a precision pen of ultra-fine needles, Michelle
                 creates microscopic channels in the skin that signal your body
@@ -146,7 +146,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/microneedling"
-                className="mt-auto pt-6 font-sans text-charcoal transition-colors duration-300 hover:text-sage"
+                className="mt-auto pt-6 font-sans text-cream transition-colors duration-300 hover:text-gold"
               >
                 Learn more →
               </Link>
@@ -155,17 +155,17 @@ export default function HomePage() {
             {services.map((service) => (
               <article
                 key={service.href}
-                className="flex flex-col bg-softWhite p-8 shadow-sm transition-all duration-300 hover:shadow-md"
+                className="flex flex-col bg-sage p-8 shadow-sm transition-all duration-300 hover:shadow-md"
               >
-                <h3 className="font-serif text-2xl leading-tight text-charcoal">
+                <h3 className="font-serif text-2xl leading-tight text-cream">
                   {service.title}
                 </h3>
-                <p className="mt-4 font-sans text-warmGray">
+                <p className="mt-4 font-sans text-cream/80">
                   {service.description}
                 </p>
                 <Link
                   href={service.href}
-                  className="mt-auto pt-6 font-sans text-charcoal transition-colors duration-300 hover:text-sage"
+                  className="mt-auto pt-6 font-sans text-cream transition-colors duration-300 hover:text-gold"
                 >
                   Learn more →
                 </Link>
