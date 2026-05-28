@@ -30,16 +30,18 @@ const services = [
     href: "/waxing",
   },
   {
-    title: "Cold-Powered Body Sculpting for the Spots That Don't Budge",
+    title:
+      "Cryo Body Sculpting — Targeted Fat Reduction, Smoother Skin, No Downtime",
     description:
-      "Controlled thermal shock applied to targeted areas naturally reduces the presence of adipose fat cells — without damaging the surrounding tissue. Non-invasive, no needles, no downtime.",
-    href: "/cryo#cryo-body-sculpting",
+      "Cryo Body Sculpting uses controlled cold therapy to target stubborn pockets of fat that don't respond to diet or workouts — the lower belly, love handles, inner thighs, bra line, the spots most of us know too well. The technology cools fat cells to a precise temperature that breaks them down without damaging the surrounding skin, muscle, or tissue.",
+    href: "/cryo-body-sculpting",
   },
   {
-    title: "Sub-Zero Cryo Facial for Tightening, De-Puffing, and Real Glow",
+    title:
+      "Cryo Facial — Cold Therapy for Tighter, Brighter, Calmer Skin",
     description:
-      "Sub-zero temperatures rapidly stimulate blood flow and oxygenation in the face. A non-invasive treatment that reduces puffiness, tightens pores, and leaves your skin looking visibly refreshed.",
-    href: "/cryo#cryo-facial",
+      "A Cryo Facial uses precisely controlled cold therapy — vaporized cooling delivered across your face, neck, and décolleté — to shock the skin in the best possible way. The cold constricts blood vessels on contact, then triggers a rush of fresh, oxygen-rich blood as your skin rewarms.",
+    href: "/cryo-facial",
   },
 ];
 
