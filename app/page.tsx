@@ -112,16 +112,16 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 3: SERVICES OVERVIEW */}
-      <section id="services" className="bg-ivory py-20 md:py-28">
+      <section id="services" className="bg-sage py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
               Services
             </p>
-            <h2 className="mt-6 font-serif text-4xl text-charcoal md:text-5xl">
+            <h2 className="mt-6 font-serif text-4xl text-cream md:text-5xl">
               Treatments built around your skin.
             </h2>
-            <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
+            <p className="mt-8 font-sans text-lg leading-relaxed text-cream/80">
               Every treatment at Aesthetics by Michelle starts with listening —
               to your goals, your concerns, and what your skin is telling us.
               Then we build the right plan from there.
