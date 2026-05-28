@@ -29,6 +29,18 @@ const services = [
       "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise facial, brow, and underarm waxing using high-quality wax and a gentle, experienced hand.",
     href: "/waxing",
   },
+  {
+    title: "Cold-Powered Body Sculpting for the Spots That Don't Budge",
+    description:
+      "Controlled thermal shock applied to targeted areas naturally reduces the presence of adipose fat cells — without damaging the surrounding tissue. Non-invasive, no needles, no downtime.",
+    href: "/cryo#cryo-body-sculpting",
+  },
+  {
+    title: "Sub-Zero Cryo Facial for Tightening, De-Puffing, and Real Glow",
+    description:
+      "Sub-zero temperatures rapidly stimulate blood flow and oxygenation in the face. A non-invasive treatment that reduces puffiness, tightens pores, and leaves your skin looking visibly refreshed.",
+    href: "/cryo#cryo-facial",
+  },
 ];
 
 export default function HomePage() {
