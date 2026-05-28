@@ -72,17 +72,17 @@ const faqJsonLd = {
 export default function CryoBodySculptingPage() {
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
+      <section className="bg-sage py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
             Cryo Body Sculpting — Targeted Fat Reduction, Smoother Skin, No
             Downtime
           </h1>
-          <p className="mt-8 font-sans text-warmGray">
-            <span className="text-xl text-charcoal">$165</span>
+          <p className="mt-8 font-sans text-cream/80">
+            <span className="text-xl text-cream">$165</span>
             <span className="mx-2">•</span>
             <span>60 minutes</span>
           </p>
