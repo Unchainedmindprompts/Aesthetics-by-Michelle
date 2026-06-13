@@ -6,9 +6,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Customized Facials in Post Falls, Idaho",
+  title: "Customized Facials in Hayden, Idaho",
   description:
-    "Five facial options in Post Falls, ID. Classic, anti-aging, dermaplaning, microdermabrasion, and reiki-paired — all built around your skin by Michelle Hoffman, Licensed Esthetician.",
+    "Five facial options in Hayden, ID. Classic, anti-aging, dermaplaning, microdermabrasion, and reiki-paired — all built around your skin by Michelle Hoffman, Licensed Esthetician.",
   alternates: { canonical: "/facials" },
 };
 
@@ -60,14 +60,15 @@ const serviceJsonLd = {
     name: "Aesthetics by Michelle",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Post Falls",
+      addressLocality: "Hayden",
       addressRegion: "ID",
       addressCountry: "US",
     },
   },
   areaServed: [
-    { "@type": "City", name: "Post Falls" },
+    { "@type": "City", name: "Hayden" },
     { "@type": "City", name: "Coeur d'Alene" },
+    { "@type": "City", name: "Post Falls" },
     { "@type": "City", name: "Spokane Valley" },
   ],
   url: `${SITE_URL}/facials`,
@@ -210,7 +211,7 @@ export default function FacialsPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book a customized facial
+            Book Today
           </Link>
         </div>
       </section>

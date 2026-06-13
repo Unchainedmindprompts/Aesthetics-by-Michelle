@@ -6,9 +6,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Waxing Services in Post Falls, Idaho",
+  title: "Waxing Services in Hayden, Idaho",
   description:
-    "Clean, precise facial, brow, and underarm waxing in Post Falls, ID. Done with high-quality wax and a gentle, experienced hand by Michelle Hoffman, Licensed Esthetician.",
+    "Clean, precise brow, lip, nostril, facial, and underarm waxing in Hayden, ID. Done with high-quality wax and a gentle, experienced hand by Michelle Hoffman, Licensed Esthetician.",
   alternates: { canonical: "/waxing" },
 };
 
@@ -51,14 +51,15 @@ const serviceJsonLd = {
     name: "Aesthetics by Michelle",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Post Falls",
+      addressLocality: "Hayden",
       addressRegion: "ID",
       addressCountry: "US",
     },
   },
   areaServed: [
-    { "@type": "City", name: "Post Falls" },
+    { "@type": "City", name: "Hayden" },
     { "@type": "City", name: "Coeur d'Alene" },
+    { "@type": "City", name: "Post Falls" },
     { "@type": "City", name: "Spokane Valley" },
   ],
   url: `${SITE_URL}/waxing`,
@@ -146,8 +147,8 @@ export default function WaxingPage() {
               Why book with Michelle
             </h2>
             <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
-              Speed and precision come from repetition. With 15+ years of
-              waxing under her belt, Michelle works fast, places strips
+              Speed and precision come from repetition. With many years of
+              experience under her belt, Michelle works fast, places strips
               perfectly, and minimizes the part you don&apos;t love about
               waxing — the part that hurts.
             </p>
@@ -164,7 +165,7 @@ export default function WaxingPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book a waxing appointment
+            Book Today
           </Link>
         </div>
       </section>

@@ -5,9 +5,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Chemical Peel in Post Falls, Idaho",
+  title: "Chemical Peel in Hayden, Idaho",
   description:
-    "Chemical Peel in Post Falls, ID. Targeted exfoliation that lifts away damaged surface skin for smoother tone and softer texture, performed by Michelle Hoffman, Licensed Esthetician.",
+    "Chemical Peel in Hayden, ID. Targeted exfoliation that lifts away damaged surface skin for smoother tone and softer texture, performed by Michelle Hoffman, Licensed Esthetician.",
   alternates: { canonical: "/chemical-peel" },
 };
 
@@ -24,14 +24,15 @@ const serviceJsonLd = {
     name: "Aesthetics by Michelle",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Post Falls",
+      addressLocality: "Hayden",
       addressRegion: "ID",
       addressCountry: "US",
     },
   },
   areaServed: [
-    { "@type": "City", name: "Post Falls" },
+    { "@type": "City", name: "Hayden" },
     { "@type": "City", name: "Coeur d'Alene" },
+    { "@type": "City", name: "Post Falls" },
     { "@type": "City", name: "Spokane Valley" },
   ],
   url: `${SITE_URL}/chemical-peel`,
@@ -108,7 +109,7 @@ export default function ChemicalPeelPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book a chemical peel
+            Book Today
           </Link>
         </div>
       </section>

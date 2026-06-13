@@ -6,9 +6,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Microneedling in Post Falls, Idaho",
+  title: "Microneedling in Hayden, Idaho",
   description:
-    "Collagen-building microneedling in Post Falls, ID. Firmer, smoother skin with refined pores and softer fine lines, performed by Michelle Hoffman, Licensed Esthetician.",
+    "Collagen-building microneedling in Hayden, ID. Firmer, smoother skin with refined pores and softer fine lines, performed by Michelle Hoffman, Licensed Esthetician.",
   alternates: { canonical: "/microneedling" },
 };
 
@@ -43,14 +43,15 @@ const serviceJsonLd = {
     name: "Aesthetics by Michelle",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Post Falls",
+      addressLocality: "Hayden",
       addressRegion: "ID",
       addressCountry: "US",
     },
   },
   areaServed: [
-    { "@type": "City", name: "Post Falls" },
+    { "@type": "City", name: "Hayden" },
     { "@type": "City", name: "Coeur d'Alene" },
+    { "@type": "City", name: "Post Falls" },
     { "@type": "City", name: "Spokane Valley" },
   ],
   url: `${SITE_URL}/microneedling`,
@@ -168,7 +169,7 @@ export default function MicroneedlingPage() {
             <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
               Microneedling depth and technique matter enormously — too shallow
               and you waste your money, too aggressive and you damage the
-              barrier. With 15+ years of hands-on experience and an Idaho
+              barrier. With many years of experience and an Idaho
               esthetician license, Michelle dials in every pass to your skin,
               your goals, and the day you&apos;re sitting in her chair.
             </p>
@@ -185,7 +186,7 @@ export default function MicroneedlingPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book your microneedling consultation
+            Book Today
           </Link>
         </div>
       </section>

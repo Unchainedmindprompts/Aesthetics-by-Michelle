@@ -5,9 +5,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Reiki Body Healing in Post Falls, Idaho",
+  title: "Reiki Body Healing in Hayden, Idaho",
   description:
-    "Reiki Body Healing in Post Falls, ID. A 45-minute hands-on session to align your body's energy and flow with Michelle Hoffman, Licensed Esthetician.",
+    "Reiki Body Healing in Hayden, ID. A 45-minute hands-on session to align your body's energy and flow with Michelle Hoffman, Licensed Esthetician.",
   alternates: { canonical: "/reiki" },
 };
 
@@ -24,14 +24,15 @@ const serviceJsonLd = {
     name: "Aesthetics by Michelle",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Post Falls",
+      addressLocality: "Hayden",
       addressRegion: "ID",
       addressCountry: "US",
     },
   },
   areaServed: [
-    { "@type": "City", name: "Post Falls" },
+    { "@type": "City", name: "Hayden" },
     { "@type": "City", name: "Coeur d'Alene" },
+    { "@type": "City", name: "Post Falls" },
     { "@type": "City", name: "Spokane Valley" },
   ],
   url: `${SITE_URL}/reiki`,
@@ -108,7 +109,7 @@ export default function ReikiPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book a reiki session
+            Book Today
           </Link>
         </div>
       </section>
