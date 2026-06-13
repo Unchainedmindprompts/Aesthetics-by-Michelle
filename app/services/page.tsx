@@ -4,9 +4,9 @@ import Link from "next/link";
 const BOOKING_URL = "/book";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "All Services & Pricing",
   description:
-    "Skin, brow & lash, waxing, and reiki services from Michelle Hoffman, Licensed Idaho Esthetician, in Hayden, Idaho. Microneedling, facials, chemical peel, brow lamination, lash lift & tint, waxing, and reiki body healing.",
+    "Browse all treatments — microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.",
   alternates: { canonical: "/services" },
 };
 

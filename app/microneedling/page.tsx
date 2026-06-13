@@ -6,9 +6,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Microneedling in Hayden, Idaho",
+  title: "Microneedling in Hayden, ID — Collagen Therapy",
   description:
-    "Collagen-building microneedling in Hayden, ID. Firmer, smoother skin with refined pores and softer fine lines, performed by Michelle Hoffman, Licensed Esthetician.",
+    "Collagen-building microneedling in Hayden, ID. Firmer, smoother skin with refined pores and softer fine lines.",
   alternates: { canonical: "/microneedling" },
 };
 

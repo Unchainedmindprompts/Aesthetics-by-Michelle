@@ -5,9 +5,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Chemical Peel in Hayden, Idaho",
+  title: "Chemical Peel in Hayden, ID",
   description:
-    "Chemical Peel in Hayden, ID. Targeted exfoliation that lifts away damaged surface skin for smoother tone and softer texture, performed by Michelle Hoffman, Licensed Esthetician.",
+    "Chemical peel in Hayden, ID. Targeted exfoliation that lifts away damaged skin for smoother tone and softer texture.",
   alternates: { canonical: "/chemical-peel" },
 };
 

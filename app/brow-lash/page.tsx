@@ -6,9 +6,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Brow & Lash Services in Hayden, Idaho",
+  title: "Brow Lamination & Lash Lift in Hayden, ID",
   description:
-    "Eyelash lift and tint, and eyebrow lamination in Hayden, ID. Low-maintenance results that last six to eight weeks with Michelle Hoffman, Licensed Esthetician.",
+    "Eyelash lift & tint and eyebrow lamination in Hayden, ID. Low-maintenance results that last six to eight weeks.",
   alternates: { canonical: "/brow-lash" },
 };
 

@@ -4,7 +4,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Book an Appointment",
   description:
-    "Schedule your appointment with Michelle Hoffman, Licensed Idaho Esthetician, at Aesthetics by Michelle in Hayden, Idaho.",
+    "Schedule your appointment in Hayden, ID — book online with Acuity Scheduling, instantly confirmed.",
   alternates: { canonical: "/book" },
 };
 

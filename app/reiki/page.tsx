@@ -5,9 +5,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Reiki Body Healing in Hayden, Idaho",
+  title: "Reiki Body Healing in Hayden, ID",
   description:
-    "Reiki Body Healing in Hayden, ID. A 45-minute hands-on session to align your body's energy and flow with Michelle Hoffman, Licensed Esthetician.",
+    "Reiki body healing in Hayden, ID. A 45-minute hands-on session to align your body's energy and flow.",
   alternates: { canonical: "/reiki" },
 };
 

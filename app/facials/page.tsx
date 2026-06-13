@@ -6,9 +6,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Customized Facials in Hayden, Idaho",
+  title: "Customized Facials in Hayden, ID",
   description:
-    "Five facial options in Hayden, ID. Classic, anti-aging, dermaplaning, microdermabrasion, and reiki-paired — all built around your skin by Michelle Hoffman, Licensed Esthetician.",
+    "Five customized facials in Hayden, ID — classic, anti-aging, dermaplaning, microdermabrasion, and body energy healing.",
   alternates: { canonical: "/facials" },
 };
 

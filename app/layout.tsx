@@ -19,14 +19,15 @@ const inter = Inter({
 
 const SITE_URL = "https://aestheticsbymichelle.com";
 const SITE_NAME = "Aesthetics by Michelle";
+const HOME_TITLE = "Aesthetics by Michelle — Skincare Studio in Hayden, ID";
 const SITE_DESCRIPTION =
-  "Licensed skincare and aesthetics services in Hayden, Idaho. Microneedling, facials, brow & lash, waxing, chemical peel, and reiki by Michelle Hoffman, Licensed Idaho Esthetician.";
+  "Solo-practitioner skincare studio in Hayden, Idaho. Microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Licensed Esthetician in Hayden, Idaho`,
-    template: `%s | ${SITE_NAME}`,
+    default: HOME_TITLE,
+    template: "%s",
   },
   description: SITE_DESCRIPTION,
   alternates: {
@@ -35,14 +36,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    title: `${SITE_NAME} | Licensed Esthetician in Hayden, Idaho`,
+    title: HOME_TITLE,
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Licensed Esthetician in Hayden, Idaho`,
+    title: HOME_TITLE,
     description: SITE_DESCRIPTION,
   },
   robots: {

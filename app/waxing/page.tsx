@@ -6,9 +6,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Waxing Services in Hayden, Idaho",
+  title: "Waxing in Hayden, ID — Brow, Lip, Face, Underarm",
   description:
-    "Clean, precise brow, lip, nostril, facial, and underarm waxing in Hayden, ID. Done with high-quality wax and a gentle, experienced hand by Michelle Hoffman, Licensed Esthetician.",
+    "Precise brow, lip, nostril, facial, and underarm waxing in Hayden, ID. Quick, clean, and over before you know it.",
   alternates: { canonical: "/waxing" },
 };
 
