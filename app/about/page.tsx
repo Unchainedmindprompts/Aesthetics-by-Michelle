@@ -6,7 +6,7 @@ const BOOKING_URL = "/book";
 export const metadata: Metadata = {
   title: "About Michelle Hoffman, Licensed Esthetician",
   description:
-    "Meet Michelle Hoffman, Licensed Idaho Esthetician (EST-292960). Solo-practitioner skincare studio in Post Falls focused on long-term skin health — tone, texture, and vitality.",
+    "Meet Michelle Hoffman, Licensed Idaho Esthetician (EST-292960). Solo-practitioner skincare studio in Hayden focused on long-term skin health.",
   alternates: { canonical: "/about" },
 };
 
@@ -71,7 +71,7 @@ export default function AboutPage() {
               Licensed Idaho Esthetician · EST-292960
             </p>
             <p className="mt-2 font-sans text-warmGray">
-              Aesthetics by Michelle · Post Falls, Idaho
+              Aesthetics by Michelle · Hayden, Idaho
             </p>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Schedule a Consultation
+            Book Today
           </Link>
         </div>
       </section>

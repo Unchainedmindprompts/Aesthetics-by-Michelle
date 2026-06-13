@@ -7,9 +7,9 @@ export default function Footer() {
         <div>
           <h3 className="font-serif text-2xl tracking-wide">Aesthetics by Michelle</h3>
           <address className="mt-4 not-italic font-sans text-sm leading-relaxed">
-            620 N Post St, Suite 202
+            2151 Hayden Avenue
             <br />
-            Post Falls, ID 83854
+            Hayden, ID 83835
             <br />
             <a href="tel:+14257654116" className="transition-colors hover:text-gold">
               (425) 765-4116
@@ -62,7 +62,7 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/book" className="transition-colors hover:text-gold">
-                Book Appointment
+                Book Today
               </Link>
             </li>
           </ul>

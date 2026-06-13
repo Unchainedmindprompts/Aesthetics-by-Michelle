@@ -3,16 +3,18 @@
   "business_type": "Skincare and Aesthetics Studio",
   "owner": "Michelle Hoffman",
   "credentials": "Licensed Idaho Esthetician (EST-292960)",
-  "experience_years": 15,
-  "location": "Post Falls, Idaho",
-  "service_area": ["Post Falls", "Coeur d'Alene", "Hayden", "Spokane Valley"],
+  "experience": "Many years in the beauty industry",
+  "location": "Hayden, Idaho",
+  "address": "2151 Hayden Avenue, Hayden, ID 83835",
+  "service_area": ["Hayden", "Coeur d'Alene", "Post Falls", "Spokane Valley"],
   "services": [
     "Microneedling",
-    "Facials",
-    "Dermaplaning",
+    "Customized Facials",
+    "Chemical Peel",
     "Brow Lamination",
     "Eyelash Lift and Tint",
-    "Waxing Services"
+    "Waxing Services",
+    "Reiki Body Healing"
   ],
   "hours": {
     "Tuesday": "9:00 AM - 5:00 PM",
@@ -20,7 +22,7 @@
     "Friday": "9:00 AM - 3:00 PM",
     "Saturday": "9:00 AM - 3:00 PM"
   },
-  "booking_url": "https://aestheticsbymichellehoffman.as.me/",
+  "booking_url": "https://aestheticsbymichelle.com/book",
   "phone": "(425) 765-4116",
   "email": "aestheticsbymichellehoffman@gmail.com",
   "appointments_only": true,

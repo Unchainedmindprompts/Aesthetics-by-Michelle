@@ -4,9 +4,9 @@ import Link from "next/link";
 const BOOKING_URL = "/book";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "All Services & Pricing",
   description:
-    "Skin, body, and brow & lash services from Michelle Hoffman, Licensed Idaho Esthetician, in Post Falls. Microneedling, facials, dermaplaning, cryo, waxing, and brow & lash.",
+    "Browse all treatments — microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.",
   alternates: { canonical: "/services" },
 };
 
@@ -99,7 +99,7 @@ export default function ServicesIndexPage() {
             href={BOOKING_URL}
             className="mt-10 inline-block bg-charcoal px-10 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
           >
-            Schedule a Consultation
+            Book Today
           </Link>
         </div>
       </section>

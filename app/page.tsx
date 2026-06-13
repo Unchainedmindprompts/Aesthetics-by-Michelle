@@ -44,13 +44,13 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-12">
           <div className="order-2 md:order-1">
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
-              Licensed Esthetician • Post Falls, Idaho
+              Licensed Esthetician • Hayden, Idaho
             </p>
             <h1 className="mt-6 font-serif text-5xl leading-tight text-charcoal md:text-6xl">
-              Microneedling + Advanced Skincare in Post Falls
+              Microneedling + Advanced Skincare in Hayden
             </h1>
             <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray md:text-xl">
-              Licensed skincare and aesthetics in Post Falls — personal,
+              Licensed skincare and aesthetics in Hayden — personal,
               attentive, and built around what your skin actually needs.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -58,7 +58,7 @@ export default function HomePage() {
                 href={BOOKING_URL}
                 className="inline-block rounded-none bg-charcoal px-8 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
               >
-                Schedule Consultation
+                Book Today
               </Link>
               <a
                 href="#services"
@@ -68,14 +68,14 @@ export default function HomePage() {
               </a>
             </div>
             <p className="mt-8 font-sans text-sm text-warmGray">
-              Idaho Esthetician License EST-292960 • 15+ years of experience
+              Idaho Esthetician License EST-292960 • Many years of experience
             </p>
           </div>
 
           <div className="order-1 md:order-2">
             <Image
               src="/images/michelle-hero.png"
-              alt="Michelle Hoffman, licensed esthetician, in her Post Falls skincare studio"
+              alt="Michelle Hoffman, licensed esthetician, in her Hayden skincare studio"
               width={1600}
               height={900}
               priority
@@ -96,10 +96,11 @@ export default function HomePage() {
           </h2>
           <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
             Aesthetics by Michelle is a solo-practitioner skincare studio in
-            Post Falls, serving the Coeur d&apos;Alene and Spokane Valley area.
-            Every appointment is one-on-one — no revolving door of staff, no
-            rushed treatments, no generic service menu. Just Michelle, her 15+
-            years of experience, and a treatment plan tailored to your skin.
+            Hayden, serving Post Falls, Coeur d&apos;Alene, and the Spokane
+            Valley area. Every appointment is one-on-one — no revolving door of
+            staff, no rushed treatments, no generic service menu. Just
+            Michelle, her many years of experience, and a treatment plan
+            tailored to your skin.
           </p>
           <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
             Whether you&apos;re new to professional skincare or you&apos;ve been
@@ -214,7 +215,7 @@ export default function HomePage() {
                 Licensed &amp; Experienced
               </h3>
               <p className="mt-4 font-sans leading-relaxed text-warmGray">
-                15+ years in the skincare industry. Idaho Esthetician license
+                Many years in the beauty industry. Idaho Esthetician license
                 EST-292960. Honest recommendations, every time.
               </p>
             </article>
@@ -247,9 +248,9 @@ export default function HomePage() {
               Visit the studio.
             </h2>
             <address className="mt-8 not-italic font-sans text-lg leading-relaxed text-warmGray">
-              620 N Post St, Suite 202
+              2151 Hayden Avenue
               <br />
-              Post Falls, ID 83854
+              Hayden, ID 83835
               <br />
               <a
                 href="tel:+14257654116"
@@ -287,7 +288,7 @@ export default function HomePage() {
           <div className="relative aspect-video w-full overflow-hidden rounded-sm">
             <Image
               src="/images/michelle-studio.png"
-              alt="Michelle Hoffman inside her Post Falls skincare studio"
+              alt="Michelle Hoffman inside her Hayden skincare studio"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
@@ -310,7 +311,7 @@ export default function HomePage() {
             href={BOOKING_URL}
             className="mt-10 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Schedule Consultation
+            Book Today
           </Link>
         </div>
       </section>

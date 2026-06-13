@@ -6,9 +6,9 @@ const BOOKING_URL = "/book";
 const SITE_URL = "https://aestheticsbymichelle.com";
 
 export const metadata: Metadata = {
-  title: "Brow & Lash Services in Post Falls, Idaho",
+  title: "Brow Lamination & Lash Lift in Hayden, ID",
   description:
-    "Brow lamination, lash lift and tint, and expert brow shaping in Post Falls, ID. Low-maintenance results that last six to eight weeks with Michelle Hoffman, Licensed Esthetician.",
+    "Eyelash lift & tint and eyebrow lamination in Hayden, ID. Low-maintenance results that last six to eight weeks.",
   alternates: { canonical: "/brow-lash" },
 };
 
@@ -48,14 +48,15 @@ const serviceJsonLd = {
     name: "Aesthetics by Michelle",
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Post Falls",
+      addressLocality: "Hayden",
       addressRegion: "ID",
       addressCountry: "US",
     },
   },
   areaServed: [
-    { "@type": "City", name: "Post Falls" },
+    { "@type": "City", name: "Hayden" },
     { "@type": "City", name: "Coeur d'Alene" },
+    { "@type": "City", name: "Post Falls" },
     { "@type": "City", name: "Spokane Valley" },
   ],
   url: `${SITE_URL}/brow-lash`,
@@ -158,7 +159,7 @@ export default function BrowLashPage() {
             <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
               Brows frame your entire face — one millimeter off and the whole
               thing shifts. Michelle&apos;s eye for symmetry and proportion is
-              honed from 15+ years of working with every brow shape you can
+              honed from many years of working with every brow shape you can
               think of.
             </p>
           </div>
@@ -174,7 +175,7 @@ export default function BrowLashPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book brow &amp; lash
+            Book Today
           </Link>
         </div>
       </section>

@@ -44,7 +44,7 @@ export default function Navigation() {
           href={BOOKING_URL}
           className="hidden rounded-full bg-sage px-5 py-2 font-sans text-sm text-softWhite transition-colors hover:bg-charcoal lg:inline-block"
         >
-          Book Now
+          Book Today
         </Link>
 
         <button
@@ -101,7 +101,7 @@ export default function Navigation() {
                 onClick={() => setOpen(false)}
                 className="inline-block rounded-full bg-sage px-5 py-2 text-sm text-softWhite transition-colors hover:bg-charcoal"
               >
-                Book Now
+                Book Today
               </Link>
             </li>
           </ul>
