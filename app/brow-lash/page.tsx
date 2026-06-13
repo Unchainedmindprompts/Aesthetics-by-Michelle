@@ -13,9 +13,8 @@ export const metadata: Metadata = {
 };
 
 const pricing = [
-  { name: "Brow Lamination", price: "$30", duration: "45 minutes" },
-  { name: "Lash Lift & Tint", price: "$75", duration: "60 minutes" },
-  { name: "Brow Wax & Shape", price: "$35", duration: "60 minutes" },
+  { name: "Eyelash Lift & Tint", price: "$75", duration: "60 minutes" },
+  { name: "Eyebrow Lamination", price: "$50", duration: "45 minutes" },
 ];
 
 const faqs = [
@@ -94,22 +93,14 @@ export default function BrowLashPage() {
           <div className="space-y-6 font-sans text-lg leading-relaxed text-warmGray">
             <p>
               Wake up looking like you already did your makeup. Michelle offers
-              three signature brow and lash services — brow lamination, lash
-              lift and tint, and expert brow shaping — designed to enhance what
-              you already have and save you fifteen minutes every morning.
+              two signature brow and lash services — eyelash lift and tint, and
+              eyebrow lamination — designed to enhance what you already have
+              and save you fifteen minutes every morning.
             </p>
             <ul className="space-y-4 pl-6">
               <li>
                 <span className="font-serif text-xl text-charcoal">
-                  Brow lamination
-                </span>{" "}
-                restructures your brow hairs so they sit fuller, fluffier, and
-                stay where you brush them — soft, modern, and natural-looking.
-                Results last six to eight weeks.
-              </li>
-              <li>
-                <span className="font-serif text-xl text-charcoal">
-                  Lash lift and tint
+                  Eyelash lift and tint
                 </span>{" "}
                 curls your natural lashes from the base and deepens their color,
                 giving you the wide-eyed look of mascara without the daily
@@ -117,9 +108,11 @@ export default function BrowLashPage() {
               </li>
               <li>
                 <span className="font-serif text-xl text-charcoal">
-                  Expert brow shaping
+                  Eyebrow lamination
                 </span>{" "}
-                — wax, tweeze, and map — sculpted to your face, not a trend.
+                restructures your brow hairs so they sit fuller, fluffier, and
+                stay where you brush them — soft, modern, and natural-looking.
+                Results last six to eight weeks.
               </li>
             </ul>
           </div>

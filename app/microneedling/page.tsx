@@ -82,7 +82,7 @@ export default function MicroneedlingPage() {
             Better
           </h1>
           <p className="mt-8 font-sans text-cream/80">
-            <span className="text-xl text-cream">$165</span>
+            <span className="text-xl text-cream">$185</span>
             <span className="mx-2">•</span>
             <span>60 minutes</span>
           </p>
@@ -119,6 +119,46 @@ export default function MicroneedlingPage() {
               damage, and dull skin that doesn&apos;t respond to topicals
               anymore.
             </p>
+          </div>
+
+          <div className="mt-14 bg-softWhite p-8">
+            <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
+              Packages
+            </h2>
+            <p className="mt-4 font-sans text-warmGray">
+              Michelle recommends a series of three to six sessions for best
+              results. Save when you book ahead.
+            </p>
+            <dl className="mt-6 divide-y divide-taupe/30 font-sans text-warmGray">
+              <div className="flex flex-col gap-1 py-4 first:pt-0 md:flex-row md:items-baseline md:justify-between">
+                <dt className="font-serif text-xl text-charcoal">
+                  Single session
+                </dt>
+                <dd>
+                  <span className="text-charcoal">$185</span>
+                </dd>
+              </div>
+              <div className="flex flex-col gap-1 py-4 md:flex-row md:items-baseline md:justify-between">
+                <dt className="font-serif text-xl text-charcoal">
+                  Series of 3
+                </dt>
+                <dd>
+                  <span className="text-charcoal">$495</span>
+                  <span className="mx-2">•</span>
+                  <span>Save $60</span>
+                </dd>
+              </div>
+              <div className="flex flex-col gap-1 py-4 last:pb-0 md:flex-row md:items-baseline md:justify-between">
+                <dt className="font-serif text-xl text-charcoal">
+                  Series of 6
+                </dt>
+                <dd>
+                  <span className="text-charcoal">$925</span>
+                  <span className="mx-2">•</span>
+                  <span>Save $185</span>
+                </dd>
+              </div>
+            </dl>
           </div>
 
           <div className="mt-14">

@@ -16,24 +16,23 @@ const categories = [
     items: [
       { name: "Microneedling", href: "/microneedling" },
       { name: "Customized Facial", href: "/facials" },
-      { name: "Dermaplaning", href: "/dermaplaning" },
-      { name: "Cryo Facial", href: "/cryo-facial" },
-    ],
-  },
-  {
-    label: "Body",
-    items: [
-      { name: "Cryo Body Sculpting", href: "/cryo-body-sculpting" },
-      { name: "Face Wax", href: "/waxing" },
-      { name: "Under Arm Wax", href: "/waxing" },
     ],
   },
   {
     label: "Brow & Lash",
     items: [
-      { name: "Brow Lamination", href: "/brow-lash" },
-      { name: "Lash Lift & Tint", href: "/brow-lash" },
-      { name: "Brow Wax & Shape", href: "/brow-lash" },
+      { name: "Eyelash Lift & Tint", href: "/brow-lash" },
+      { name: "Eyebrow Lamination", href: "/brow-lash" },
+    ],
+  },
+  {
+    label: "Waxing",
+    items: [
+      { name: "Eyebrow Wax", href: "/waxing" },
+      { name: "Lip", href: "/waxing" },
+      { name: "Nostrils", href: "/waxing" },
+      { name: "Facial Wax", href: "/waxing" },
+      { name: "Under Arms", href: "/waxing" },
     ],
   },
 ];
