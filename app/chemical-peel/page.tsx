@@ -1,0 +1,122 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+const BOOKING_URL = "/book";
+const SITE_URL = "https://aestheticsbymichelle.com";
+
+export const metadata: Metadata = {
+  title: "Chemical Peel in Post Falls, Idaho",
+  description:
+    "Chemical Peel in Post Falls, ID. Targeted exfoliation that lifts away damaged surface skin for smoother tone and softer texture, performed by Michelle Hoffman, Licensed Esthetician.",
+  alternates: { canonical: "/chemical-peel" },
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Chemical Peel",
+  serviceType: "Chemical Peel",
+  description:
+    "A chemical exfoliation treatment that lifts away damaged surface skin, revealing smoother tone and softer texture underneath.",
+  provider: {
+    "@type": "LocalBusiness",
+    "@id": `${SITE_URL}/#business`,
+    name: "Aesthetics by Michelle",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Post Falls",
+      addressRegion: "ID",
+      addressCountry: "US",
+    },
+  },
+  areaServed: [
+    { "@type": "City", name: "Post Falls" },
+    { "@type": "City", name: "Coeur d'Alene" },
+    { "@type": "City", name: "Spokane Valley" },
+  ],
+  url: `${SITE_URL}/chemical-peel`,
+};
+
+export default function ChemicalPeelPage() {
+  return (
+    <>
+      <section className="bg-sage py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
+          <p className="font-sans text-sm uppercase tracking-widest text-gold">
+            Services
+          </p>
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+            Chemical Peel — Smoother Tone, Softer Texture, Less Damage
+          </h1>
+          <p className="mt-8 font-sans text-cream/80">
+            <span className="text-xl text-cream">$110</span>
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-ivory py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-6 md:px-12">
+          <div className="space-y-6 font-sans text-lg leading-relaxed text-warmGray">
+            <p>
+              A chemical peel is a precision exfoliation treatment that lifts
+              away damaged surface skin to reveal smoother tone and softer
+              texture underneath. Michelle selects the right solution and
+              strength for your skin during consultation, then applies and
+              neutralizes carefully — the whole appointment is calm, focused,
+              and well-timed.
+            </p>
+            <p>
+              You&apos;ll feel a mild tingling during the peel and may notice
+              light flaking or peeling over the days that follow as your skin
+              turns over. The result: brighter, more even tone, refined
+              texture, and the kind of clarity that makes your other skincare
+              work harder.
+            </p>
+          </div>
+
+          <div className="mt-14 border-l-4 border-gold bg-softWhite p-8">
+            <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
+              Best for
+            </h2>
+            <p className="mt-4 font-sans text-lg leading-relaxed text-charcoal">
+              Sun damage, uneven tone, dullness, fine lines, rough texture, and
+              skin that needs a meaningful refresh — anyone whose at-home
+              exfoliation has plateaued.
+            </p>
+          </div>
+
+          <div className="mt-14">
+            <h2 className="font-serif text-3xl text-charcoal md:text-4xl">
+              Why book with Michelle
+            </h2>
+            <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
+              Choosing the right peel for your skin — depth, formulation,
+              timing — is the whole game. Michelle reads your skin first, picks
+              accordingly, and walks you through aftercare so the result lasts.
+              No one-size-fits-all chemistry.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-sage">
+        <div className="mx-auto max-w-2xl px-6 py-20 text-center md:px-12">
+          <h2 className="font-serif text-3xl text-cream md:text-4xl">
+            Ready for a fresh layer?
+          </h2>
+          <Link
+            href={BOOKING_URL}
+            className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
+          >
+            Book a chemical peel
+          </Link>
+        </div>
+      </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+    </>
+  );
+}

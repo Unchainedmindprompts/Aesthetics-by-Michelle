@@ -8,9 +8,26 @@ const SITE_URL = "https://aestheticsbymichelle.com";
 export const metadata: Metadata = {
   title: "Customized Facials in Post Falls, Idaho",
   description:
-    "Customized facials in Post Falls, ID. Built around your skin today — cleanse, exfoliation, mask, and finishing steps tailored by Michelle Hoffman, Licensed Esthetician.",
+    "Five facial options in Post Falls, ID. Classic, anti-aging, dermaplaning, microdermabrasion, and reiki-paired — all built around your skin by Michelle Hoffman, Licensed Esthetician.",
   alternates: { canonical: "/facials" },
 };
+
+const pricing = [
+  { name: "Classic Facial", price: "$95", duration: "60 minutes" },
+  { name: "Anti-Aging Facial", price: "$98", duration: "60 minutes" },
+  { name: "Facial with Dermaplaning", price: "$110", duration: "60 minutes" },
+  { name: "Microdermabrasion Facial", price: "$130", duration: "60 minutes" },
+  {
+    name: "Body Energy Healing & Facial",
+    price: "$98",
+    duration: "60 minutes",
+  },
+];
+
+const addOns = [
+  { name: "Microdermabrasion add-on", price: "$20" },
+  { name: "Dermaplaning add-on", price: "$25" },
+];
 
 const faqs = [
   {
@@ -33,10 +50,10 @@ const faqs = [
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Customized Facial",
+  name: "Customized Facials",
   serviceType: "Facial Treatment",
   description:
-    "Customized facial treatments built around what your skin is doing right now. Real conversation, the right cleanse, targeted exfoliation, and finishing steps that leave you glowing.",
+    "Five customized facial options built around what your skin is doing right now — classic, anti-aging, with dermaplaning, microdermabrasion, or paired with reiki body energy healing. All include cleanse, exfoliation, red light therapy, mask, and moisturizer.",
   provider: {
     "@type": "LocalBusiness",
     "@id": `${SITE_URL}/#business`,
@@ -81,6 +98,7 @@ export default function FacialsPage() {
             Facials Built Around Your Skin Today — Not a Generic Menu
           </h1>
           <p className="mt-8 font-sans text-cream/80">
+            <span>Starting at </span>
             <span className="text-xl text-cream">$95</span>
             <span className="mx-2">•</span>
             <span>60 minutes</span>
@@ -106,6 +124,12 @@ export default function FacialsPage() {
               steps that leave you glowing on the way out the door. Expect
               calm, careful pacing, warm towels, and zero rushing.
             </p>
+            <p>
+              Every facial includes cleanse, exfoliation, red light therapy,
+              mask, and moisturizer. Choose the option that matches what your
+              skin is asking for — Michelle will help you pick if you&apos;re
+              not sure.
+            </p>
           </div>
 
           <div className="mt-14 border-l-4 border-gold bg-softWhite p-8">
@@ -117,6 +141,50 @@ export default function FacialsPage() {
               dryness and dullness, sensitivity, pre-event glow-ups, and anyone
               who wants a professional eye on their skincare routine.
             </p>
+          </div>
+
+          <div className="mt-14 bg-softWhite p-8">
+            <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
+              Facials &amp; pricing
+            </h2>
+            <dl className="mt-6 divide-y divide-taupe/30 font-sans text-warmGray">
+              {pricing.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex flex-col gap-1 py-4 first:pt-0 last:pb-0 md:flex-row md:items-baseline md:justify-between"
+                >
+                  <dt className="font-serif text-xl text-charcoal">
+                    {item.name}
+                  </dt>
+                  <dd>
+                    <span className="text-charcoal">{item.price}</span>
+                    <span className="mx-2">•</span>
+                    <span>{item.duration}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="mt-8 bg-softWhite p-8">
+            <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
+              Add-ons
+            </h2>
+            <dl className="mt-6 divide-y divide-taupe/30 font-sans text-warmGray">
+              {addOns.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex flex-col gap-1 py-4 first:pt-0 last:pb-0 md:flex-row md:items-baseline md:justify-between"
+                >
+                  <dt className="font-serif text-xl text-charcoal">
+                    {item.name}
+                  </dt>
+                  <dd>
+                    <span className="text-charcoal">{item.price}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           <div className="mt-14">

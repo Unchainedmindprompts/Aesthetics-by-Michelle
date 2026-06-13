@@ -11,16 +11,28 @@ const services = [
     href: "/facials",
   },
   {
+    title: "Chemical Peel — Smoother Tone, Softer Texture, Less Damage",
+    description:
+      "A precision chemical exfoliation that lifts away damaged surface skin to reveal smoother tone and softer texture underneath. Michelle selects the right solution and strength for your skin during consultation, then applies and neutralizes carefully.",
+    href: "/chemical-peel",
+  },
+  {
     title: "Lifted Lashes, Shaped Brows, Zero Daily Maintenance",
     description:
-      "Wake up looking like you already did your makeup. Michelle offers three signature brow and lash services — brow lamination, lash lift and tint, and expert brow shaping — designed to enhance what you already have and save you fifteen minutes every morning.",
+      "Wake up looking like you already did your makeup. Michelle offers two signature brow and lash services — eyelash lift and tint, and eyebrow lamination — designed to enhance what you already have and save you fifteen minutes every morning.",
     href: "/brow-lash",
   },
   {
     title: "Clean, Precise, Comfortable Waxing — Done Right the First Time",
     description:
-      "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise facial, brow, and underarm waxing using high-quality wax and a gentle, experienced hand.",
+      "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise brow, lip, nostril, facial, and underarm waxing using high-quality wax and a gentle, experienced hand.",
     href: "/waxing",
+  },
+  {
+    title: "Reiki Body Healing — Aligning Energy and Flow",
+    description:
+      "A gentle, hands-on practice for aligning your body's energy and flow. Forty-five quiet minutes designed to help your nervous system settle and your body find a more balanced place to rest.",
+    href: "/reiki",
   },
 ];
 

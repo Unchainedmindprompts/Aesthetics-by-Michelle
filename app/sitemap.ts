@@ -8,6 +8,8 @@ const routes = [
   "/services",
   "/microneedling",
   "/facials",
+  "/chemical-peel",
+  "/reiki",
   "/brow-lash",
   "/waxing",
   "/contact",

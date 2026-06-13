@@ -15,7 +15,8 @@ const categories = [
     label: "Skin",
     items: [
       { name: "Microneedling", href: "/microneedling" },
-      { name: "Customized Facial", href: "/facials" },
+      { name: "Customized Facials", href: "/facials" },
+      { name: "Chemical Peel", href: "/chemical-peel" },
     ],
   },
   {
@@ -34,6 +35,10 @@ const categories = [
       { name: "Facial Wax", href: "/waxing" },
       { name: "Under Arms", href: "/waxing" },
     ],
+  },
+  {
+    label: "Healing",
+    items: [{ name: "Reiki Body Healing", href: "/reiki" }],
   },
 ];
 
@@ -57,7 +62,7 @@ export default function ServicesIndexPage() {
 
       <section className="bg-sage py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-16">
+          <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-16 lg:grid-cols-4">
             {categories.map((category) => (
               <div key={category.label}>
                 <p className="font-sans text-sm uppercase tracking-widest text-cream/80">
