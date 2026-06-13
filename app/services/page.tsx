@@ -15,26 +15,30 @@ const categories = [
     label: "Skin",
     items: [
       { name: "Microneedling", href: "/microneedling" },
-      { name: "Customized Facial", href: "/facials" },
-      { name: "Dermaplaning", href: "/dermaplaning" },
-      { name: "Cryo Facial", href: "/cryo-facial" },
-    ],
-  },
-  {
-    label: "Body",
-    items: [
-      { name: "Cryo Body Sculpting", href: "/cryo-body-sculpting" },
-      { name: "Face Wax", href: "/waxing" },
-      { name: "Under Arm Wax", href: "/waxing" },
+      { name: "Customized Facials", href: "/facials" },
+      { name: "Chemical Peel", href: "/chemical-peel" },
     ],
   },
   {
     label: "Brow & Lash",
     items: [
-      { name: "Brow Lamination", href: "/brow-lash" },
-      { name: "Lash Lift & Tint", href: "/brow-lash" },
-      { name: "Brow Wax & Shape", href: "/brow-lash" },
+      { name: "Eyelash Lift & Tint", href: "/brow-lash" },
+      { name: "Eyebrow Lamination", href: "/brow-lash" },
     ],
+  },
+  {
+    label: "Waxing",
+    items: [
+      { name: "Eyebrow Wax", href: "/waxing" },
+      { name: "Lip", href: "/waxing" },
+      { name: "Nostrils", href: "/waxing" },
+      { name: "Facial Wax", href: "/waxing" },
+      { name: "Under Arms", href: "/waxing" },
+    ],
+  },
+  {
+    label: "Healing",
+    items: [{ name: "Reiki Body Healing", href: "/reiki" }],
   },
 ];
 
@@ -58,7 +62,7 @@ export default function ServicesIndexPage() {
 
       <section className="bg-sage py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-16">
+          <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-16 lg:grid-cols-4">
             {categories.map((category) => (
               <div key={category.label}>
                 <p className="font-sans text-sm uppercase tracking-widest text-cream/80">

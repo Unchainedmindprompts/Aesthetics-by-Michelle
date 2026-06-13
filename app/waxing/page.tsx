@@ -13,8 +13,11 @@ export const metadata: Metadata = {
 };
 
 const pricing = [
-  { name: "Face Wax (chin, brows, lip)", price: "$40", duration: "60 minutes" },
-  { name: "Under Arm Wax", price: "$25", duration: "15 minutes" },
+  { name: "Eyebrow Wax", price: "$20", duration: "15 minutes" },
+  { name: "Lip", price: "$15", duration: "15 minutes" },
+  { name: "Nostrils", price: "$10", duration: "10 minutes" },
+  { name: "Facial Wax", price: "$30", duration: "30 minutes" },
+  { name: "Under Arms", price: "$30", duration: "15 minutes" },
 ];
 
 const faqs = [
@@ -93,10 +96,10 @@ export default function WaxingPage() {
           <div className="space-y-6 font-sans text-lg leading-relaxed text-warmGray">
             <p>
               Waxing should be quick, clean, and over before you&apos;ve thought
-              twice about it. Michelle offers precise facial, brow, and
-              underarm waxing using high-quality wax and a gentle, experienced
-              hand. No yanked skin, no missed hairs, no awkward small talk
-              while you wait for someone to come back.
+              twice about it. Michelle offers precise brow, lip, nostril,
+              facial, and underarm waxing using high-quality wax and a gentle,
+              experienced hand. No yanked skin, no missed hairs, no awkward
+              small talk while you wait for someone to come back.
             </p>
             <p>
               You&apos;ll walk out smoother, neater, and with skin that&apos;s
@@ -109,8 +112,9 @@ export default function WaxingPage() {
               Best for
             </h2>
             <p className="mt-4 font-sans text-lg leading-relaxed text-charcoal">
-              Brow shaping and clean-up, upper lip, chin, sides of the face,
-              and underarms. Great as a standalone or paired with a facial.
+              Brow shaping and clean-up, lip, nostrils, chin, sides of the
+              face, and underarms. Great as a standalone or paired with a
+              facial.
             </p>
           </div>
 

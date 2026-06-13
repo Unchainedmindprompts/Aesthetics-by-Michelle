@@ -11,37 +11,28 @@ const services = [
     href: "/facials",
   },
   {
-    title:
-      "Smoother Skin, Brighter Glow, Better Product Absorption — In Under an Hour",
+    title: "Chemical Peel — Smoother Tone, Softer Texture, Less Damage",
     description:
-      "Dermaplaning is a gentle, deeply satisfying treatment that uses a sterile surgical blade to remove the top layer of dead skin cells and the fine vellus hair on your face. The result is immediate: skin feels remarkably soft and every serum absorbs significantly better.",
-    href: "/dermaplaning",
+      "A precision chemical exfoliation that lifts away damaged surface skin to reveal smoother tone and softer texture underneath. Michelle selects the right solution and strength for your skin during consultation, then applies and neutralizes carefully.",
+    href: "/chemical-peel",
   },
   {
     title: "Lifted Lashes, Shaped Brows, Zero Daily Maintenance",
     description:
-      "Wake up looking like you already did your makeup. Michelle offers three signature brow and lash services — brow lamination, lash lift and tint, and expert brow shaping — designed to enhance what you already have and save you fifteen minutes every morning.",
+      "Wake up looking like you already did your makeup. Michelle offers two signature brow and lash services — eyelash lift and tint, and eyebrow lamination — designed to enhance what you already have and save you fifteen minutes every morning.",
     href: "/brow-lash",
   },
   {
     title: "Clean, Precise, Comfortable Waxing — Done Right the First Time",
     description:
-      "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise facial, brow, and underarm waxing using high-quality wax and a gentle, experienced hand.",
+      "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise brow, lip, nostril, facial, and underarm waxing using high-quality wax and a gentle, experienced hand.",
     href: "/waxing",
   },
   {
-    title:
-      "Cryo Body Sculpting — Targeted Fat Reduction, Smoother Skin, No Downtime",
+    title: "Reiki Body Healing — Aligning Energy and Flow",
     description:
-      "Cryo Body Sculpting uses controlled cold therapy to target stubborn pockets of fat that don't respond to diet or workouts — the lower belly, love handles, inner thighs, bra line, the spots most of us know too well. The technology cools fat cells to a precise temperature that breaks them down without damaging the surrounding skin, muscle, or tissue.",
-    href: "/cryo-body-sculpting",
-  },
-  {
-    title:
-      "Cryo Facial — Cold Therapy for Tighter, Brighter, Calmer Skin",
-    description:
-      "A Cryo Facial uses precisely controlled cold therapy — vaporized cooling delivered across your face, neck, and décolleté — to shock the skin in the best possible way. The cold constricts blood vessels on contact, then triggers a rush of fresh, oxygen-rich blood as your skin rewarms.",
-    href: "/cryo-facial",
+      "A gentle, hands-on practice for aligning your body's energy and flow. Forty-five quiet minutes designed to help your nervous system settle and your body find a more balanced place to rest.",
+    href: "/reiki",
   },
 ];
 
