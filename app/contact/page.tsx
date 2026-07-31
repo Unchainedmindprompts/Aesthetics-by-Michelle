@@ -17,15 +17,15 @@ const hours = [
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Contact
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Request an Appointment
           </h1>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-cream/80">
+          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
             Call or send a note and Michelle will get back to you with
             availability. Every appointment is one-on-one, so there is always a
             real conversation before your first visit.

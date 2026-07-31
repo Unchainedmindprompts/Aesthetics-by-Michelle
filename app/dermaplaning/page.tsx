@@ -41,16 +41,16 @@ const serviceJsonLd = {
 export default function DermaplaningPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Dermaplaning — Smoother Skin and a Brighter Glow in 30 Minutes
           </h1>
-          <p className="mt-8 font-sans text-cream/80">
-            <span className="text-xl text-cream">$40</span>
+          <p className="mt-8 font-sans text-warmGray">
+            <span className="text-xl text-charcoal">$40</span>
             <span className="mx-2">•</span>
             <span>30 minutes</span>
           </p>

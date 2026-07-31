@@ -91,17 +91,17 @@ const faqJsonLd = {
 export default function FacialsPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Facials Built Around Your Skin Today — Not a Generic Menu
           </h1>
-          <p className="mt-8 font-sans text-cream/80">
+          <p className="mt-8 font-sans text-warmGray">
             <span>Starting at </span>
-            <span className="text-xl text-cream">$50</span>
+            <span className="text-xl text-charcoal">$50</span>
             <span className="mx-2">•</span>
             <span>30 minutes</span>
           </p>

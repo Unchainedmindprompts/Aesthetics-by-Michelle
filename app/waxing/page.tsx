@@ -81,12 +81,12 @@ const faqJsonLd = {
 export default function WaxingPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Clean, Precise, Comfortable Waxing — Done Right the First Time
           </h1>
         </div>
