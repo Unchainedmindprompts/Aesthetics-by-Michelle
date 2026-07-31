@@ -8,11 +8,12 @@ const SITE_URL = "https://aestheticsbymichelle.com";
 export const metadata: Metadata = {
   title: "Customized Facials in Hayden, ID",
   description:
-    "Five customized facials in Hayden, ID — classic, anti-aging, dermaplaning, microdermabrasion, and body energy healing.",
+    "Six customized facials in Hayden, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
   alternates: { canonical: "/facials" },
 };
 
 const pricing = [
+  { name: "Mini Facial", price: "$50", duration: "30 minutes" },
   { name: "Classic Facial", price: "$95", duration: "60 minutes" },
   { name: "Anti-Aging Facial", price: "$98", duration: "60 minutes" },
   { name: "Facial with Dermaplaning", price: "$110", duration: "60 minutes" },
@@ -100,9 +101,9 @@ export default function FacialsPage() {
           </h1>
           <p className="mt-8 font-sans text-cream/80">
             <span>Starting at </span>
-            <span className="text-xl text-cream">$95</span>
+            <span className="text-xl text-cream">$50</span>
             <span className="mx-2">•</span>
-            <span>60 minutes</span>
+            <span>30 minutes</span>
           </p>
         </div>
       </section>
@@ -141,6 +142,28 @@ export default function FacialsPage() {
               Maintenance and prevention, congested or breakout-prone skin,
               dryness and dullness, sensitivity, pre-event glow-ups, and anyone
               who wants a professional eye on their skincare routine.
+            </p>
+          </div>
+
+          <div className="mt-14 border-t-4 border-gold bg-softWhite p-8 md:p-10 shadow-sm">
+            <p className="font-sans text-sm uppercase tracking-widest text-gold">
+              Featured
+            </p>
+            <h2 className="mt-3 font-serif text-3xl text-charcoal md:text-4xl">
+              Mini Facial — For the Pre-Event Glow
+            </h2>
+            <p className="mt-5 font-sans text-lg leading-relaxed text-warmGray">
+              The one to book before a wedding, bachelorette weekend, first
+              date, engagement photos, or any night you want your skin to look
+              its absolute best. A focused thirty-minute treatment that hits
+              the essentials — cleanse, gentle exfoliation, mask, and a
+              finishing glow — no time off your day required. Great solo, and
+              even better with a friend or a bridal party.
+            </p>
+            <p className="mt-6 font-sans text-warmGray">
+              <span className="text-xl text-charcoal">$50</span>
+              <span className="mx-2">•</span>
+              <span>30 minutes</span>
             </p>
           </div>
 

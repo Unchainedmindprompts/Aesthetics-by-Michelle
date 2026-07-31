@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 };
 
 const pricing = [
-  { name: "Eyebrow Wax", price: "$20", duration: "15 minutes" },
+  { name: "Eyebrow Wax", price: "$30", duration: "15 minutes" },
   { name: "Lip", price: "$15", duration: "15 minutes" },
   { name: "Nostrils", price: "$10", duration: "10 minutes" },
-  { name: "Facial Wax", price: "$30", duration: "30 minutes" },
+  { name: "Facial Wax", price: "$35", duration: "30 minutes" },
   { name: "Under Arms", price: "$30", duration: "15 minutes" },
 ];
 
