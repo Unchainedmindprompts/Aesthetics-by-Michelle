@@ -16,6 +16,7 @@ const categories = [
     items: [
       { name: "Microneedling", href: "/microneedling" },
       { name: "Customized Facials", href: "/facials" },
+      { name: "Dermaplaning", href: "/dermaplaning" },
       { name: "Chemical Peel", href: "/chemical-peel" },
     ],
   },
