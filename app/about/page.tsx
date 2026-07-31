@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "/contact";
 
 export const metadata: Metadata = {
   title: "About Michelle Hoffman, Licensed Esthetician",
@@ -86,7 +86,7 @@ export default function AboutPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book Today
+            Request an Appointment
           </Link>
         </div>
       </section>

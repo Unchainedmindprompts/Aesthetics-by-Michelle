@@ -5,7 +5,7 @@
   "credentials": "Licensed Idaho Esthetician (EST-292960)",
   "experience": "Many years in the beauty industry",
   "location": "Hayden, Idaho",
-  "address": "2151 Hayden Avenue, Hayden, ID 83835",
+  "address": "2151 W Hayden Ave, Hayden, ID 83835",
   "service_area": ["Hayden", "Coeur d'Alene", "Post Falls", "Spokane Valley"],
   "services": [
     "Microneedling",
@@ -22,7 +22,9 @@
     "Friday": "9:00 AM - 3:00 PM",
     "Saturday": "9:00 AM - 3:00 PM"
   },
-  "booking_url": "https://aestheticsbymichelle.com/book",
+  "online_booking_available": false,
+  "booking_method": "Call or email to request an appointment",
+  "contact_url": "https://aestheticsbymichelle.com/contact",
   "phone": "(425) 765-4116",
   "email": "aestheticsbymichellehoffman@gmail.com",
   "appointments_only": true,

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "/contact";
 
 const services = [
   {
@@ -58,7 +58,7 @@ export default function HomePage() {
                 href={BOOKING_URL}
                 className="inline-block rounded-none bg-charcoal px-8 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
               >
-                Book Today
+                Request an Appointment
               </Link>
               <a
                 href="#services"
@@ -248,7 +248,7 @@ export default function HomePage() {
               Visit the studio.
             </h2>
             <address className="mt-8 not-italic font-sans text-lg leading-relaxed text-warmGray">
-              2151 Hayden Avenue
+              2151 W Hayden Ave
               <br />
               Hayden, ID 83835
               <br />
@@ -311,7 +311,7 @@ export default function HomePage() {
             href={BOOKING_URL}
             className="mt-10 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Book Today
+            Request an Appointment
           </Link>
         </div>
       </section>

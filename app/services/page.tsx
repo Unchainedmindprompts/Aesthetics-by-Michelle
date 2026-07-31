@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "/contact";
 
 export const metadata: Metadata = {
   title: "All Services & Pricing",
@@ -15,6 +16,7 @@ const categories = [
     label: "Skin",
     items: [
       { name: "Microneedling", href: "/microneedling" },
+      { name: "Mini Facial", href: "/facials" },
       { name: "Customized Facials", href: "/facials" },
       { name: "Dermaplaning", href: "/dermaplaning" },
       { name: "Chemical Peel", href: "/chemical-peel" },
@@ -46,7 +48,7 @@ const categories = [
 export default function ServicesIndexPage() {
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
+      <section className="bg-cream pb-14 pt-20 md:pb-20 md:pt-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
@@ -54,10 +56,28 @@ export default function ServicesIndexPage() {
           <h1 className="mt-6 font-serif text-5xl text-charcoal md:text-6xl">
             Treatments built around your skin.
           </h1>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            Personalized skin, body, and brow & lash services — every
-            appointment one-on-one with Michelle.
-          </p>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-7xl px-6 md:mt-16 md:px-12">
+          <div className="relative">
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm md:aspect-[16/9]">
+              <Image
+                src="/images/michelle-facial-treatment.png"
+                alt="Michelle Hoffman applying a facial treatment to a client in her Hayden studio"
+                fill
+                priority
+                sizes="(min-width: 1280px) 1280px, 100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="md:absolute md:inset-y-0 md:left-0 md:flex md:w-[46%] md:items-center md:p-10 lg:p-14">
+              <p className="mt-6 font-sans text-base leading-relaxed text-warmGray md:mt-0 md:text-xl md:text-charcoal">
+                Personalized skin, brow &amp; lash, waxing, and healing
+                services — every appointment one-on-one with Michelle.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -100,7 +120,7 @@ export default function ServicesIndexPage() {
             href={BOOKING_URL}
             className="mt-10 inline-block bg-charcoal px-10 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
           >
-            Book Today
+            Request an Appointment
           </Link>
         </div>
       </section>

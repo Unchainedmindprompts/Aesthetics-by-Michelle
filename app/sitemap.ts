@@ -15,7 +15,6 @@ const routes = [
   "/waxing",
   "/contact",
   "/blog",
-  "/book",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
