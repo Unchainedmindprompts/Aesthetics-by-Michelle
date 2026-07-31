@@ -59,23 +59,24 @@ export default function ServicesIndexPage() {
         </div>
 
         <div className="mx-auto mt-12 max-w-7xl px-6 md:mt-16 md:px-12">
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm md:aspect-[16/9]">
-            <Image
-              src="/images/michelle-facial-treatment.png"
-              alt="Michelle Hoffman applying a facial treatment to a client in her Hayden studio"
-              fill
-              priority
-              sizes="(min-width: 1280px) 1280px, 100vw"
-              className="object-cover"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent"
-            />
-            <p className="absolute inset-x-0 bottom-0 p-6 font-sans text-base leading-relaxed text-cream md:p-10 md:text-xl lg:max-w-3xl">
-              Personalized skin, brow &amp; lash, waxing, and healing services
-              — every appointment one-on-one with Michelle.
-            </p>
+          <div className="relative">
+            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm md:aspect-[16/9]">
+              <Image
+                src="/images/michelle-facial-treatment.png"
+                alt="Michelle Hoffman applying a facial treatment to a client in her Hayden studio"
+                fill
+                priority
+                sizes="(min-width: 1280px) 1280px, 100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="md:absolute md:inset-y-0 md:left-0 md:flex md:w-[46%] md:items-center md:p-10 lg:p-14">
+              <p className="mt-6 font-sans text-base leading-relaxed text-warmGray md:mt-0 md:text-xl md:text-charcoal">
+                Personalized skin, brow &amp; lash, waxing, and healing
+                services — every appointment one-on-one with Michelle.
+              </p>
+            </div>
           </div>
         </div>
       </section>
