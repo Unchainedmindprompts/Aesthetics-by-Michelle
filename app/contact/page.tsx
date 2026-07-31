@@ -74,7 +74,7 @@ export default function ContactPage() {
                 Visit the studio
               </h2>
               <address className="mt-6 font-sans text-lg not-italic leading-relaxed text-warmGray">
-                2151 Hayden Avenue
+                2151 W Hayden Ave
                 <br />
                 Hayden, ID 83835
               </address>

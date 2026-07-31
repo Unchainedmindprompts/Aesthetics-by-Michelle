@@ -7,7 +7,7 @@ export default function Footer() {
         <div>
           <h3 className="font-serif text-2xl tracking-wide">Aesthetics by Michelle</h3>
           <address className="mt-4 not-italic font-sans text-sm leading-relaxed">
-            2151 Hayden Avenue
+            2151 W Hayden Ave
             <br />
             Hayden, ID 83835
             <br />

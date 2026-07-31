@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 
 const postalAddress = {
   "@type": "PostalAddress",
-  streetAddress: "2151 Hayden Avenue",
+  streetAddress: "2151 W Hayden Ave",
   addressLocality: "Hayden",
   addressRegion: "ID",
   postalCode: "83835",
