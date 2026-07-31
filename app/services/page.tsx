@@ -15,6 +15,7 @@ const categories = [
     label: "Skin",
     items: [
       { name: "Microneedling", href: "/microneedling" },
+      { name: "Mini Facial", href: "/facials" },
       { name: "Customized Facials", href: "/facials" },
       { name: "Dermaplaning", href: "/dermaplaning" },
       { name: "Chemical Peel", href: "/chemical-peel" },
