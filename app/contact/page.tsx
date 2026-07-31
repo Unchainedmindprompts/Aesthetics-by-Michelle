@@ -34,11 +34,11 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-ivory py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mx-auto max-w-5xl px-6 md:px-12">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
             <a
               href="tel:+14257654116"
-              className="block border-t-4 border-gold bg-softWhite p-8 shadow-sm transition-shadow duration-300 hover:shadow-md"
+              className="block border-t-4 border-gold bg-softWhite p-6 shadow-sm transition-shadow duration-300 hover:shadow-md md:col-span-5 md:p-8"
             >
               <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
                 Call or text
@@ -53,12 +53,12 @@ export default function ContactPage() {
 
             <a
               href="mailto:aestheticsbymichellehoffman@gmail.com"
-              className="block border-t-4 border-gold bg-softWhite p-8 shadow-sm transition-shadow duration-300 hover:shadow-md"
+              className="block border-t-4 border-gold bg-softWhite p-6 shadow-sm transition-shadow duration-300 hover:shadow-md md:col-span-7 md:p-8"
             >
               <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
                 Email
               </h2>
-              <p className="mt-4 break-words font-serif text-xl text-charcoal md:text-2xl">
+              <p className="mt-4 font-serif text-sm text-charcoal sm:text-base lg:text-xl">
                 aestheticsbymichellehoffman@gmail.com
               </p>
               <p className="mt-3 font-sans text-warmGray">
