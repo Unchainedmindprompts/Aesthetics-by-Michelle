@@ -56,14 +56,10 @@ export default function ServicesIndexPage() {
           <h1 className="mt-6 font-serif text-5xl text-charcoal md:text-6xl">
             Treatments built around your skin.
           </h1>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            Personalized skin, brow &amp; lash, waxing, and healing services —
-            every appointment one-on-one with Michelle.
-          </p>
         </div>
 
-        <div className="mx-auto mt-14 max-w-7xl px-6 md:mt-20 md:px-12">
-          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm">
+        <div className="mx-auto mt-12 max-w-7xl px-6 md:mt-16 md:px-12">
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm md:aspect-[16/9]">
             <Image
               src="/images/michelle-facial-treatment.png"
               alt="Michelle Hoffman applying a facial treatment to a client in her Hayden studio"
@@ -72,6 +68,14 @@ export default function ServicesIndexPage() {
               sizes="(min-width: 1280px) 1280px, 100vw"
               className="object-cover"
             />
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-transparent"
+            />
+            <p className="absolute inset-x-0 bottom-0 p-6 font-sans text-base leading-relaxed text-cream md:p-10 md:text-xl lg:max-w-3xl">
+              Personalized skin, brow &amp; lash, waxing, and healing services
+              — every appointment one-on-one with Michelle.
+            </p>
           </div>
         </div>
       </section>
