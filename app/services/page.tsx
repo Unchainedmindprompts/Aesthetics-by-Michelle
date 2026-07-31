@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 const BOOKING_URL = "/book";
@@ -47,7 +48,7 @@ const categories = [
 export default function ServicesIndexPage() {
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
+      <section className="bg-cream pb-14 pt-20 md:pb-20 md:pt-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
@@ -56,9 +57,22 @@ export default function ServicesIndexPage() {
             Treatments built around your skin.
           </h1>
           <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            Personalized skin, body, and brow & lash services — every
-            appointment one-on-one with Michelle.
+            Personalized skin, brow &amp; lash, waxing, and healing services —
+            every appointment one-on-one with Michelle.
           </p>
+        </div>
+
+        <div className="mx-auto mt-14 max-w-7xl px-6 md:mt-20 md:px-12">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm">
+            <Image
+              src="/images/michelle-facial-treatment.png"
+              alt="Michelle Hoffman applying a facial treatment to a client in her Hayden studio"
+              fill
+              priority
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
