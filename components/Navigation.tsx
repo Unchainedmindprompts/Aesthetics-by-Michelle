@@ -18,11 +18,11 @@ export default function Navigation() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sage/20 bg-cream">
+    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-sage">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="flex items-center gap-2 font-serif text-2xl tracking-wide text-charcoal transition-colors hover:text-sage md:gap-3"
+          className="flex items-center gap-2 font-serif text-2xl tracking-wide text-charcoal transition-colors hover:text-cream md:gap-3"
           onClick={() => setOpen(false)}
         >
           <Image
@@ -41,7 +41,7 @@ export default function Navigation() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="transition-colors hover:text-sage"
+                className="transition-colors hover:text-cream"
               >
                 {link.label}
               </Link>
@@ -51,7 +51,7 @@ export default function Navigation() {
 
         <Link
           href={BOOKING_URL}
-          className="hidden rounded-full bg-sage px-5 py-2 font-sans text-sm text-softWhite transition-colors hover:bg-charcoal lg:inline-block"
+          className="hidden rounded-full bg-cream px-5 py-2 font-sans text-sm text-charcoal transition-colors hover:bg-ivory lg:inline-block"
         >
           Request an Appointment
         </Link>
@@ -91,14 +91,14 @@ export default function Navigation() {
       </nav>
 
       {open && (
-        <div className="border-t border-sage/20 bg-cream lg:hidden">
+        <div className="border-t border-charcoal/10 bg-sage lg:hidden">
           <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4 font-sans text-base text-charcoal">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded px-2 py-2 transition-colors hover:text-sage"
+                  className="block rounded px-2 py-2 transition-colors hover:text-cream"
                 >
                   {link.label}
                 </Link>
@@ -108,7 +108,7 @@ export default function Navigation() {
               <Link
                 href={BOOKING_URL}
                 onClick={() => setOpen(false)}
-                className="inline-block rounded-full bg-sage px-5 py-2 text-sm text-softWhite transition-colors hover:bg-charcoal"
+                className="inline-block rounded-full bg-cream px-5 py-2 text-sm text-charcoal transition-colors hover:bg-ivory"
               >
                 Request an Appointment
               </Link>
