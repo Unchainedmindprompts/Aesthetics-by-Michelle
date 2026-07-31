@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -21,9 +22,17 @@ export default function Navigation() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="font-serif text-2xl tracking-wide text-charcoal transition-colors hover:text-sage"
+          className="flex items-center gap-2 font-serif text-2xl tracking-wide text-charcoal transition-colors hover:text-sage md:gap-3"
           onClick={() => setOpen(false)}
         >
+          <Image
+            src="/images/logo-mark.png"
+            alt=""
+            width={512}
+            height={518}
+            priority
+            className="h-7 w-auto md:h-9"
+          />
           Aesthetics by Michelle
         </Link>
 
