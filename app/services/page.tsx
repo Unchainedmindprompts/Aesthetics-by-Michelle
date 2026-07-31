@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const BOOKING_URL = "/book";
+const BOOKING_URL = "/contact";
 
 export const metadata: Metadata = {
   title: "All Services & Pricing",
@@ -120,7 +120,7 @@ export default function ServicesIndexPage() {
             href={BOOKING_URL}
             className="mt-10 inline-block bg-charcoal px-10 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
           >
-            Book Today
+            Request an Appointment
           </Link>
         </div>
       </section>

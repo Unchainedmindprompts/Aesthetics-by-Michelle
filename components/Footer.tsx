@@ -61,8 +61,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <Link href="/book" className="transition-colors hover:text-gold">
-                Book Today
+              <Link
+                href="/contact"
+                className="transition-colors hover:text-gold"
+              >
+                Request an Appointment
               </Link>
             </li>
           </ul>

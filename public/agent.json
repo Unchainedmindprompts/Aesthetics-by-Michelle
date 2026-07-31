@@ -22,7 +22,9 @@
     "Friday": "9:00 AM - 3:00 PM",
     "Saturday": "9:00 AM - 3:00 PM"
   },
-  "booking_url": "https://aestheticsbymichelle.com/book",
+  "online_booking_available": false,
+  "booking_method": "Call or email to request an appointment",
+  "contact_url": "https://aestheticsbymichelle.com/contact",
   "phone": "(425) 765-4116",
   "email": "aestheticsbymichellehoffman@gmail.com",
   "appointments_only": true,
