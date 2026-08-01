@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Reiki Body Healing in Hayden, ID",
@@ -11,46 +12,27 @@ export const metadata: Metadata = {
   alternates: { canonical: "/reiki" },
 };
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Reiki Body Healing",
-  serviceType: "Reiki Healing",
-  description:
-    "A 45-minute reiki session focused on aligning the body's energy and flow through gentle hands-on touch.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/reiki`,
-};
+
+const pageGraph = servicePageGraph({
+  path: "/reiki",
+  pageName: "Reiki Body Healing in Hayden, ID",
+  pageDescription:
+    "Reiki body healing in Hayden, ID. A 45-minute hands-on session to align your body's energy and flow.",
+});
 
 export default function ReikiPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Reiki Body Healing — Aligning Energy and Flow
           </h1>
-          <p className="mt-8 font-sans text-cream/80">
-            <span className="text-xl text-cream">$85</span>
+          <p className="mt-8 font-sans text-warmGray">
+            <span className="text-xl text-charcoal">$85</span>
             <span className="mx-2">•</span>
             <span>45 minutes</span>
           </p>
@@ -116,7 +98,7 @@ export default function ReikiPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
     </>
   );

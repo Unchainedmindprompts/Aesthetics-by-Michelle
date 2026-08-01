@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Waxing in Hayden, ID — Brow, Lip, Face, Underarm",
@@ -38,32 +39,6 @@ const faqs = [
   },
 ];
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Waxing Services",
-  serviceType: "Waxing",
-  description:
-    "Clean, precise facial, brow, and underarm waxing using high-quality wax and a gentle, experienced hand. Walk out smoother, neater, and with skin that's prepped and soothed.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/waxing`,
-};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -78,15 +53,21 @@ const faqJsonLd = {
   })),
 };
 
+const pageGraph = servicePageGraph({
+  path: "/waxing",
+  pageName: "Waxing in Hayden, ID — Brow, Lip, Face, Underarm",
+  pageDescription: "Precise brow, lip, nostril, facial, and underarm waxing in Hayden, ID. Quick, clean, and over before you know it.",
+});
+
 export default function WaxingPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Clean, Precise, Comfortable Waxing — Done Right the First Time
           </h1>
         </div>
@@ -183,7 +164,7 @@ export default function WaxingPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
       <script
         type="application/ld+json"

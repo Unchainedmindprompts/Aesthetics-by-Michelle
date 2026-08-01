@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Chemical Peel in Hayden, ID",
@@ -11,46 +12,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/chemical-peel" },
 };
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Chemical Peel",
-  serviceType: "Chemical Peel",
-  description:
-    "A chemical exfoliation treatment that lifts away damaged surface skin, revealing smoother tone and softer texture underneath.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/chemical-peel`,
-};
+
+const pageGraph = servicePageGraph({
+  path: "/chemical-peel",
+  pageName: "Chemical Peel in Hayden, ID",
+  pageDescription: "Chemical peel in Hayden, ID. Targeted exfoliation that lifts away damaged skin for smoother tone and softer texture.",
+});
 
 export default function ChemicalPeelPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Services
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Chemical Peel — Smoother Tone, Softer Texture, Less Damage
           </h1>
-          <p className="mt-8 font-sans text-cream/80">
-            <span className="text-xl text-cream">$110</span>
+          <p className="mt-8 font-sans text-warmGray">
+            <span className="text-xl text-charcoal">$110</span>
           </p>
         </div>
       </section>
@@ -116,7 +97,7 @@ export default function ChemicalPeelPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
     </>
   );

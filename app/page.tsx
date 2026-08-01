@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { webPageGraph } from "@/lib/schema";
 
 const BOOKING_URL = "/contact";
+
+const homePageGraph = webPageGraph({
+  path: "/",
+  name: "Aesthetics by Michelle — Skincare Studio in Hayden, ID",
+  description:
+    "Solo-practitioner skincare studio in Hayden, Idaho. Microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.",
+});
 
 const services = [
   {
@@ -315,6 +323,11 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageGraph) }}
+      />
     </>
   );
 }

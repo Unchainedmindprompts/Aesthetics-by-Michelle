@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Microneedling in Hayden, ID — Collagen Therapy",
@@ -30,32 +31,6 @@ const faqs = [
   },
 ];
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Microneedling",
-  serviceType: "Microneedling",
-  description:
-    "Microneedling is the closest thing skincare has to a reset button. Using a precision pen of ultra-fine needles, Michelle creates microscopic channels in the skin that signal your body to flood the area with collagen and elastin.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/microneedling`,
-};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -70,20 +45,26 @@ const faqJsonLd = {
   })),
 };
 
+const pageGraph = servicePageGraph({
+  path: "/microneedling",
+  pageName: "Microneedling in Hayden, ID — Collagen Therapy",
+  pageDescription: "Collagen-building microneedling in Hayden, ID. Firmer, smoother skin with refined pores and softer fine lines.",
+});
+
 export default function MicroneedlingPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Hero Service
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Collagen-Building Microneedling for Skin That Looks Like You, Just
             Better
           </h1>
-          <p className="mt-8 font-sans text-cream/80">
-            <span className="text-xl text-cream">$185</span>
+          <p className="mt-8 font-sans text-warmGray">
+            <span className="text-xl text-charcoal">$185</span>
             <span className="mx-2">•</span>
             <span>60 minutes</span>
           </p>
@@ -204,7 +185,7 @@ export default function MicroneedlingPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
       <script
         type="application/ld+json"

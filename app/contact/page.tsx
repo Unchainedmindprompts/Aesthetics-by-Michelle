@@ -17,15 +17,15 @@ const hours = [
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-sage py-20 md:py-28">
+      <section className="bg-cream py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="font-sans text-sm uppercase tracking-widest text-gold">
             Contact
           </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-cream md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
             Request an Appointment
           </h1>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-cream/80">
+          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
             Call or send a note and Michelle will get back to you with
             availability. Every appointment is one-on-one, so there is always a
             real conversation before your first visit.
@@ -34,11 +34,11 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-ivory py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="mx-auto max-w-5xl px-6 md:px-12">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
             <a
               href="tel:+14257654116"
-              className="block border-t-4 border-gold bg-softWhite p-8 shadow-sm transition-shadow duration-300 hover:shadow-md"
+              className="block border-t-4 border-gold bg-softWhite p-6 shadow-sm transition-shadow duration-300 hover:shadow-md md:col-span-5 md:p-8"
             >
               <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
                 Call or text
@@ -53,12 +53,12 @@ export default function ContactPage() {
 
             <a
               href="mailto:aestheticsbymichellehoffman@gmail.com"
-              className="block border-t-4 border-gold bg-softWhite p-8 shadow-sm transition-shadow duration-300 hover:shadow-md"
+              className="block border-t-4 border-gold bg-softWhite p-6 shadow-sm transition-shadow duration-300 hover:shadow-md md:col-span-7 md:p-8"
             >
               <h2 className="font-sans text-sm uppercase tracking-widest text-gold">
                 Email
               </h2>
-              <p className="mt-4 break-words font-serif text-xl text-charcoal md:text-2xl">
+              <p className="mt-4 font-serif text-sm text-charcoal sm:text-base lg:text-xl">
                 aestheticsbymichellehoffman@gmail.com
               </p>
               <p className="mt-3 font-sans text-warmGray">
