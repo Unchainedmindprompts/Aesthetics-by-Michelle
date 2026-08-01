@@ -87,7 +87,7 @@ export const SERVICES: ServiceDefinition[] = [
     name: "Customized Facials",
     serviceType: "Facial Treatment",
     description:
-      "Five customized facial options built around what your skin is doing right now — classic, anti-aging, with dermaplaning, microdermabrasion, or paired with reiki body energy healing. All include cleanse, exfoliation, red light therapy, mask, and moisturizer.",
+      "Six customized facial options built around what your skin is doing right now — mini, classic, anti-aging, with dermaplaning, microdermabrasion, or paired with reiki body energy healing. All include cleanse, exfoliation, red light therapy, mask, and moisturizer.",
   },
   {
     path: "/dermaplaning",
@@ -108,7 +108,7 @@ export const SERVICES: ServiceDefinition[] = [
     name: "Brow & Lash Services",
     serviceType: "Beauty Services",
     description:
-      "Brow lamination, lash lift and tint, and expert brow shaping designed to enhance what you already have and save you fifteen minutes every morning.",
+      "Eyelash lift and tint, and eyebrow lamination, designed to enhance what you already have and save you fifteen minutes every morning.",
   },
   {
     path: "/waxing",
