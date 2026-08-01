@@ -9,6 +9,8 @@
  *   {path}#service - one persistent Service per service route
  */
 
+import type { ArticleDefinition } from "./articles";
+
 export const SITE_URL = "https://aestheticsbymichelle.com";
 export const SITE_NAME = "Aesthetics by Michelle";
 
@@ -18,8 +20,14 @@ export const ID = {
   website: `${SITE_URL}/#website`,
   serviceCatalog: `${SITE_URL}/#service-catalog`,
   appointmentRequest: `${SITE_URL}/#appointment-request`,
+  blogCollection: `${SITE_URL}/blog#collection`,
   webPage: (path: string) => `${SITE_URL}${path}#webpage`,
   service: (path: string) => `${SITE_URL}${path}#service`,
+  article: (slug: string) => `${SITE_URL}/blog/${slug}#article`,
+  articleWebPage: (slug: string) => `${SITE_URL}/blog/${slug}#webpage`,
+  articleBreadcrumb: (slug: string) => `${SITE_URL}/blog/${slug}#breadcrumb`,
+  articleImage: (slug: string) => `${SITE_URL}/blog/${slug}#primaryimage`,
+  articleFaq: (slug: string) => `${SITE_URL}/blog/${slug}#faq`,
 } as const;
 
 const TELEPHONE = "+14257654116";
@@ -304,4 +312,142 @@ export function servicePageGraph({
       },
     ],
   };
+}
+
+/* ------------------------------------------------------------------ */
+/* Blog + article layer                                                */
+/* ------------------------------------------------------------------ */
+
+const BLOG_NAME = "Notes — Skincare from Michelle Hoffman";
+const BLOG_DESCRIPTION =
+  "Skincare notes, results, and what's working for clients of Aesthetics by Michelle in Hayden, ID.";
+
+/** The one canonical blog collection. Articles resolve back to it. */
+function blogCollectionNode() {
+  return {
+    "@type": "CollectionPage",
+    "@id": ID.blogCollection,
+    url: `${SITE_URL}/blog`,
+    name: BLOG_NAME,
+    description: BLOG_DESCRIPTION,
+    isPartOf: { "@id": ID.website },
+    about: { "@id": ID.business },
+    publisher: { "@id": ID.business },
+  };
+}
+
+/** Graph for the /blog index. */
+export function blogIndexGraph() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [blogCollectionNode()],
+  };
+}
+
+/**
+ * Full graph for one article route.
+ *
+ * Reuses the canonical #person, #business, #website and Service @ids rather
+ * than redefining them, so the article becomes a connected node in the
+ * existing graph instead of a parallel schema system.
+ */
+export function articlePageGraph(article: ArticleDefinition) {
+  const url = `${SITE_URL}/blog/${article.slug}`;
+  const primaryServiceId = ID.service(article.primaryServicePath);
+
+  const imageNode = {
+    "@type": "ImageObject",
+    "@id": ID.articleImage(article.slug),
+    url: `${SITE_URL}${article.image.src}`,
+    contentUrl: `${SITE_URL}${article.image.src}`,
+    width: article.image.width,
+    height: article.image.height,
+    caption: article.image.alt,
+  };
+
+  const breadcrumbNode = {
+    "@type": "BreadcrumbList",
+    "@id": ID.articleBreadcrumb(article.slug),
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_URL}/blog`,
+      },
+      { "@type": "ListItem", position: 3, name: article.title, item: url },
+    ],
+  };
+
+  const webPageNode = {
+    "@type": "WebPage",
+    "@id": ID.articleWebPage(article.slug),
+    url,
+    name: article.title,
+    description: article.description,
+    isPartOf: { "@id": ID.website },
+    about: { "@id": primaryServiceId },
+    mainEntity: { "@id": ID.article(article.slug) },
+    breadcrumb: { "@id": ID.articleBreadcrumb(article.slug) },
+    primaryImageOfPage: { "@id": ID.articleImage(article.slug) },
+  };
+
+  const articleNode: Record<string, unknown> = {
+    "@type": "BlogPosting",
+    "@id": ID.article(article.slug),
+    headline: article.title,
+    description: article.description,
+    url,
+    mainEntityOfPage: { "@id": ID.articleWebPage(article.slug) },
+    image: { "@id": ID.articleImage(article.slug) },
+    datePublished: article.datePublished,
+    author: { "@id": ID.person },
+    publisher: { "@id": ID.business },
+    isPartOf: { "@id": ID.blogCollection },
+    articleSection: article.articleSection,
+    keywords: article.keywords,
+    about: { "@id": primaryServiceId },
+    inLanguage: "en-US",
+  };
+
+  if (article.dateModified) {
+    articleNode.dateModified = article.dateModified;
+  }
+  if (article.mentionServicePaths.length) {
+    articleNode.mentions = article.mentionServicePaths.map((p) => ({
+      "@id": ID.service(p),
+    }));
+  }
+  if (article.citations.length) {
+    articleNode.citation = article.citations.map((c) => ({
+      "@type": "CreativeWork",
+      name: c.name,
+      url: c.url,
+    }));
+  }
+
+  const graph: Record<string, unknown>[] = [
+    webPageNode,
+    articleNode,
+    imageNode,
+    breadcrumbNode,
+    blogCollectionNode(),
+  ];
+
+  // FAQPage is emitted only when the article renders a visible FAQ section.
+  if (article.faqs?.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": ID.articleFaq(article.slug),
+      isPartOf: { "@id": ID.articleWebPage(article.slug) },
+      mainEntity: article.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
 }
