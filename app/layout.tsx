@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { SITE_NAME, SITE_URL, identityGraph } from "@/lib/schema";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -17,8 +18,6 @@ const inter = Inter({
   display: "swap",
 });
 
-const SITE_URL = "https://aestheticsbymichelle.com";
-const SITE_NAME = "Aesthetics by Michelle";
 const HOME_TITLE = "Aesthetics by Michelle — Skincare Studio in Hayden, ID";
 const SITE_DESCRIPTION =
   "Solo-practitioner skincare studio in Hayden, Idaho. Microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.";
@@ -52,115 +51,6 @@ export const metadata: Metadata = {
   },
 };
 
-const postalAddress = {
-  "@type": "PostalAddress",
-  streetAddress: "2151 W Hayden Ave",
-  addressLocality: "Hayden",
-  addressRegion: "ID",
-  postalCode: "83835",
-  addressCountry: "US",
-};
-
-const socialProfiles = [
-  "https://www.instagram.com/aestheticsbymichellehoffman",
-  "https://www.facebook.com/profile.php?id=61559290697737",
-];
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      url: SITE_URL,
-      founder: { "@id": `${SITE_URL}/#person` },
-      sameAs: socialProfiles,
-    },
-    {
-      "@type": ["HealthAndBeautyBusiness", "LocalBusiness"],
-      "@id": `${SITE_URL}/#business`,
-      name: SITE_NAME,
-      parentOrganization: { "@id": `${SITE_URL}/#organization` },
-      founder: { "@id": `${SITE_URL}/#person` },
-      address: postalAddress,
-      telephone: "+14257654116",
-      email: "aestheticsbymichellehoffman@gmail.com",
-      url: SITE_URL,
-      priceRange: "$$",
-      areaServed: ["Hayden", "Coeur d'Alene", "Post Falls", "Spokane Valley"],
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Tuesday",
-          opens: "09:00",
-          closes: "17:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Thursday",
-          opens: "09:00",
-          closes: "17:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Friday",
-          opens: "09:00",
-          closes: "15:00",
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Saturday",
-          opens: "09:00",
-          closes: "15:00",
-        },
-      ],
-      sameAs: socialProfiles,
-    },
-    {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#person`,
-      name: "Michelle Hoffman",
-      jobTitle: "Licensed Esthetician",
-      worksFor: { "@id": `${SITE_URL}/#business` },
-      hasCredential: {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "license",
-        name: "Idaho Esthetician License",
-        identifier: "EST-292960",
-        recognizedBy: {
-          "@type": "Organization",
-          name: "Idaho Barber and Cosmetology Services Licensing Board",
-        },
-      },
-      knowsAbout: [
-        "Microneedling",
-        "Facials",
-        "Chemical Peel",
-        "Brow Lamination",
-        "Eyelash Lift and Tint",
-        "Waxing Services",
-        "Reiki Healing",
-        "Skincare",
-      ],
-      sameAs: ["https://www.instagram.com/aestheticsbymichellehoffman"],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
-      name: SITE_NAME,
-      publisher: { "@id": `${SITE_URL}/#organization` },
-    },
-    {
-      "@type": "Place",
-      "@id": `${SITE_URL}/#place`,
-      name: "Aesthetics by Michelle Studio",
-      address: postalAddress,
-      telephone: "+14257654116",
-    },
-  ],
-};
 
 export default function RootLayout({
   children,
@@ -175,7 +65,7 @@ export default function RootLayout({
         <Footer />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(identityGraph()) }}
         />
       </body>
     </html>

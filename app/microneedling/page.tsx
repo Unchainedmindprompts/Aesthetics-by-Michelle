@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Microneedling in Hayden, ID — Collagen Therapy",
@@ -30,32 +31,6 @@ const faqs = [
   },
 ];
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Microneedling",
-  serviceType: "Microneedling",
-  description:
-    "Microneedling is the closest thing skincare has to a reset button. Using a precision pen of ultra-fine needles, Michelle creates microscopic channels in the skin that signal your body to flood the area with collagen and elastin.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/microneedling`,
-};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -69,6 +44,12 @@ const faqJsonLd = {
     },
   })),
 };
+
+const pageGraph = servicePageGraph({
+  path: "/microneedling",
+  pageName: "Microneedling in Hayden, ID — Collagen Therapy",
+  pageDescription: "Collagen-building microneedling in Hayden, ID. Firmer, smoother skin with refined pores and softer fine lines.",
+});
 
 export default function MicroneedlingPage() {
   return (
@@ -204,7 +185,7 @@ export default function MicroneedlingPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
       <script
         type="application/ld+json"

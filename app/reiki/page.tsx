@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Reiki Body Healing in Hayden, ID",
@@ -11,32 +12,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/reiki" },
 };
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Reiki Body Healing",
-  serviceType: "Reiki Healing",
-  description:
-    "A 45-minute reiki session focused on aligning the body's energy and flow through gentle hands-on touch.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/reiki`,
-};
+
+const pageGraph = servicePageGraph({
+  path: "/reiki",
+  pageName: "Reiki Body Healing in Hayden, ID",
+  pageDescription:
+    "Reiki body healing in Hayden, ID. A 45-minute hands-on session to align your body's energy and flow.",
+});
 
 export default function ReikiPage() {
   return (
@@ -116,7 +98,7 @@ export default function ReikiPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
     </>
   );

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Dermaplaning in Hayden, ID",
@@ -11,32 +12,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/dermaplaning" },
 };
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Dermaplaning",
-  serviceType: "Dermaplaning",
-  description:
-    "A gentle exfoliation treatment that uses a sterile blade to remove the top layer of dead skin cells and fine vellus hair, revealing softer, brighter skin.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/dermaplaning`,
-};
+
+const pageGraph = servicePageGraph({
+  path: "/dermaplaning",
+  pageName: "Dermaplaning in Hayden, ID",
+  pageDescription: "Dermaplaning in Hayden, ID. A 30-minute treatment that gently removes dead skin and peach fuzz for an immediately smoother, brighter complexion.",
+});
 
 export default function DermaplaningPage() {
   return (
@@ -117,7 +98,7 @@ export default function DermaplaningPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
     </>
   );

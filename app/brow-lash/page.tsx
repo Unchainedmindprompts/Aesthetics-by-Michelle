@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Brow Lamination & Lash Lift in Hayden, ID",
@@ -35,32 +36,6 @@ const faqs = [
   },
 ];
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Brow & Lash Services",
-  serviceType: "Beauty Services",
-  description:
-    "Brow lamination, lash lift and tint, and expert brow shaping designed to enhance what you already have and save you fifteen minutes every morning.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/brow-lash`,
-};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -74,6 +49,12 @@ const faqJsonLd = {
     },
   })),
 };
+
+const pageGraph = servicePageGraph({
+  path: "/brow-lash",
+  pageName: "Brow Lamination & Lash Lift in Hayden, ID",
+  pageDescription: "Eyelash lift & tint and eyebrow lamination in Hayden, ID. Low-maintenance results that last six to eight weeks.",
+});
 
 export default function BrowLashPage() {
   return (
@@ -193,7 +174,7 @@ export default function BrowLashPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
       <script
         type="application/ld+json"

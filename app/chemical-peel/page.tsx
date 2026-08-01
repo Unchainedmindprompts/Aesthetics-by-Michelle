@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Chemical Peel in Hayden, ID",
@@ -11,32 +12,12 @@ export const metadata: Metadata = {
   alternates: { canonical: "/chemical-peel" },
 };
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Chemical Peel",
-  serviceType: "Chemical Peel",
-  description:
-    "A chemical exfoliation treatment that lifts away damaged surface skin, revealing smoother tone and softer texture underneath.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/chemical-peel`,
-};
+
+const pageGraph = servicePageGraph({
+  path: "/chemical-peel",
+  pageName: "Chemical Peel in Hayden, ID",
+  pageDescription: "Chemical peel in Hayden, ID. Targeted exfoliation that lifts away damaged skin for smoother tone and softer texture.",
+});
 
 export default function ChemicalPeelPage() {
   return (
@@ -116,7 +97,7 @@ export default function ChemicalPeelPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
     </>
   );

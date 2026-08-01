@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 
 const BOOKING_URL = "/contact";
-const SITE_URL = "https://aestheticsbymichelle.com";
+
 
 export const metadata: Metadata = {
   title: "Customized Facials in Hayden, ID",
@@ -48,32 +49,6 @@ const faqs = [
   },
 ];
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Customized Facials",
-  serviceType: "Facial Treatment",
-  description:
-    "Five customized facial options built around what your skin is doing right now — classic, anti-aging, with dermaplaning, microdermabrasion, or paired with reiki body energy healing. All include cleanse, exfoliation, red light therapy, mask, and moisturizer.",
-  provider: {
-    "@type": "LocalBusiness",
-    "@id": `${SITE_URL}/#business`,
-    name: "Aesthetics by Michelle",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Hayden",
-      addressRegion: "ID",
-      addressCountry: "US",
-    },
-  },
-  areaServed: [
-    { "@type": "City", name: "Hayden" },
-    { "@type": "City", name: "Coeur d'Alene" },
-    { "@type": "City", name: "Post Falls" },
-    { "@type": "City", name: "Spokane Valley" },
-  ],
-  url: `${SITE_URL}/facials`,
-};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -87,6 +62,12 @@ const faqJsonLd = {
     },
   })),
 };
+
+const pageGraph = servicePageGraph({
+  path: "/facials",
+  pageName: "Customized Facials in Hayden, ID",
+  pageDescription: "Six customized facials in Hayden, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
+});
 
 export default function FacialsPage() {
   return (
@@ -252,7 +233,7 @@ export default function FacialsPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageGraph) }}
       />
       <script
         type="application/ld+json"
