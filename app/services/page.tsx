@@ -113,8 +113,8 @@ export default function ServicesIndexPage() {
             Not sure where to start?
           </h2>
           <p className="mt-6 font-sans text-lg text-warmGray">
-            Book a consultation and Michelle will recommend the right treatment
-            for what your skin actually needs.
+            Request a consultation and Michelle will recommend the right
+            treatment for what your skin actually needs.
           </p>
           <Link
             href={BOOKING_URL}

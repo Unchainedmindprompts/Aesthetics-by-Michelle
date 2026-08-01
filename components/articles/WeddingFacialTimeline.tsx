@@ -570,7 +570,7 @@ export default function WeddingFacialTimeline() {
         The Mini Facial is $50 and takes thirty minutes — cleanse, gentle
         exfoliation, mask, and a finishing glow, with no time off your day
         required. Great solo, better with a bridal party.{" "}
-        <Int href="/facials">Book the Mini Facial</Int>.
+        <Int href="/facials">Explore the Mini Facial</Int>.
       </p>
     </>
   );
