@@ -95,7 +95,7 @@ export const SERVICES: ServiceDefinition[] = [
     name: "Customized Facials",
     serviceType: "Facial Treatment",
     description:
-      "Six customized facial options built around what your skin is doing right now — mini, classic, anti-aging, with dermaplaning, microdermabrasion, or paired with reiki body energy healing. All include cleanse, exfoliation, red light therapy, mask, and moisturizer.",
+      "Seven customized facial options built around what your skin is doing right now — mini, classic, anti-aging, with dermaplaning, microdermabrasion, Body Energy Healing & Facial, or the Reiki Facial ($120, 1.5 hours), which combines a relaxing facial with gentle Reiki energy work. All include cleanse, exfoliation, red light therapy, mask, and moisturizer.",
   },
   {
     path: "/dermaplaning",

@@ -75,8 +75,11 @@ export default function ReikiPage() {
               Michelle brings the same focused, calm presence to a reiki
               session as she does to every other treatment — no rushing, no
               distractions, just attention. If you&apos;d like to combine reiki
-              with a facial, ask about the Body Energy Healing &amp; Facial
-              option on the facials page.
+              with a facial, explore the{" "}
+              <Link href="/facials#reiki-facial" className="underline underline-offset-4 hover:text-charcoal">
+                Reiki Facial
+              </Link>{" "}
+              — $120 for 1.5 hours.
             </p>
           </div>
         </div>

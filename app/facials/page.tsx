@@ -9,7 +9,7 @@ const BOOKING_URL = "/contact";
 export const metadata: Metadata = {
   title: "Customized Facials in Hayden, ID",
   description:
-    "Six customized facials in Hayden, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
+    "Seven customized facials in Hayden, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
   alternates: { canonical: "/facials" },
 };
 
@@ -23,6 +23,11 @@ const pricing = [
     name: "Body Energy Healing & Facial",
     price: "$98",
     duration: "60 minutes",
+  },
+  {
+    name: "Reiki Facial",
+    price: "$120",
+    duration: "1.5 hours",
   },
 ];
 
@@ -66,7 +71,7 @@ const faqJsonLd = {
 const pageGraph = servicePageGraph({
   path: "/facials",
   pageName: "Customized Facials in Hayden, ID",
-  pageDescription: "Six customized facials in Hayden, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
+  pageDescription: "Seven customized facials in Hayden, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
 });
 
 export default function FacialsPage() {
@@ -145,6 +150,24 @@ export default function FacialsPage() {
               <span className="text-xl text-charcoal">$50</span>
               <span className="mx-2">•</span>
               <span>30 minutes</span>
+            </p>
+          </div>
+
+          <div id="reiki-facial" className="mt-14 scroll-mt-24 border-t-4 border-gold bg-softWhite p-8 md:p-10 shadow-sm">
+            <h2 className="font-serif text-3xl text-charcoal md:text-4xl">
+              Reiki Facial
+            </h2>
+            <p className="mt-5 font-sans text-lg leading-relaxed text-warmGray">
+              Reiki facial combines the benefits of a relaxing facial with the
+              calming practice of Reiki. While your skin is being cleansed,
+              treated, and nourished, gentle Reiki energy work is incorporated
+              to create a peaceful, restorative experience. It’s designed to
+              help you slow down, relax, and leave feeling refreshed—inside and out.
+            </p>
+            <p className="mt-6 font-sans text-warmGray">
+              <span className="text-xl text-charcoal">$120</span>
+              <span className="mx-2">•</span>
+              <span>1.5 hours</span>
             </p>
           </div>
 
