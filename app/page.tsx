@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import StudioAddress from "@/components/StudioAddress";
 import { webPageGraph } from "@/lib/schema";
 
 const BOOKING_URL = "/contact";
 
 const homePageGraph = webPageGraph({
   path: "/",
-  name: "Aesthetics by Michelle — Skincare Studio in Hayden, ID",
+  name: "Aesthetics by Michelle — Skincare Studio in Coeur d'Alene, ID",
   description:
-    "Solo-practitioner skincare studio in Hayden, Idaho. Microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.",
+    "Solo-practitioner skincare studio in Coeur d'Alene, Idaho. Microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.",
 });
 
 const services = [
@@ -52,13 +53,13 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-12">
           <div className="order-2 md:order-1">
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
-              Licensed Esthetician • Hayden, Idaho
+              Licensed Esthetician • Coeur d&apos;Alene, Idaho
             </p>
             <h1 className="mt-6 font-serif text-5xl leading-tight text-charcoal md:text-6xl">
-              Microneedling + Advanced Skincare in Hayden
+              Microneedling + Advanced Skincare in Coeur d&apos;Alene
             </h1>
             <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray md:text-xl">
-              Licensed skincare and aesthetics in Hayden — personal,
+              Licensed skincare and aesthetics in Coeur d&apos;Alene — personal,
               attentive, and built around what your skin actually needs.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -83,7 +84,7 @@ export default function HomePage() {
           <div className="order-1 md:order-2">
             <Image
               src="/images/michelle-hero.png"
-              alt="Michelle Hoffman, licensed esthetician, in her Hayden skincare studio"
+              alt="Michelle Hoffman, licensed esthetician, in her skincare studio"
               width={1600}
               height={900}
               priority
@@ -104,7 +105,7 @@ export default function HomePage() {
           </h2>
           <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
             Aesthetics by Michelle is a solo-practitioner skincare studio in
-            Hayden, serving Post Falls, Coeur d&apos;Alene, and the Spokane
+            Coeur d&apos;Alene, serving Hayden, Post Falls, and the Spokane
             Valley area. Every appointment is one-on-one — no revolving door of
             staff, no rushed treatments, no generic service menu. Just
             Michelle, her many years of experience, and a treatment plan
@@ -256,9 +257,7 @@ export default function HomePage() {
               Visit the studio.
             </h2>
             <address className="mt-8 not-italic font-sans text-lg leading-relaxed text-warmGray">
-              2151 W Hayden Ave
-              <br />
-              Hayden, ID 83835
+              <StudioAddress />
               <br />
               <a
                 href="tel:+14257654116"
@@ -296,7 +295,7 @@ export default function HomePage() {
           <div className="relative aspect-video w-full overflow-hidden rounded-sm">
             <Image
               src="/images/michelle-studio.png"
-              alt="Michelle Hoffman inside her Hayden skincare studio"
+              alt="Michelle Hoffman inside her skincare studio"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"

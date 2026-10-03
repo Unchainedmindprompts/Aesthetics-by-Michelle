@@ -6,17 +6,17 @@ const BOOKING_URL = "/contact";
 
 
 export const metadata: Metadata = {
-  title: "Dermaplaning in Hayden, ID",
+  title: "Dermaplaning in Coeur d'Alene, ID",
   description:
-    "Dermaplaning in Hayden, ID. A 30-minute treatment that gently removes dead skin and peach fuzz for an immediately smoother, brighter complexion.",
+    "Dermaplaning in Coeur d'Alene, ID. A 30-minute treatment that gently removes dead skin and peach fuzz for an immediately smoother, brighter complexion.",
   alternates: { canonical: "/dermaplaning" },
 };
 
 
 const pageGraph = servicePageGraph({
   path: "/dermaplaning",
-  pageName: "Dermaplaning in Hayden, ID",
-  pageDescription: "Dermaplaning in Hayden, ID. A 30-minute treatment that gently removes dead skin and peach fuzz for an immediately smoother, brighter complexion.",
+  pageName: "Dermaplaning in Coeur d'Alene, ID",
+  pageDescription: "Dermaplaning in Coeur d'Alene, ID. A 30-minute treatment that gently removes dead skin and peach fuzz for an immediately smoother, brighter complexion.",
 });
 
 export default function DermaplaningPage() {

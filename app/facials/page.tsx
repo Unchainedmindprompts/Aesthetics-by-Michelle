@@ -7,9 +7,9 @@ const BOOKING_URL = "/contact";
 
 
 export const metadata: Metadata = {
-  title: "Customized Facials in Hayden, ID",
+  title: "Customized Facials in Coeur d'Alene, ID",
   description:
-    "Seven customized facials in Hayden, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
+    "Seven customized facials in Coeur d'Alene, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
   alternates: { canonical: "/facials" },
 };
 
@@ -70,8 +70,8 @@ const faqJsonLd = {
 
 const pageGraph = servicePageGraph({
   path: "/facials",
-  pageName: "Customized Facials in Hayden, ID",
-  pageDescription: "Seven customized facials in Hayden, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
+  pageName: "Customized Facials in Coeur d'Alene, ID",
+  pageDescription: "Seven customized facials in Coeur d'Alene, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
 });
 
 export default function FacialsPage() {

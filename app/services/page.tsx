@@ -64,7 +64,7 @@ export default function ServicesIndexPage() {
             <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm md:aspect-[16/9]">
               <Image
                 src="/images/michelle-facial-treatment.png"
-                alt="Michelle Hoffman applying a facial treatment to a client in her Hayden studio"
+                alt="Michelle Hoffman applying a facial treatment to a client in her studio"
                 fill
                 priority
                 sizes="(min-width: 1280px) 1280px, 100vw"

@@ -18,9 +18,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const HOME_TITLE = "Aesthetics by Michelle — Skincare Studio in Hayden, ID";
+const HOME_TITLE = "Aesthetics by Michelle — Skincare Studio in Coeur d'Alene, ID";
 const SITE_DESCRIPTION =
-  "Solo-practitioner skincare studio in Hayden, Idaho. Microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.";
+  "Solo-practitioner skincare studio in Coeur d'Alene, Idaho. Microneedling, facials, chemical peel, brow & lash, waxing, and reiki body healing.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

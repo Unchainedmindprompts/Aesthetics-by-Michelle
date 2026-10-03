@@ -7,7 +7,7 @@ import { blogIndexGraph } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Notes — Skincare from Michelle Hoffman",
   description:
-    "Skincare notes, results, and what's working for clients of Aesthetics by Michelle in Hayden, ID.",
+    "Skincare notes, results, and what's working for clients of Aesthetics by Michelle in Coeur d'Alene, ID.",
   alternates: { canonical: "/blog" },
 };
 

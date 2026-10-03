@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import StudioAddress from "@/components/StudioAddress";
 
 export const metadata: Metadata = {
   title: "Contact & Studio Hours",
   description:
-    "Contact Aesthetics by Michelle in Hayden, ID. Call or email to request an appointment. Studio hours, location, phone, and email.",
+    "Contact Aesthetics by Michelle in Coeur d'Alene, ID. Call or email to request an appointment. Studio hours, location, phone, and email.",
   alternates: { canonical: "/contact" },
 };
 
@@ -74,9 +75,7 @@ export default function ContactPage() {
                 Visit the studio
               </h2>
               <address className="mt-6 font-sans text-lg not-italic leading-relaxed text-warmGray">
-                2151 W Hayden Ave
-                <br />
-                Hayden, ID 83835
+                <StudioAddress />
               </address>
               <p className="mt-6 font-sans text-warmGray">
                 Serving Hayden, Coeur d&apos;Alene, Post Falls, and the Spokane

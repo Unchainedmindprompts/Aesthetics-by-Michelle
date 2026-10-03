@@ -6,17 +6,17 @@ const BOOKING_URL = "/contact";
 
 
 export const metadata: Metadata = {
-  title: "Chemical Peel in Hayden, ID",
+  title: "Chemical Peel in Coeur d'Alene, ID",
   description:
-    "Chemical peel in Hayden, ID. Targeted exfoliation that lifts away damaged skin for smoother tone and softer texture.",
+    "Chemical peel in Coeur d'Alene, ID. Targeted exfoliation that lifts away damaged skin for smoother tone and softer texture.",
   alternates: { canonical: "/chemical-peel" },
 };
 
 
 const pageGraph = servicePageGraph({
   path: "/chemical-peel",
-  pageName: "Chemical Peel in Hayden, ID",
-  pageDescription: "Chemical peel in Hayden, ID. Targeted exfoliation that lifts away damaged skin for smoother tone and softer texture.",
+  pageName: "Chemical Peel in Coeur d'Alene, ID",
+  pageDescription: "Chemical peel in Coeur d'Alene, ID. Targeted exfoliation that lifts away damaged skin for smoother tone and softer texture.",
 });
 
 export default function ChemicalPeelPage() {

@@ -7,9 +7,9 @@ const BOOKING_URL = "/contact";
 
 
 export const metadata: Metadata = {
-  title: "Microneedling in Hayden, ID — Collagen Therapy",
+  title: "Microneedling in Coeur d'Alene, ID — Collagen Therapy",
   description:
-    "Collagen-building microneedling in Hayden, ID. Firmer, smoother skin with refined pores and softer fine lines.",
+    "Collagen-building microneedling in Coeur d'Alene, ID. Firmer, smoother skin with refined pores and softer fine lines.",
   alternates: { canonical: "/microneedling" },
 };
 
@@ -47,8 +47,8 @@ const faqJsonLd = {
 
 const pageGraph = servicePageGraph({
   path: "/microneedling",
-  pageName: "Microneedling in Hayden, ID — Collagen Therapy",
-  pageDescription: "Collagen-building microneedling in Hayden, ID. Firmer, smoother skin with refined pores and softer fine lines.",
+  pageName: "Microneedling in Coeur d'Alene, ID — Collagen Therapy",
+  pageDescription: "Collagen-building microneedling in Coeur d'Alene, ID. Firmer, smoother skin with refined pores and softer fine lines.",
 });
 
 export default function MicroneedlingPage() {

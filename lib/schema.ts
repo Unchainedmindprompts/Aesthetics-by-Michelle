@@ -10,6 +10,7 @@
  */
 
 import type { ArticleDefinition } from "./articles";
+import { STUDIO_ADDRESS, STUDIO_MAP_URL } from "./location";
 
 export const SITE_URL = "https://aestheticsbymichelle.com";
 export const SITE_NAME = "Aesthetics by Michelle";
@@ -40,15 +41,15 @@ const socialProfiles = [
 
 const postalAddress = {
   "@type": "PostalAddress",
-  streetAddress: "2151 W Hayden Ave",
-  addressLocality: "Hayden",
-  addressRegion: "ID",
-  postalCode: "83835",
-  addressCountry: "US",
+  streetAddress: `${STUDIO_ADDRESS.street}, ${STUDIO_ADDRESS.suite}`,
+  addressLocality: STUDIO_ADDRESS.city,
+  addressRegion: STUDIO_ADDRESS.region,
+  postalCode: STUDIO_ADDRESS.postalCode,
+  addressCountry: STUDIO_ADDRESS.country,
 } as const;
 
 /**
- * Cities the business serves. The studio itself is in Hayden only; the
+ * Cities the business serves. The studio itself is in Coeur d'Alene only; the
  * remaining entries describe reach, not additional locations.
  */
 const areaServed = [
@@ -182,6 +183,7 @@ function businessNode() {
     name: SITE_NAME,
     url: SITE_URL,
     address: postalAddress,
+    hasMap: STUDIO_MAP_URL,
     telephone: TELEPHONE,
     email: EMAIL,
     priceRange: "$$",
@@ -320,7 +322,7 @@ export function servicePageGraph({
 
 const BLOG_NAME = "Notes — Skincare from Michelle Hoffman";
 const BLOG_DESCRIPTION =
-  "Skincare notes, results, and what's working for clients of Aesthetics by Michelle in Hayden, ID.";
+  "Skincare notes, results, and what's working for clients of Aesthetics by Michelle in Coeur d'Alene, ID.";
 
 /** The one canonical blog collection. Articles resolve back to it. */
 function blogCollectionNode() {

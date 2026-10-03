@@ -6,18 +6,18 @@ const BOOKING_URL = "/contact";
 
 
 export const metadata: Metadata = {
-  title: "Reiki Body Healing in Hayden, ID",
+  title: "Reiki Body Healing in Coeur d'Alene, ID",
   description:
-    "Reiki body healing in Hayden, ID. A 45-minute hands-on session to align your body's energy and flow.",
+    "Reiki body healing in Coeur d'Alene, ID. A 45-minute hands-on session to align your body's energy and flow.",
   alternates: { canonical: "/reiki" },
 };
 
 
 const pageGraph = servicePageGraph({
   path: "/reiki",
-  pageName: "Reiki Body Healing in Hayden, ID",
+  pageName: "Reiki Body Healing in Coeur d'Alene, ID",
   pageDescription:
-    "Reiki body healing in Hayden, ID. A 45-minute hands-on session to align your body's energy and flow.",
+    "Reiki body healing in Coeur d'Alene, ID. A 45-minute hands-on session to align your body's energy and flow.",
 });
 
 export default function ReikiPage() {

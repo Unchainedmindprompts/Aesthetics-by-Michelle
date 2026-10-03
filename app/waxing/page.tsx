@@ -7,9 +7,9 @@ const BOOKING_URL = "/contact";
 
 
 export const metadata: Metadata = {
-  title: "Waxing in Hayden, ID — Brow, Lip, Face, Underarm",
+  title: "Waxing in Coeur d'Alene, ID — Brow, Lip, Face, Underarm",
   description:
-    "Precise brow, lip, nostril, facial, and underarm waxing in Hayden, ID. Quick, clean, and over before you know it.",
+    "Precise brow, lip, nostril, facial, and underarm waxing in Coeur d'Alene, ID. Quick, clean, and over before you know it.",
   alternates: { canonical: "/waxing" },
 };
 
@@ -55,8 +55,8 @@ const faqJsonLd = {
 
 const pageGraph = servicePageGraph({
   path: "/waxing",
-  pageName: "Waxing in Hayden, ID — Brow, Lip, Face, Underarm",
-  pageDescription: "Precise brow, lip, nostril, facial, and underarm waxing in Hayden, ID. Quick, clean, and over before you know it.",
+  pageName: "Waxing in Coeur d'Alene, ID — Brow, Lip, Face, Underarm",
+  pageDescription: "Precise brow, lip, nostril, facial, and underarm waxing in Coeur d'Alene, ID. Quick, clean, and over before you know it.",
 });
 
 export default function WaxingPage() {

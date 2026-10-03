@@ -7,9 +7,9 @@ const BOOKING_URL = "/contact";
 
 
 export const metadata: Metadata = {
-  title: "Brow Lamination & Lash Lift in Hayden, ID",
+  title: "Brow Lamination & Lash Lift in Coeur d'Alene, ID",
   description:
-    "Eyelash lift & tint and eyebrow lamination in Hayden, ID. Low-maintenance results that last six to eight weeks.",
+    "Eyelash lift & tint and eyebrow lamination in Coeur d'Alene, ID. Low-maintenance results that last six to eight weeks.",
   alternates: { canonical: "/brow-lash" },
 };
 
@@ -52,8 +52,8 @@ const faqJsonLd = {
 
 const pageGraph = servicePageGraph({
   path: "/brow-lash",
-  pageName: "Brow Lamination & Lash Lift in Hayden, ID",
-  pageDescription: "Eyelash lift & tint and eyebrow lamination in Hayden, ID. Low-maintenance results that last six to eight weeks.",
+  pageName: "Brow Lamination & Lash Lift in Coeur d'Alene, ID",
+  pageDescription: "Eyelash lift & tint and eyebrow lamination in Coeur d'Alene, ID. Low-maintenance results that last six to eight weeks.",
 });
 
 export default function BrowLashPage() {
