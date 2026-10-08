@@ -50,16 +50,27 @@ export default function HomePage() {
   return (
     <>
       {/* SECTION 1: HERO */}
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-12">
-          <div className="order-2 md:order-1">
+      <section className="michelle-hero" aria-labelledby="hero-heading">
+        <div className="michelle-hero__photo">
+          <Image
+            src="/images/michelle-hero.png"
+            alt="Michelle Hoffman, licensed esthetician, in her skincare studio"
+            fill
+            priority
+            sizes="100vw"
+            className="michelle-hero__image"
+          />
+        </div>
+        <div className="michelle-hero__fade" aria-hidden="true" />
+        <div className="michelle-hero__inner">
+          <div className="michelle-hero__copy">
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
               Licensed Esthetician • Coeur d&apos;Alene, Idaho
             </p>
-            <h1 className="mt-6 font-serif text-5xl leading-tight text-charcoal md:text-6xl">
+            <h1 id="hero-heading" className="mt-6 font-serif text-5xl leading-tight text-charcoal md:text-6xl">
               Microneedling + Advanced Skincare in Coeur d&apos;Alene
             </h1>
-            <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray md:text-xl">
+            <p className="mt-6 font-sans text-lg leading-relaxed text-charcoal/80 md:text-xl">
               Licensed skincare and aesthetics in Coeur d&apos;Alene — personal,
               attentive, and built around what your skin actually needs.
             </p>
@@ -72,25 +83,14 @@ export default function HomePage() {
               </Link>
               <a
                 href="#services"
-                className="inline-block rounded-none border border-charcoal bg-transparent px-8 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-cream"
+                className="inline-block rounded-none border border-charcoal bg-cream/50 px-8 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-cream"
               >
                 Explore Services
               </a>
             </div>
-            <p className="mt-8 font-sans text-sm text-warmGray">
+            <p className="mt-8 font-sans text-sm text-charcoal/80">
               Idaho Esthetician License EST-292960 • Many years of experience
             </p>
-          </div>
-
-          <div className="order-1 md:order-2">
-            <Image
-              src="/images/michelle-hero.png"
-              alt="Michelle Hoffman, licensed esthetician, in her skincare studio"
-              width={1600}
-              height={900}
-              priority
-              className="h-auto w-full rounded-sm object-cover"
-            />
           </div>
         </div>
       </section>
