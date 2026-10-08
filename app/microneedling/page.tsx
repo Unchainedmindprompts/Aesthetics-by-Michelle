@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { servicePageGraph } from "@/lib/schema";
+import { treatmentById } from "@/lib/treatments";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 
-const BOOKING_URL = "/contact";
+const treatment = treatmentById("microneedling");
+const BOOKING_URL = treatment.bookingUrl;
 
 
 export const metadata: Metadata = {
@@ -64,9 +66,9 @@ export default function MicroneedlingPage() {
             Better
           </h1>
           <p className="mt-8 font-sans text-warmGray">
-            <span className="text-xl text-charcoal">$185</span>
+            <span className="text-xl text-charcoal">${treatment.price}</span>
             <span className="mx-2">•</span>
-            <span>60 minutes</span>
+            <span>{treatment.minutes} minutes</span>
           </p>
         </div>
       </section>
@@ -74,22 +76,7 @@ export default function MicroneedlingPage() {
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-12">
           <div className="space-y-6 font-sans text-lg leading-relaxed text-warmGray">
-            <p>
-              Microneedling is the closest thing skincare has to a reset button.
-              Using a precision pen of ultra-fine needles, Michelle creates
-              microscopic channels in the skin that signal your body to flood
-              the area with collagen and elastin — the two things your skin
-              loses as it ages. The result is firmer, smoother skin with refined
-              pores, softer fine lines, and a healthy glow that builds over the
-              weeks following your treatment.
-            </p>
-            <p>
-              This isn&apos;t a quick fix or a one-and-done facial. It&apos;s a
-              clinically-backed treatment that improves the actual structure of
-              your skin over time. Most clients see noticeable change after
-              their first session and significant transformation across a
-              series of three to four.
-            </p>
+            <p>{treatment.description}</p>
           </div>
 
           <div className="mt-14 border-l-4 border-gold bg-softWhite p-8">
@@ -109,7 +96,7 @@ export default function MicroneedlingPage() {
             </h2>
             <p className="mt-4 font-sans text-warmGray">
               Michelle recommends a series of three to six sessions for best
-              results. Save when you book ahead.
+              results. Package prices are listed below.
             </p>
             <dl className="mt-6 divide-y divide-taupe/30 font-sans text-warmGray">
               <div className="flex flex-col gap-1 py-4 first:pt-0 md:flex-row md:items-baseline md:justify-between">
@@ -117,7 +104,7 @@ export default function MicroneedlingPage() {
                   Single session
                 </dt>
                 <dd>
-                  <span className="text-charcoal">$185</span>
+                  <span className="text-charcoal">${treatment.price}</span>
                 </dd>
               </div>
               <div className="flex flex-col gap-1 py-4 md:flex-row md:items-baseline md:justify-between">
@@ -126,8 +113,6 @@ export default function MicroneedlingPage() {
                 </dt>
                 <dd>
                   <span className="text-charcoal">$495</span>
-                  <span className="mx-2">•</span>
-                  <span>Save $60</span>
                 </dd>
               </div>
               <div className="flex flex-col gap-1 py-4 last:pb-0 md:flex-row md:items-baseline md:justify-between">
@@ -137,7 +122,7 @@ export default function MicroneedlingPage() {
                 <dd>
                   <span className="text-charcoal">$925</span>
                   <span className="mx-2">•</span>
-                  <span>Save $185</span>
+                  <span>Save $65</span>
                 </dd>
               </div>
             </dl>
@@ -167,7 +152,7 @@ export default function MicroneedlingPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Request an Appointment
+            Book Microneedling
           </Link>
         </div>
       </section>
