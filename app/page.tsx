@@ -57,7 +57,8 @@ export default function HomePage() {
             alt="Michelle Hoffman, licensed esthetician, in her skincare studio"
             fill
             priority
-            sizes="100vw"
+            quality={90}
+            sizes="(min-width: 1024px) 140vw, (min-width: 640px) 100vw, 180vw"
             className="michelle-hero__image"
           />
         </div>
