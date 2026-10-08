@@ -1,3 +1,4 @@
+import { treatmentById } from "@/lib/treatments";
 import Image from "next/image";
 import Link from "next/link";
 import StudioAddress from "@/components/StudioAddress";
@@ -153,11 +154,7 @@ export default function HomePage() {
                 Just Better
               </h3>
               <p className="mt-4 font-sans text-cream/80">
-                Microneedling is the closest thing skincare has to a reset
-                button. Using a precision pen of ultra-fine needles, Michelle
-                creates microscopic channels in the skin that signal your body
-                to flood the area with collagen and elastin — the two things
-                your skin loses as it ages.
+                {treatmentById("microneedling").description}
               </p>
               <Link
                 href="/microneedling"

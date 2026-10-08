@@ -17,7 +17,9 @@ const categories = [
     items: [
       { name: "Microneedling", href: "/microneedling" },
       { name: "Mini Facial", href: "/facials" },
-      { name: "Customized Facials", href: "/facials" },
+      { name: "Facial", href: "/facials#facial" },
+      { name: "Anti-Aging Facial", href: "/facials#anti-aging-facial" },
+      { name: "Acne Facial", href: "/facials#acne-facial" },
       { name: "Reiki Facial", href: "/facials#reiki-facial" },
       { name: "Dermaplaning", href: "/dermaplaning" },
       { name: "Chemical Peel", href: "/chemical-peel" },
