@@ -7,3 +7,71 @@ body {
   background-color: #F5F1EA;
   color: #2C2A27;
 }
+
+/* Keep the original portrait intact; blend its surroundings into the copy. */
+.michelle-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #F7F3EC;
+}
+
+.michelle-hero__photo {
+  position: absolute;
+  inset: 0 0 auto;
+  height: clamp(340px, 88vw, 560px);
+  z-index: -2;
+}
+
+.michelle-hero__image {
+  object-fit: cover;
+  object-position: 68% 30%;
+}
+
+.michelle-hero__fade {
+  position: absolute;
+  inset: 0 0 auto;
+  height: clamp(340px, 88vw, 560px);
+  z-index: -1;
+  background: linear-gradient(to bottom, transparent 58%, rgba(247, 243, 236, .2) 73%, #F7F3EC 100%);
+}
+
+.michelle-hero__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: calc(clamp(340px, 88vw, 560px) - 24px) 24px 64px;
+}
+
+.michelle-hero__copy {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .michelle-hero__photo,
+  .michelle-hero__fade {
+    inset: 0;
+    height: 100%;
+  }
+
+  .michelle-hero__image {
+    object-position: 50% 35%;
+  }
+
+  .michelle-hero__fade {
+    background: linear-gradient(90deg, #F7F3EC 0%, rgba(247, 243, 236, .98) 26%, rgba(247, 243, 236, .9) 35%, rgba(247, 243, 236, .55) 45%, rgba(247, 243, 236, .12) 56%, transparent 65%);
+  }
+
+  .michelle-hero__inner {
+    min-height: clamp(720px, 54vw, 900px);
+    display: flex;
+    align-items: center;
+    padding: 80px 48px;
+  }
+
+  .michelle-hero__copy {
+    width: 47%;
+    max-width: 580px;
+    margin: 0;
+  }
+}
