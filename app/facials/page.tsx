@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
+import { TREATMENTS } from "@/lib/treatments";
 import Faq from "@/components/Faq";
 
 const BOOKING_URL = "/contact";
@@ -9,14 +10,17 @@ const BOOKING_URL = "/contact";
 export const metadata: Metadata = {
   title: "Customized Facials in Coeur d'Alene, ID",
   description:
-    "Seven customized facials in Coeur d'Alene, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
+    "Eight customized facials in Coeur d'Alene, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
   alternates: { canonical: "/facials" },
 };
 
+const facialTreatments = TREATMENTS.filter((item) => item.path === "/facials");
+
 const pricing = [
   { name: "Mini Facial", price: "$50", duration: "30 minutes" },
-  { name: "Classic Facial", price: "$95", duration: "60 minutes" },
-  { name: "Anti-Aging Facial", price: "$98", duration: "60 minutes" },
+  ...facialTreatments.map((item) => ({
+    name: item.name, price: `$${item.price}`, duration: `${item.minutes} minutes`,
+  })),
   { name: "Facial with Dermaplaning", price: "$110", duration: "60 minutes" },
   { name: "Microdermabrasion Facial", price: "$130", duration: "60 minutes" },
   {
@@ -71,7 +75,7 @@ const faqJsonLd = {
 const pageGraph = servicePageGraph({
   path: "/facials",
   pageName: "Customized Facials in Coeur d'Alene, ID",
-  pageDescription: "Seven customized facials in Coeur d'Alene, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
+  pageDescription: "Eight customized facials in Coeur d'Alene, ID — including the 30-minute Mini Facial for weddings, bachelorette parties, and special occasions.",
 });
 
 export default function FacialsPage() {
@@ -113,8 +117,7 @@ export default function FacialsPage() {
               calm, careful pacing, warm towels, and zero rushing.
             </p>
             <p>
-              Every facial includes cleanse, exfoliation, red light therapy,
-              mask, and moisturizer. Choose the option that matches what your
+              Choose the option that matches what your
               skin is asking for — Michelle will help you pick if you&apos;re
               not sure.
             </p>
@@ -152,6 +155,20 @@ export default function FacialsPage() {
               <span>30 minutes</span>
             </p>
           </div>
+
+          {facialTreatments.map((item) => (
+            <article key={item.id} id={item.id} className="mt-14 scroll-mt-24 border-t-4 border-gold bg-softWhite p-8 md:p-10 shadow-sm">
+              <h2 className="font-serif text-3xl text-charcoal md:text-4xl">{item.name}</h2>
+              <p className="mt-5 font-sans text-lg leading-relaxed text-warmGray">{item.description}</p>
+              <p className="mt-6 font-sans text-warmGray">
+                <span className="text-xl text-charcoal">${item.price}</span>
+                <span className="mx-2">•</span>{item.minutes} minutes
+              </p>
+              <a href={item.bookingUrl} className="mt-6 inline-block bg-sage px-6 py-3 font-sans text-cream hover:bg-charcoal">
+                Book {item.name}
+              </a>
+            </article>
+          ))}
 
           <div id="reiki-facial" className="mt-14 scroll-mt-24 border-t-4 border-gold bg-softWhite p-8 md:p-10 shadow-sm">
             <h2 className="font-serif text-3xl text-charcoal md:text-4xl">

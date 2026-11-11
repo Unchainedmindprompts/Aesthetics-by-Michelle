@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { servicePageGraph } from "@/lib/schema";
+import { treatmentById } from "@/lib/treatments";
 import Link from "next/link";
 
-const BOOKING_URL = "/contact";
+const treatment = treatmentById("dermaplaning");
+const BOOKING_URL = treatment.bookingUrl;
 
 
 export const metadata: Metadata = {
@@ -31,9 +33,9 @@ export default function DermaplaningPage() {
             Dermaplaning — Smoother Skin and a Brighter Glow in 30 Minutes
           </h1>
           <p className="mt-8 font-sans text-warmGray">
-            <span className="text-xl text-charcoal">$40</span>
+            <span className="text-xl text-charcoal">${treatment.price}</span>
             <span className="mx-2">•</span>
-            <span>30 minutes</span>
+            <span>{treatment.minutes} minutes</span>
           </p>
         </div>
       </section>
@@ -41,20 +43,7 @@ export default function DermaplaningPage() {
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-12">
           <div className="space-y-6 font-sans text-lg leading-relaxed text-warmGray">
-            <p>
-              Dermaplaning is a gentle, deeply satisfying treatment that uses
-              a sterile surgical blade to remove the top layer of dead skin
-              cells and the fine vellus hair (peach fuzz) on your face. The
-              result is immediate: skin feels remarkably soft, makeup glides
-              on cleanly, and every serum and moisturizer you apply
-              afterward absorbs significantly better.
-            </p>
-            <p>
-              There&apos;s no downtime, no redness, no peeling — just a
-              polished, lit-from-within finish you can see the second you sit
-              up. Great as a standalone thirty-minute refresh, or ask about
-              adding it to a facial for an even deeper result.
-            </p>
+            <p>{treatment.description}</p>
           </div>
 
           <div className="mt-14 border-l-4 border-gold bg-softWhite p-8">
@@ -91,7 +80,7 @@ export default function DermaplaningPage() {
             href={BOOKING_URL}
             className="mt-8 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
           >
-            Request an Appointment
+            Book Dermaplaning
           </Link>
         </div>
       </section>

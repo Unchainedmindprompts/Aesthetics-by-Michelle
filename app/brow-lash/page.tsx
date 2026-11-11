@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
+import { treatmentById } from "@/lib/treatments";
 import Faq from "@/components/Faq";
 
 const BOOKING_URL = "/contact";
@@ -9,20 +10,22 @@ const BOOKING_URL = "/contact";
 export const metadata: Metadata = {
   title: "Brow Lamination & Lash Lift in Coeur d'Alene, ID",
   description:
-    "Eyelash lift & tint and eyebrow lamination in Coeur d'Alene, ID. Low-maintenance results that last six to eight weeks.",
+    "Eyelash lift & tint and eyebrow lamination in Coeur d'Alene, ID. Brow lamination lasts up to 5 weeks; lash lifts last six to eight weeks.",
   alternates: { canonical: "/brow-lash" },
 };
 
+const brow = treatmentById("eyebrow-lamination");
+
 const pricing = [
   { name: "Eyelash Lift & Tint", price: "$75", duration: "60 minutes" },
-  { name: "Eyebrow Lamination", price: "$50", duration: "45 minutes" },
+  { name: brow.name, price: `$${brow.price}`, duration: `${brow.minutes} minutes` },
 ];
 
 const faqs = [
   {
     question: "How long do brow lamination and lash lifts last?",
     answer:
-      "Both last six to eight weeks on average. Lash lifts fade gradually as your natural lashes shed and regrow, and brow lamination softens over time as new brow hairs come in. Most clients rebook every two months.",
+      "Brow lamination lasts up to 5 weeks. Lash lifts last six to eight weeks on average and fade gradually as your natural lashes shed and regrow.",
   },
   {
     question: "Can I get my lashes wet or wear makeup right after?",
@@ -53,7 +56,7 @@ const faqJsonLd = {
 const pageGraph = servicePageGraph({
   path: "/brow-lash",
   pageName: "Brow Lamination & Lash Lift in Coeur d'Alene, ID",
-  pageDescription: "Eyelash lift & tint and eyebrow lamination in Coeur d'Alene, ID. Low-maintenance results that last six to eight weeks.",
+  pageDescription: "Eyelash lift & tint and eyebrow lamination in Coeur d'Alene, ID. Brow lamination lasts up to 5 weeks; lash lifts last six to eight weeks.",
 });
 
 export default function BrowLashPage() {
@@ -92,9 +95,7 @@ export default function BrowLashPage() {
                 <span className="font-serif text-xl text-charcoal">
                   Eyebrow lamination
                 </span>{" "}
-                restructures your brow hairs so they sit fuller, fluffier, and
-                stay where you brush them — soft, modern, and natural-looking.
-                Results last six to eight weeks.
+                {brow.description}
               </li>
             </ul>
           </div>
@@ -127,6 +128,9 @@ export default function BrowLashPage() {
                     <span className="text-charcoal">{item.price}</span>
                     <span className="mx-2">•</span>
                     <span>{item.duration}</span>
+                    {item.name === brow.name && (
+                      <a href={brow.bookingUrl} className="mt-3 block text-sage underline underline-offset-4">Book Eyebrow Lamination</a>
+                    )}
                   </dd>
                 </div>
               ))}

@@ -9,6 +9,7 @@
  *   {path}#service - one persistent Service per service route
  */
 
+import { TREATMENTS, treatmentById } from "./treatments";
 import type { ArticleDefinition } from "./articles";
 import { STUDIO_ADDRESS, STUDIO_MAP_URL } from "./location";
 
@@ -79,9 +80,8 @@ export type ServiceDefinition = {
 };
 
 /**
- * One entry per service route. These descriptions are carried over verbatim
- * from each page's existing schema so the canonical Service facts do not
- * change as part of the architecture cleanup.
+ * One canonical entry per existing service route. Approved treatment offers
+ * reuse these routes rather than introducing competing service pages.
  */
 export const SERVICES: ServiceDefinition[] = [
   {
@@ -89,21 +89,21 @@ export const SERVICES: ServiceDefinition[] = [
     name: "Microneedling",
     serviceType: "Microneedling",
     description:
-      "Microneedling is the closest thing skincare has to a reset button. Using a precision pen of ultra-fine needles, Michelle creates microscopic channels in the skin that signal your body to flood the area with collagen and elastin.",
+      treatmentById("microneedling").description,
   },
   {
     path: "/facials",
     name: "Customized Facials",
     serviceType: "Facial Treatment",
     description:
-      "Seven customized facial options built around what your skin is doing right now — mini, classic, anti-aging, with dermaplaning, microdermabrasion, Body Energy Healing & Facial, or the Reiki Facial ($120, 1.5 hours), which combines a relaxing facial with gentle Reiki energy work. All include cleanse, exfoliation, red light therapy, mask, and moisturizer.",
+      "Eight customized facial options built around what your skin is doing right now — mini, facial, anti-aging, acne, with dermaplaning, microdermabrasion, Body Energy Healing & Facial, or the Reiki Facial ($120, 1.5 hours), which combines a relaxing facial with gentle Reiki energy work.",
   },
   {
     path: "/dermaplaning",
     name: "Dermaplaning",
     serviceType: "Dermaplaning",
     description:
-      "A gentle exfoliation treatment that uses a sterile blade to remove the top layer of dead skin cells and fine vellus hair, revealing softer, brighter skin.",
+      treatmentById("dermaplaning").description,
   },
   {
     path: "/chemical-peel",
@@ -152,6 +152,15 @@ export function serviceNode(service: ServiceDefinition) {
     url: `${SITE_URL}${service.path}`,
     provider: { "@id": ID.business },
     areaServed,
+    offers: TREATMENTS.filter((item) => item.path === service.path).map((item) => ({
+      "@type": "Offer",
+      "@id": `${SITE_URL}${item.path}#offer-${item.id}`,
+      name: item.name,
+      description: `${item.description} Duration: ${item.minutes} minutes.`,
+      price: item.price,
+      priceCurrency: "USD",
+      url: item.bookingUrl,
+    })),
   };
 }
 
