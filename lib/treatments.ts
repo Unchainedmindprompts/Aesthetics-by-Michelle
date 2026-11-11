@@ -23,7 +23,7 @@ export const TREATMENTS: Treatment[] = [
     "id": "anti-aging-facial",
     "path": "/facials",
     "name": "Anti-Aging Facial",
-    "price": 120,
+    "price": 160,
     "minutes": 75,
     "description": "Specialized, result-driven skin treatments designed to minimize fine lines, boost collagen production, and improve skin elasticity. Includes a peptide mask and serums.",
     "bookingUrl": "https://aestheticsbymichellehoffman.as.me/?appointmentType=94547747"
