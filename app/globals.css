@@ -319,7 +319,7 @@ body {
   .meet-feature__link { transition: none; }
 }
 
-/* Curated skincare: uninterrupted light grasscloth with two full-width brand stories. */
+/* Curated skincare: compact header and full-bleed three-brand banner. */
 .product-edit {
   position: relative;
   isolation: isolate;
@@ -345,14 +345,14 @@ body {
 }
 
 .product-edit__inner {
-  max-width: 1380px;
-  margin-inline: auto;
-  padding: clamp(94px, 9vw, 154px) clamp(25px, 6vw, 100px) clamp(86px, 8vw, 125px);
+  width: 100%;
+  padding: 36px 0 24px;
 }
 
 .product-edit__header {
-  max-width: 1020px;
-  margin: 0 auto clamp(66px, 8vw, 118px);
+  max-width: 920px;
+  margin: 0 auto 28px;
+  padding-inline: 24px;
   text-align: center;
 }
 
@@ -376,32 +376,32 @@ body {
 }
 
 .product-edit__heading {
-  margin: 31px auto 0;
-  font-family: var(--font-cormorant), Georgia, serif;
-  font-size: clamp(4.3rem, 7.1vw, 8.7rem);
+  margin: 12px auto 0;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
   font-weight: 500;
-  letter-spacing: -.046em;
-  line-height: .93;
+  letter-spacing: -.035em;
+  line-height: 1.2;
   text-wrap: balance;
 }
 
 .product-edit__heading em {
-  display: block;
-  margin-top: -.01em;
+  display: inline;
+  margin: 0;
   color: #5e705f;
-  font-size: 1.25em;
-  font-style: italic;
-  font-weight: 400;
-  line-height: .91;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: inherit;
 }
 
 .product-edit__lead {
-  max-width: 590px;
-  margin: 35px auto 0;
+  max-width: 670px;
+  margin: 12px auto 0;
   color: #706960;
   font-family: var(--font-inter), sans-serif;
-  font-size: clamp(1rem, 1.42vw, 1.2rem);
-  line-height: 1.85;
+  font-size: .94rem;
+  line-height: 1.65;
 }
 
 /* Photographic product rail adapted from the expanding Bend Edit pattern:
@@ -415,7 +415,7 @@ body {
   position: relative;
   display: flex;
   width: 100%;
-  height: clamp(560px, 47vw, 680px);
+  height: clamp(400px, 32vw, 480px);
   overflow: hidden;
   background: #e7dfd3;
 }
@@ -489,8 +489,8 @@ body {
   bottom: 30px;
   left: 21px;
   color: #fff8ef;
-  font-family: var(--font-cormorant), Georgia, serif;
-  font-size: clamp(2.4rem, 3.05vw, 4rem);
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(1.35rem, 1.8vw, 1.9rem);
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
@@ -525,9 +525,9 @@ body {
 .product-rail__caption {
   position: absolute;
   z-index: 4;
-  left: clamp(28px, 3.8vw, 66px);
-  right: clamp(22px, 3vw, 52px);
-  bottom: clamp(25px, 3vw, 48px);
+  left: clamp(24px, 3vw, 48px);
+  right: clamp(24px, 3vw, 48px);
+  bottom: 26px;
   max-width: 580px;
   color: #fff9ef;
   opacity: 0;
@@ -552,27 +552,27 @@ body {
 }
 
 .product-rail__caption h3 {
-  margin: 13px 0 4px;
+  margin: 10px 0 7px;
   color: #fff9ef;
-  font-family: var(--font-cormorant), Georgia, serif;
-  font-size: clamp(3.7rem, 5vw, 5.85rem);
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(1.75rem, 2.8vw, 2.75rem);
   font-weight: 500;
-  line-height: .95;
+  line-height: 1.1;
   letter-spacing: -.03em;
   text-wrap: balance;
 }
 
 .product-rail__heading {
   color: #f6ebe0;
-  font-family: var(--font-cormorant), Georgia, serif;
-  font-size: clamp(1.45rem, 1.75vw, 2.1rem);
-  font-style: italic;
-  line-height: 1.1;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 1.4;
 }
 
 .product-rail__copy {
   max-width: 54ch;
-  margin-top: 15px;
+  margin-top: 10px;
   color: rgba(255, 249, 237, .91);
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(.87rem, 1vw, .99rem);
@@ -587,7 +587,7 @@ body {
   justify-content: space-between;
   gap: 30px;
   min-height: 44px;
-  margin-top: 16px;
+  margin-top: 8px;
   padding: 11px 0 8px;
   color: #fff9ef;
   border-bottom: 1px solid var(--rail-accent);
@@ -609,7 +609,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding-top: 21px;
+  padding: 12px clamp(20px, 4vw, 64px) 0;
   color: #716c64;
   font-family: var(--font-inter), sans-serif;
   font-size: .64rem;
@@ -644,7 +644,8 @@ body {
 
 .product-edit__disclaimer {
   max-width: 840px;
-  margin: 40px auto 0;
+  margin: 12px auto 0;
+  padding-inline: 24px;
   color: #777168;
   font-family: var(--font-inter), sans-serif;
   font-size: .77rem;
@@ -654,7 +655,7 @@ body {
 
 @media (max-width: 1023px) {
   .product-rail__track {
-    height: 610px;
+    height: 440px;
     overflow-x: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
@@ -683,21 +684,24 @@ body {
 }
 
 @media (max-width: 700px) {
-  .product-edit__inner { padding-left: 20px; padding-right: 20px; }
-  .product-rail__track { height: 590px; padding-right: 9%; }
+  .product-edit__inner { padding-top: 28px; padding-bottom: 20px; }
+  .product-edit__header { margin-bottom: 22px; padding-inline: 20px; }
+  .product-edit__eyebrow { gap: 10px; font-size: .6rem; letter-spacing: .16em; }
+  .product-edit__lead { font-size: .88rem; }
+  .product-rail__track { height: 460px; padding-right: 9%; }
   .product-rail__panel,
   .product-rail__panel.is-active { flex: 0 0 86%; }
-  .product-rail__caption { left: 24px; right: 20px; bottom: 30px; }
-  .product-rail__caption h3 { font-size: clamp(3.35rem, 12vw, 4.9rem); }
-  .product-rail__heading { font-size: 1.55rem; }
+  .product-rail__caption { left: 20px; right: 20px; bottom: 22px; }
+  .product-rail__caption h3 { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .product-rail__heading { font-size: .94rem; }
   .product-rail__copy { font-size: .88rem; line-height: 1.57; }
   .product-rail__eyebrow { font-size: .59rem; letter-spacing: .12em; }
-  .product-rail__navigation { gap: 6px; padding-top: 17px; }
+  .product-rail__navigation { gap: 6px; padding-top: 10px; }
   .product-rail__navigation > span { max-width: 152px; font-size: .54rem; line-height: 1.6; letter-spacing: .08em; }
   .product-rail__arrows { gap: 7px; }
-  .product-rail__arrows button { width: 38px; height: 38px; }
+  .product-rail__arrows button { width: 44px; height: 44px; }
   .product-rail__count { min-width: 49px; font-size: .59rem; }
-  .product-edit__disclaimer { margin-top: 30px; }
+  .product-edit__disclaimer { margin-top: 12px; font-size: .7rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
