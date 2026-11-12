@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import StudioAddress from "@/components/StudioAddress";
+import SkincareBrandRail from "@/components/SkincareBrandRail";
 import { webPageGraph } from "@/lib/schema";
 
 const BOOKING_URL = "/contact";
@@ -193,110 +194,13 @@ export default function HomePage() {
             </p>
           </header>
 
-          <div className="product-edit__brands">
-            <article className="product-edit__brand product-edit__brand--ringana">
-              <div className="product-edit__identity">
-                <p className="product-edit__edition">01 / FRESH BY DESIGN</p>
-                <svg className="product-edit__botanical" viewBox="0 0 90 90" fill="none" aria-hidden="true" focusable="false">
-                  <path d="M26 77C43 58 47 37 59 10M39 55C27 57 19 48 19 36C33 37 40 43 41 49M50 34C45 24 48 13 58 8M47 43C59 36 68 39 72 48C60 53 52 51 46 48" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <h3 className="product-edit__wordmark product-edit__wordmark--ringana">RINGANA</h3>
-                <p className="product-edit__origin">FRESH SKINCARE · AUSTRIA</p>
-              </div>
-              <div className="product-edit__story">
-                <p className="product-edit__category">FRESH, PLANT-BASED SKINCARE</p>
-                <h4>Fresh skincare, <em>made differently.</em></h4>
-                <p>
-                  An Austrian approach to beauty: freshly produced, vegan
-                  cosmetics made in smaller batches, with plant-based
-                  ingredients and a focus on everyday face and body care.
-                </p>
-                <a
-                  className="product-edit__link"
-                  href="https://5058049.ringana.us/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Explore RINGANA through Michelle's shared shop link (opens in a new tab)"
-                >
-                  Explore RINGANA
-                  <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
-                    <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article className="product-edit__brand product-edit__brand--ellie">
-              <div className="product-edit__identity">
-                <p className="product-edit__edition">02 / SCIENCE-LED SKINCARE</p>
-                <div className="product-edit__wordmark product-edit__wordmark--ellie" aria-label="EllieMD">
-                  <span>ellie</span><span className="product-edit__ellie-dot" aria-hidden="true" /><small>MD</small>
-                </div>
-                <p className="product-edit__origin">SKINCARE · HEALTH &amp; WELLNESS</p>
-              </div>
-              <div className="product-edit__story">
-                <p className="product-edit__category">TARGETED SKINCARE OPTIONS</p>
-                <h4>A more <em>science-led routine.</em></h4>
-                <p>
-                  EllieMD offers targeted skincare, including EllieVate Skin+,
-                  a provider-prescribed topical serum formulated with tretinoin,
-                  copper peptides, niacinamide and other skincare ingredients.
-                  Medical assessment and prescribing are handled by licensed
-                  healthcare providers through EllieMD, not by Michelle.
-                </p>
-                <a
-                  className="product-edit__link"
-                  href="https://elliemd.com/product/skincare"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Explore EllieMD skincare on its official website (opens in a new tab)"
-                >
-                  Explore EllieMD skincare
-                  <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
-                    <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            <article className="product-edit__brand product-edit__brand--zo">
-              <div className="product-edit__identity">
-                <p className="product-edit__edition">03 / SKIN HEALTH SCIENCE</p>
-                <div className="product-edit__wordmark product-edit__wordmark--zo" aria-label="ZO Skin Health">
-                  <span>ZO<sup>®</sup></span>
-                  <small>SKIN HEALTH</small>
-                </div>
-                <p className="product-edit__origin">SKIN HEALTH · SCIENCE-BASED CARE</p>
-              </div>
-              <div className="product-edit__story">
-                <p className="product-edit__category">PROFESSIONAL SKINCARE</p>
-                <h4>Healthy skin, <em>backed by science.</em></h4>
-                <p>
-                  Founded by dermatologist Dr. Zein Obagi, ZO Skin Health offers
-                  advanced skincare, from cleansers and exfoliators to targeted
-                  serums, retinols, and sun protection. Ask Michelle which ZO
-                  products she carries and how they may fit your routine.
-                </p>
-                <a
-                  className="product-edit__link"
-                  href="https://zoskinhealth.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Explore ZO Skin Health on its official website (opens in a new tab)"
-                >
-                  Explore ZO Skin Health
-                  <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
-                    <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </div>
-            </article>
-          </div>
+          <SkincareBrandRail />
 
           <p className="product-edit__disclaimer">
-            Product selection and availability are determined by the respective
-            brands. Prescription skincare requires a separate medical
-            assessment through the provider.
+            Brand product photographs illustrate the collections, not Michelle&apos;s
+            current inventory. Please confirm availability with Michelle.
+            Prescription skincare requires a separate medical assessment
+            through the prescribing provider.
           </p>
         </div>
       </section>
