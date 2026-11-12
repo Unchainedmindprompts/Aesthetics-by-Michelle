@@ -6,8 +6,8 @@ import { useRef, useState } from "react";
 type SkincareSlide = {
   id: string;
   name: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   eyebrow?: string;
   heading?: string;
   copy?: string;
@@ -30,8 +30,6 @@ const brands: readonly SkincareSlide[] = [
   {
     id: "nature",
     name: "Nature",
-    image: "/images/editorial/nature.jpg",
-    imageAlt: "Dew on sage and eucalyptus leaves in soft natural light",
   },
   {
     id: "ellie",
@@ -47,8 +45,6 @@ const brands: readonly SkincareSlide[] = [
   {
     id: "ritual",
     name: "Ritual",
-    image: "/images/editorial/ritual-still-life.jpg",
-    imageAlt: "A glass serum bottle and pipette on an ivory ceramic dish beside folded linen",
   },
   {
     id: "zo",
@@ -64,8 +60,6 @@ const brands: readonly SkincareSlide[] = [
   {
     id: "radiance",
     name: "Radiance",
-    image: "/images/editorial/radiance.jpg",
-    imageAlt: "A woman's naturally textured skin in warm light",
   },
 ];
 
@@ -110,20 +104,20 @@ export default function SkincareBrandRail() {
         {brands.map((brand, index) => (
           <article
             key={brand.id}
-            className={`product-rail__panel product-rail__panel--${brand.id} ${active === index ? "is-active" : ""}`}
+            className={`product-rail__panel product-rail__panel--${brand.id} ${!brand.image ? "product-rail__panel--word" : ""} ${active === index ? "is-active" : ""}`}
             onMouseEnter={() => setActive(index)}
             onFocus={() => setActive(index)}
           >
-            <Image
+            {brand.image && <Image
               className="product-rail__image"
               src={brand.image}
-              alt={brand.imageAlt}
+              alt={brand.imageAlt ?? brand.name}
               fill
               sizes="(min-width: 1024px) 50vw, (min-width: 701px) 66vw, 86vw"
-            />
-            <div className="product-rail__shade" aria-hidden="true" />
+            />}
+            {brand.image && <div className="product-rail__shade" aria-hidden="true" />}
             <span className="product-rail__index">0{index + 1} / 0{brands.length}</span>
-            <span className="product-rail__vertical" aria-hidden="true">{brand.name}</span>
+            {brand.image ? <span className="product-rail__vertical" aria-hidden="true">{brand.name}</span> : <h3 className="product-rail__word">{brand.name}</h3>}
             <button
               type="button"
               className="product-rail__trigger"
@@ -131,7 +125,7 @@ export default function SkincareBrandRail() {
               aria-label={`Show ${brand.name}${brand.href ? " skincare collection" : ""}`}
               aria-expanded={active === index}
             />
-            <div className="product-rail__caption">
+            {brand.image && <div className="product-rail__caption">
               {brand.eyebrow && <span className="product-rail__eyebrow">{brand.eyebrow}</span>}
               <h3>{brand.name}</h3>
               {brand.heading && <p className="product-rail__heading">{brand.heading}</p>}
@@ -140,7 +134,7 @@ export default function SkincareBrandRail() {
                 {brand.linkText}
                 <span aria-hidden="true">↗</span>
               </a>}
-            </div>
+            </div>}
           </article>
         ))}
       </div>
