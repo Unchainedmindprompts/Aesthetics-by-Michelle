@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef, useState } from "react";
+import type { PointerEvent } from "react";
 
 type SkincareSlide = {
   id: string;
@@ -70,6 +71,24 @@ export default function SkincareBrandRail() {
   const [active, setActive] = useState(0);
   const rail = useRef<HTMLDivElement>(null);
 
+  const resetGlass = (event: PointerEvent<HTMLElement>) => {
+    const style = event.currentTarget.style;
+    ["--glass-rx", "--glass-ry", "--glass-x", "--glass-y"].forEach((name) => style.removeProperty(name));
+  };
+
+  const moveGlass = (event: PointerEvent<HTMLElement>) => {
+    if (event.pointerType !== "mouse" ||
+        !window.matchMedia("(min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference)").matches) return;
+    const panel = event.currentTarget;
+    const rect = panel.getBoundingClientRect();
+    const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
+    const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height));
+    panel.style.setProperty("--glass-rx", `${(0.5 - y) * 4}deg`);
+    panel.style.setProperty("--glass-ry", `${(x - 0.5) * 4}deg`);
+    panel.style.setProperty("--glass-x", `${x * 100}%`);
+    panel.style.setProperty("--glass-y", `${y * 100}%`);
+  };
+
   const navigate = (index: number) => {
     const next = (index + brands.length) % brands.length;
     setActive(next);
@@ -110,6 +129,9 @@ export default function SkincareBrandRail() {
             className={`product-rail__panel product-rail__panel--${brand.id} ${!brand.image ? "product-rail__panel--word" : ""} ${active === index ? "is-active" : ""}`}
             onMouseEnter={() => setActive(index)}
             onFocus={() => setActive(index)}
+            onPointerMove={!brand.image && active === index ? moveGlass : undefined}
+            onPointerLeave={!brand.image ? resetGlass : undefined}
+            onPointerCancel={!brand.image ? resetGlass : undefined}
           >
             {brand.image && <Image
               className="product-rail__image"
@@ -119,6 +141,7 @@ export default function SkincareBrandRail() {
               sizes="(min-width: 1024px) 50vw, (min-width: 701px) 66vw, 86vw"
             />}
             {brand.image && <div className="product-rail__shade" aria-hidden="true" />}
+            {!brand.image && <div className="product-rail__glass" aria-hidden="true" />}
             <span className="product-rail__index">0{index + 1} / 0{brands.length}</span>
             {brand.image ? <span className="product-rail__vertical" aria-hidden="true">{brand.name}</span> : <div className="product-rail__word-content">
               <h3 className="product-rail__word">{brand.name}</h3>
