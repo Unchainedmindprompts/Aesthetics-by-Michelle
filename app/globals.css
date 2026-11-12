@@ -332,7 +332,7 @@ body {
   background-position: center, left top;
   background-repeat: no-repeat, repeat;
   background-size: cover, 512px 384px;
-  color: #343b33;
+  color: #403C38;
 }
 
 .grasscloth-feature::before {
@@ -366,7 +366,7 @@ body {
   letter-spacing: -.09em;
   font-weight: 500;
   white-space: nowrap;
-  color: rgba(79, 89, 70, .052);
+  color: rgba(64, 60, 56, .065);
   pointer-events: none;
   user-select: none;
 }
@@ -383,7 +383,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  color: #847565;
+  color: #837A70;
   font-family: var(--font-inter), sans-serif;
   font-size: .73rem;
   font-weight: 600;
@@ -394,7 +394,7 @@ body {
 .grasscloth-feature__eyebrow span {
   width: clamp(18px, 5vw, 74px);
   height: 1px;
-  background: rgba(130, 116, 91, .65);
+  background: rgba(185, 155, 121, .88);
 }
 
 .grasscloth-feature__heading {
@@ -417,7 +417,7 @@ body {
   display: inline-block;
   margin-top: .07em;
   padding: 0 .12em .15em;
-  color: #516553;
+  color: #5E705F;
   font-size: clamp(7.2rem, 12.4vw, 13.2rem);
   font-weight: 400;
   font-style: italic;
@@ -432,7 +432,7 @@ body {
   width: 96%;
   height: .17em;
   overflow: visible;
-  color: #ac8d62;
+  color: #B99B79;
   opacity: .82;
 }
 
@@ -440,7 +440,7 @@ body {
   position: relative;
   max-width: 650px;
   margin: clamp(32px, 4vw, 56px) auto 0;
-  color: #5b6156;
+  color: #726B63;
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(1.06rem, 1.5vw, 1.23rem);
   font-weight: 400;
@@ -453,7 +453,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid rgba(67, 75, 61, .43);
+  border-top: 1px solid rgba(131, 122, 112, .55);
 }
 
 .grasscloth-feature__reason {
@@ -462,11 +462,11 @@ body {
   align-items: center;
   column-gap: clamp(20px, 3.1vw, 54px);
   padding: clamp(38px, 4.5vw, 68px) 0;
-  border-bottom: 1px solid rgba(67, 75, 61, .37);
+  border-bottom: 1px solid rgba(131, 122, 112, .47);
 }
 
 .grasscloth-feature__number {
-  color: #a48e6c;
+  color: #A78660;
   font-family: var(--font-cormorant), Georgia, serif;
   font-size: clamp(5.5rem, 7vw, 8.5rem);
   font-weight: 400;
@@ -476,7 +476,7 @@ body {
 }
 
 .grasscloth-feature__title {
-  color: #28352c;
+  color: #403C38;
   font-family: var(--font-cormorant), Georgia, serif;
   font-size: clamp(3rem, 4.1vw, 5.25rem);
   font-weight: 500;
@@ -486,7 +486,7 @@ body {
 }
 
 .grasscloth-feature__title em {
-  color: #5d705a;
+  color: #5E705F;
   font-style: italic;
   font-weight: 400;
   white-space: normal;
@@ -494,7 +494,7 @@ body {
 
 .grasscloth-feature__description {
   max-width: 46ch;
-  color: #51594f;
+  color: #6D665D;
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(1.02rem, 1.18vw, 1.13rem);
   font-weight: 400;
@@ -508,7 +508,7 @@ body {
   gap: 24px;
   margin-top: clamp(65px, 7.6vw, 120px);
   font-family: var(--font-inter), sans-serif;
-  color: #777566;
+  color: #837A70;
   font-size: .69rem;
   font-weight: 600;
   letter-spacing: .27em;
@@ -518,7 +518,7 @@ body {
   display: block;
   width: clamp(36px, 8vw, 124px);
   height: 1px;
-  background: rgba(93, 99, 80, .4);
+  background: rgba(185, 155, 121, .72);
 }
 
 @media (max-width: 1100px) {
