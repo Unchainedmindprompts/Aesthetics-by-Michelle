@@ -718,7 +718,7 @@ body {
 .product-rail__panel--radiance { --glass-tint: 170, 187, 234; color: #283b66; }
 .product-rail__panel.product-rail__panel--word {
   border: 0;
-  perspective: 1000px;
+  perspective: 900px;
   background: linear-gradient(150deg, rgba(var(--glass-tint),.48), rgba(var(--glass-tint),.88));
 }
 .product-rail__panel--word::before {
@@ -734,6 +734,7 @@ body {
 }
 .product-rail__glass {
   position: absolute;
+  z-index: 1;
   inset: 10px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,.55);
@@ -745,27 +746,51 @@ body {
   pointer-events: none;
   transition: inset .7s ease, transform .45s ease, box-shadow .7s ease, border-radius .7s ease;
 }
+.product-rail__panel--word::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 13px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(31,37,26,.28);
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity .6s ease;
+  pointer-events: none;
+}
+.product-rail__panel--word.is-active::after { opacity: 1; }
+.product-rail__glass::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: inherit;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,.3);
+  pointer-events: none;
+}
 .product-rail__glass::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at var(--glass-x, 28%) var(--glass-y, 15%), rgba(255,255,255,.42), transparent 58%),
-    linear-gradient(120deg, transparent 20%, rgba(255,255,255,.2) 40%, transparent 61%);
+    radial-gradient(ellipse at var(--glass-x, 28%) var(--glass-y, 15%), rgba(255,255,255,.65), transparent 58%),
+    linear-gradient(120deg, transparent 20%, rgba(255,255,255,.32) 38%, rgba(255,255,255,.08) 43%, transparent 61%);
   opacity: .45;
   transition: opacity .5s ease;
 }
 .product-rail__panel--word.is-active .product-rail__glass {
-  inset: 30px 24px;
-  border-radius: 24px;
-  transform: translateY(-6px) rotateX(var(--glass-rx, 0deg)) rotateY(var(--glass-ry, 0deg));
-  box-shadow: 0 24px 36px -16px rgba(36,39,29,.32), 0 8px 16px -10px rgba(36,39,29,.22), inset 1px 1px 0 rgba(255,255,255,.85), inset -1px -1px 0 rgba(255,255,255,.36);
+  inset: 42px 32px;
+  border-radius: 28px;
+  transform: translateY(-14px) translateZ(18px) rotateX(calc(var(--glass-rx, 0deg) * 2 + 2deg)) rotateY(calc(var(--glass-ry, 0deg) * 2 - 1deg));
+  box-shadow: 0 36px 42px -18px rgba(36,39,29,.48), 0 14px 22px -12px rgba(36,39,29,.3), 0 2px 0 rgba(255,255,255,.45), inset 2px 2px 1px rgba(255,255,255,.95), inset -2px -2px 1px rgba(255,255,255,.5);
 }
 .product-rail__panel--word.is-active .product-rail__glass::after { opacity: 1; }
 @media (max-width: 1023px), (hover: none) {
   .product-rail__panel--word.is-active .product-rail__glass {
-    inset: 22px 16px;
-    transform: translateY(-3px);
+    inset: 32px 18px;
+    transform: translateY(-8px);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -774,12 +799,14 @@ body {
     transform: none;
     transition: none;
   }
-  .product-rail__glass::after { transition: none; }
+  .product-rail__glass::after,
+  .product-rail__panel--word::after { transition: none; }
 }
 .product-rail__panel--word .product-rail__index { color: inherit; text-shadow: none; }
 .product-rail__panel--word .product-rail__trigger:focus-visible { outline-color: currentColor; }
 .product-rail__word-content {
   position: absolute;
+  z-index: 2;
   inset: 0;
   display: flex;
   flex-direction: column;
