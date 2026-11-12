@@ -7,7 +7,7 @@
 <script type="module">
 let app;
 try {
-  const { Application } = await import("https://unpkg.com/@splinetool/runtime@2.0.76/build/runtime.js");
+  const { Application } = await import("https://unpkg.com/@splinetool/runtime@2.0.179/build/runtime.js");
   app = new Application(document.getElementById("glass"));
   await app.load("https://prod.spline.design/QLSpTUfQslL3xRXh/scene.splinecode");
   parent.postMessage({type:"michelle-glass-ready"}, location.origin);
