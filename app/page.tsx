@@ -269,7 +269,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 5: LOCATION & HOURS */}
-      <section className="bg-ivory py-20 md:py-28">
+      <section className="visit-studio-palette bg-ivory py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-2 md:px-12">
           <div>
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
