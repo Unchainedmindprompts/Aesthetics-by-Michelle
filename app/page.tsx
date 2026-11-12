@@ -1,4 +1,3 @@
-import { treatmentById } from "@/lib/treatments";
 import Image from "next/image";
 import Link from "next/link";
 import StudioAddress from "@/components/StudioAddress";
@@ -14,84 +13,78 @@ const homePageGraph = webPageGraph({
 });
 
 const services = [
-  {
-    title: "Facials Built Around Your Skin Today — Not a Generic Menu",
-    description:
-      "Most facials are a script. Yours shouldn't be. Every facial at Aesthetics by Michelle starts with a real conversation and a close look at what your skin is doing right now — because the skin you walked in with last spring isn't the skin you have today.",
-    href: "/facials",
-  },
-  {
-    title: "Chemical Peel — Smoother Tone, Softer Texture, Less Damage",
-    description:
-      "A precision chemical exfoliation that lifts away damaged surface skin to reveal smoother tone and softer texture underneath. Michelle selects the right solution and strength for your skin during consultation, then applies and neutralizes carefully.",
-    href: "/chemical-peel",
-  },
-  {
-    title: "Lifted Lashes, Shaped Brows, Zero Daily Maintenance",
-    description:
-      "Wake up looking like you already did your makeup. Michelle offers two signature brow and lash services — eyelash lift and tint, and eyebrow lamination — designed to enhance what you already have and save you fifteen minutes every morning.",
-    href: "/brow-lash",
-  },
-  {
-    title: "Clean, Precise, Comfortable Waxing — Done Right the First Time",
-    description:
-      "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise brow, lip, nostril, facial, and underarm waxing using high-quality wax and a gentle, experienced hand.",
-    href: "/waxing",
-  },
-  {
-    title: "Reiki Body Healing — Aligning Energy and Flow",
-    description:
-      "A gentle, hands-on practice for aligning your body's energy and flow. Forty-five quiet minutes designed to help your nervous system settle and your body find a more balanced place to rest.",
-    href: "/reiki",
-  },
+  { title: "Microneedling", href: "/microneedling", image: "/editorial-media/microneedling" },
+  { title: "Facials", href: "/facials", image: "/editorial-media/facials" },
+  { title: "Chemical Peels", href: "/chemical-peel", image: "/editorial-media/chemical-peels" },
+  { title: "Brow & Lash", href: "/brow-lash", image: "/editorial-media/brow-lash" },
+  { title: "Waxing", href: "/waxing", image: "/editorial-media/waxing" },
+  { title: "Reiki", href: "/reiki", image: "/editorial-media/reiki" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* SECTION 1: HERO */}
-      <section className="michelle-hero" aria-labelledby="hero-heading">
-        <div className="michelle-hero__photo">
+      {/* SECTION 1: EDITORIAL HERO — desktop image reference, mobile accessible layout */}
+      <section className="editorial-hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading" className="sr-only">Skincare, done with intention.</h1>
+        <div className="editorial-hero__desktop">
           <Image
-            src="/images/michelle-hero.png"
-            alt="Michelle Hoffman, licensed esthetician, in her skincare studio"
+            src="/editorial-media/hero"
+            alt="Calm skincare still life with serum bottles, stacked stones, white vase and folded towel; the words Skincare, done with intention"
             fill
             priority
-            quality={90}
-            sizes="(min-width: 1024px) 140vw, (min-width: 640px) 100vw, 180vw"
-            className="michelle-hero__image"
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-bottom"
           />
+          <Link href={BOOKING_URL} className="editorial-hero__button" aria-label="Request an Appointment">
+            <span className="sr-only">Request an Appointment</span>
+          </Link>
         </div>
-        <div className="michelle-hero__fade" aria-hidden="true" />
-        <div className="michelle-hero__inner">
-          <div className="michelle-hero__copy">
-            <p className="font-sans text-sm uppercase tracking-widest text-gold">
-              Licensed Esthetician • Coeur d&apos;Alene, Idaho
-            </p>
-            <h1 id="hero-heading" className="mt-6 font-serif text-5xl leading-tight text-charcoal md:text-6xl">
-              Microneedling + Advanced Skincare in Coeur d&apos;Alene
-            </h1>
-            <p className="mt-6 font-sans text-lg leading-relaxed text-charcoal/80 md:text-xl">
-              Licensed skincare and aesthetics in Coeur d&apos;Alene — personal,
-              attentive, and built around what your skin actually needs.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <div className="editorial-hero__mobile">
+          <Image src="/editorial-media/facials" alt="Clean white spa towels and a ceramic bowl" fill priority unoptimized sizes="100vw" className="object-cover" />
+          <div className="editorial-hero__mobile-shade" />
+          <div className="editorial-hero__mobile-content">
+            <p className="text-xs uppercase tracking-[0.2em] text-sage">Aesthetics by Michelle · Coeur d&apos;Alene, Idaho</p>
+            <p className="mt-5 font-serif text-4xl leading-tight text-charcoal">Skincare, done with intention.</p>
+            <p className="mt-5 max-w-xs text-base leading-relaxed text-warmGray">One-on-one treatments and fresh, natural products, built around what your skin actually needs.</p>
+            <Link href={BOOKING_URL} className="mt-7 inline-block rounded-full bg-[#3f604a] px-7 py-3 font-sans text-white">Request an Appointment</Link>
+            <p className="mt-5 text-xs text-warmGray">Licensed Esthetician · ID License EST-292960</p>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: IMAGE-FIRST SERVICE CARDS */}
+      <section id="services" className="bg-[#f8f5ef] py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-5 md:px-10">
+          <div className="mb-10 flex items-center justify-center gap-6 md:mb-14 md:gap-10">
+            <span className="h-px flex-1 bg-sage/40" aria-hidden="true" />
+            <h2 className="font-serif text-4xl text-charcoal md:text-5xl">Services</h2>
+            <span className="h-px flex-1 bg-sage/40" aria-hidden="true" />
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
               <Link
-                href={BOOKING_URL}
-                className="inline-block rounded-none bg-charcoal px-8 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
+                key={service.href}
+                href={service.href}
+                className="group overflow-hidden rounded-2xl bg-[#f8f5ef] shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage"
+                aria-label={`Explore ${service.title}`}
               >
-                Request an Appointment
+                <div className="relative aspect-[3/2] w-full overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} treatment imagery`}
+                    fill
+                    unoptimized
+                    sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <h3 className="px-4 py-5 text-center font-serif text-2xl text-charcoal">
+                  {service.title}
+                </h3>
               </Link>
-              <a
-                href="#services"
-                className="inline-block rounded-none border border-charcoal bg-cream/50 px-8 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-cream"
-              >
-                Explore Services
-              </a>
-            </div>
-            <p className="mt-8 font-sans text-sm text-charcoal/80">
-              Idaho Esthetician License EST-292960 • Many years of experience
-            </p>
+            ))}
           </div>
         </div>
       </section>
@@ -125,66 +118,6 @@ export default function HomePage() {
           >
             Learn more about Michelle →
           </Link>
-        </div>
-      </section>
-
-      {/* SECTION 3: SERVICES OVERVIEW */}
-      <section id="services" className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <p className="font-sans text-sm uppercase tracking-widest text-gold">
-              Services
-            </p>
-            <h2 className="mt-6 font-serif text-4xl text-charcoal md:text-5xl">
-              Treatments built around your skin.
-            </h2>
-            <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-              Every treatment at Aesthetics by Michelle starts with listening —
-              to your goals, your concerns, and what your skin is telling us.
-              Then we build the right plan from there.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article className="flex flex-col border-t-4 border-gold bg-sage p-8 shadow-sm transition-all duration-300 hover:shadow-md">
-              <p className="font-sans text-xs uppercase tracking-widest text-gold">
-                Hero Service
-              </p>
-              <h3 className="mt-4 font-serif text-2xl leading-tight text-cream">
-                Collagen-Building Microneedling for Skin That Looks Like You,
-                Just Better
-              </h3>
-              <p className="mt-4 font-sans text-cream/80">
-                {treatmentById("microneedling").description}
-              </p>
-              <Link
-                href="/microneedling"
-                className="mt-auto pt-6 font-sans text-cream transition-colors duration-300 hover:text-gold"
-              >
-                Learn more →
-              </Link>
-            </article>
-
-            {services.map((service) => (
-              <article
-                key={service.href}
-                className="flex flex-col bg-sage p-8 shadow-sm transition-all duration-300 hover:shadow-md"
-              >
-                <h3 className="font-serif text-2xl leading-tight text-cream">
-                  {service.title}
-                </h3>
-                <p className="mt-4 font-sans text-cream/80">
-                  {service.description}
-                </p>
-                <Link
-                  href={service.href}
-                  className="mt-auto pt-6 font-sans text-cream transition-colors duration-300 hover:text-gold"
-                >
-                  Learn more →
-                </Link>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
