@@ -54,7 +54,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 2: IMAGE-FIRST SERVICE CARDS */}
+      {/* SECTION 2: ABOUT — MEET MICHELLE */}
+      <section id="meet-michelle" className="bg-ivory py-20 md:py-28" aria-labelledby="meet-michelle-heading">
+        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
+          <p className="font-sans text-sm uppercase tracking-widest text-gold">
+            Meet Michelle
+          </p>
+          <h2 id="meet-michelle-heading" className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl">
+            A more personal approach to skincare.
+          </h2>
+          <p className="mx-auto mt-8 max-w-2xl font-sans text-lg leading-relaxed text-warmGray">
+            At Aesthetics by Michelle in Coeur d&apos;Alene, every appointment is
+            one-on-one. Michelle brings years of experience, thoughtful care, and
+            honest recommendations to treatments tailored to what your skin
+            needs today. No rushing, no one-size-fits-all routines — just
+            personal attention from start to finish.
+          </p>
+          <Link
+            href="/about"
+            className="mt-10 inline-block font-sans text-charcoal underline underline-offset-4 transition-colors duration-300 hover:text-sage"
+          >
+            Get to know Michelle →
+          </Link>
+        </div>
+      </section>
+
+      {/* SECTION 3: IMAGE-FIRST SERVICE CARDS */}
       <section id="services" className="bg-[#f8f5ef] py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-5 md:px-10">
           <div className="mb-10 flex items-center justify-center gap-6 md:mb-14 md:gap-10">
@@ -86,38 +111,6 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* SECTION 2: INTRO — MEET MICHELLE */}
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            About
-          </p>
-          <h2 className="mt-6 font-serif text-4xl text-charcoal md:text-5xl">
-            Skincare, done with intention.
-          </h2>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            Aesthetics by Michelle is a solo-practitioner skincare studio in
-            Coeur d&apos;Alene, serving Hayden, Post Falls, and the Spokane
-            Valley area. Every appointment is one-on-one — no revolving door of
-            staff, no rushed treatments, no generic service menu. Just
-            Michelle, her many years of experience, and a treatment plan
-            tailored to your skin.
-          </p>
-          <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
-            Whether you&apos;re new to professional skincare or you&apos;ve been
-            around the industry long enough to know the difference, the goal is
-            the same: treatments that work, honest recommendations, and visible
-            results.
-          </p>
-          <Link
-            href="/about"
-            className="mt-10 inline-block font-sans text-charcoal underline underline-offset-4 transition-colors duration-300 hover:text-sage"
-          >
-            Learn more about Michelle →
-          </Link>
         </div>
       </section>
 
