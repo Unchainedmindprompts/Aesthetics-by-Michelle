@@ -5,6 +5,7 @@ on:
       - preview/michelle-spa-editorial-20261111
     paths:
       - .github/workflows/import-spa-preview-images.yml
+      - 'app/editorial-media/[name]/route.ts'
   workflow_dispatch:
 
 permissions:
