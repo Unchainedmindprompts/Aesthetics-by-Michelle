@@ -13,12 +13,12 @@ const homePageGraph = webPageGraph({
 });
 
 const services = [
-  { title: "Microneedling", href: "/microneedling", image: "/editorial-media/microneedling" },
-  { title: "Facials", href: "/facials", image: "/editorial-media/facials" },
-  { title: "Chemical Peels", href: "/chemical-peel", image: "/editorial-media/chemical-peels" },
-  { title: "Brow & Lash", href: "/brow-lash", image: "/editorial-media/brow-lash" },
-  { title: "Waxing", href: "/waxing", image: "/editorial-media/waxing" },
-  { title: "Reiki", href: "/reiki", image: "/editorial-media/reiki" },
+  { title: "Microneedling", href: "/microneedling", image: "/images/editorial/microneedling.webp" },
+  { title: "Facials", href: "/facials", image: "/images/editorial/facials.webp" },
+  { title: "Chemical Peels", href: "/chemical-peel", image: "/images/editorial/chemical-peels.webp" },
+  { title: "Brow & Lash", href: "/brow-lash", image: "/images/editorial/brow-lash.webp" },
+  { title: "Waxing", href: "/waxing", image: "/images/editorial/waxing.webp" },
+  { title: "Reiki", href: "/reiki", image: "/images/editorial/reiki.webp" },
 ];
 
 export default function HomePage() {
@@ -29,7 +29,7 @@ export default function HomePage() {
         <h1 id="hero-heading" className="sr-only">Skincare, done with intention.</h1>
         <div className="editorial-hero__desktop">
           <Image
-            src="/editorial-media/hero"
+            src="/images/editorial/hero.webp"
             alt="Calm skincare still life with serum bottles, stacked stones, white vase and folded towel; the words Skincare, done with intention"
             fill
             priority
@@ -42,7 +42,7 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="editorial-hero__mobile">
-          <Image src="/editorial-media/facials" alt="Clean white spa towels and a ceramic bowl" fill priority unoptimized sizes="100vw" className="object-cover" />
+          <Image src="/images/editorial/facials.webp" alt="Clean white spa towels and a ceramic bowl" fill priority unoptimized sizes="100vw" className="object-cover" />
           <div className="editorial-hero__mobile-shade" />
           <div className="editorial-hero__mobile-content">
             <p className="text-xs uppercase tracking-[0.2em] text-sage">Aesthetics by Michelle · Coeur d&apos;Alene, Idaho</p>
