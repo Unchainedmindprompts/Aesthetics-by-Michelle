@@ -178,10 +178,22 @@ export default function HomePage() {
       {/* SECTION 4: FULL-WIDTH GRASSCLOTH EDITORIAL FEATURE */}
       <section className="grasscloth-feature" aria-labelledby="difference-heading">
         <div className="grasscloth-feature__inner">
+          <span className="grasscloth-feature__ghost" aria-hidden="true">CARE</span>
           <header className="grasscloth-feature__header">
-            <p className="grasscloth-feature__eyebrow">THE MICHELLE DIFFERENCE</p>
+            <p className="grasscloth-feature__eyebrow">
+              <span aria-hidden="true" />
+              THE MICHELLE DIFFERENCE
+              <span aria-hidden="true" />
+            </p>
             <h2 id="difference-heading" className="grasscloth-feature__heading">
-              Beautiful care is <em>personal.</em>
+              <span className="grasscloth-feature__heading-first">Beautiful care is</span>
+              <em className="grasscloth-feature__heading-accent">
+                personal.
+                <svg className="grasscloth-feature__flourish" viewBox="0 0 560 34" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M7 23C125 6 347 9 553 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M155 28C278 21 398 20 495 27" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity=".65" />
+                </svg>
+              </em>
             </h2>
             <p className="grasscloth-feature__intro">
               Thoughtful treatments, honest guidance, and attention to the
@@ -192,7 +204,9 @@ export default function HomePage() {
           <ol className="grasscloth-feature__reasons">
             <li className="grasscloth-feature__reason">
               <span className="grasscloth-feature__number" aria-hidden="true">01</span>
-              <h3 className="grasscloth-feature__title">Always Michelle.</h3>
+              <h3 className="grasscloth-feature__title">
+                Always <em>Michelle.</em>
+              </h3>
               <p className="grasscloth-feature__description">
                 No rotating staff, no handoffs. Every appointment is with
                 Michelle herself, from the first conversation to the final touch.
@@ -200,7 +214,9 @@ export default function HomePage() {
             </li>
             <li className="grasscloth-feature__reason">
               <span className="grasscloth-feature__number" aria-hidden="true">02</span>
-              <h3 className="grasscloth-feature__title">Experience you can trust.</h3>
+              <h3 className="grasscloth-feature__title">
+                Experience you can <em>trust.</em>
+              </h3>
               <p className="grasscloth-feature__description">
                 Years in the beauty industry, Idaho esthetician license
                 EST-292960, and honest recommendations without the pressure.
@@ -208,7 +224,9 @@ export default function HomePage() {
             </li>
             <li className="grasscloth-feature__reason">
               <span className="grasscloth-feature__number" aria-hidden="true">03</span>
-              <h3 className="grasscloth-feature__title">Made for your skin.</h3>
+              <h3 className="grasscloth-feature__title">
+                Made for <em>your skin.</em>
+              </h3>
               <p className="grasscloth-feature__description">
                 Skin changes with the seasons and with life. Your treatment
                 is shaped around what yours needs right now.
@@ -216,9 +234,9 @@ export default function HomePage() {
             </li>
           </ol>
           <div className="grasscloth-feature__footer" aria-hidden="true">
-            <span></span>
-            CARE IN EVERY DETAIL
-            <span></span>
+            <span />
+            THE ART OF PERSONAL CARE
+            <span />
           </div>
         </div>
       </section>
