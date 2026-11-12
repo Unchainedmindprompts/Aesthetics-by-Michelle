@@ -58,9 +58,25 @@ export default function SkincareBrandRail() {
     }
   };
 
+  const trackMobileScroll = () => {
+    const track = rail.current;
+    if (!track || window.matchMedia("(min-width: 1024px)").matches) return;
+
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+    Array.from(track.children).forEach((node, index) => {
+      const distance = Math.abs((node as HTMLElement).offsetLeft - track.scrollLeft);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+    setActive((current) => current === closestIndex ? current : closestIndex);
+  };
+
   return (
     <div className="product-rail">
-      <div className="product-rail__track" ref={rail} aria-label="Explore Michelle's skincare product brands">
+      <div className="product-rail__track" ref={rail} onScroll={trackMobileScroll} aria-label="Explore Michelle's skincare product brands">
         {brands.map((brand, index) => (
           <article
             key={brand.id}
