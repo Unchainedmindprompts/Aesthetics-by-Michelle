@@ -578,6 +578,36 @@ body {
   text-align: center;
 }
 
+/* ZO Skin Health: editorial text treatment matching the two existing brand stories. */
+.product-edit__wordmark--zo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 32px 0 13px;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(5.4rem, 9vw, 9.8rem);
+  font-weight: 500;
+  letter-spacing: -.095em;
+  line-height: .85;
+}
+
+.product-edit__wordmark--zo sup {
+  position: relative;
+  top: -.48em;
+  margin-left: .14em;
+  font-size: .16em;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.product-edit__wordmark--zo small {
+  margin-top: 21px;
+  font-size: clamp(.78rem, 1.2vw, .98rem);
+  font-weight: 600;
+  letter-spacing: .27em;
+  line-height: 1.45;
+}
+
 @media (max-width: 900px) {
   .product-edit__brand { grid-template-columns: 1fr; row-gap: 32px; }
   .product-edit__identity { padding: 0; }
