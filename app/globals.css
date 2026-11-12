@@ -75,3 +75,40 @@ body {
     margin: 0;
   }
 }
+
+
+/* November editorial preview: screenshot crop excludes original mockup's navbar. */
+.editorial-hero { overflow: hidden; background: #f5f3ee; }
+.editorial-hero__desktop { position: relative; width: 100%; aspect-ratio: 1515 / 850; }
+.editorial-hero__desktop > img { display: block; }
+.editorial-hero__button {
+  position: absolute;
+  z-index: 2;
+  left: 6.05%;
+  top: 71.2%;
+  width: 22.8%;
+  height: 7.2%;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.editorial-hero__button:focus-visible {
+  outline: 3px solid #d4a355;
+  outline-offset: 4px;
+}
+.editorial-hero__mobile { display: none; }
+@media (max-width: 767px) {
+  .editorial-hero__desktop { display: none; }
+  .editorial-hero__mobile {
+    display: flex;
+    position: relative;
+    min-height: 650px;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+  .editorial-hero__mobile > img { object-position: 50% 50%; }
+  .editorial-hero__mobile-shade {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(248,245,239,.3) 0%,rgba(248,245,239,.84) 42%,rgba(248,245,239,.99) 78%);
+  }
+  .editorial-hero__mobile-content { position: relative; z-index: 1; padding: 145px 24px 58px; }
+}
