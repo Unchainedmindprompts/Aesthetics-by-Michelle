@@ -608,3 +608,47 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .product-edit__link { transition: none; }
 }
+
+
+/* Preview only: harmonize Visit the Studio with the homepage's light ivory,
+   charcoal, oak, smoky taupe and restrained sage accents.
+   No layout, spacing, image or content changes. */
+.visit-studio-palette {
+  background-color: #f8f5ef;
+}
+
+.visit-studio-palette > div > div:first-child > p:first-child {
+  color: #b99b79;
+}
+
+.visit-studio-palette h2,
+.visit-studio-palette h3 {
+  color: #403c38;
+}
+
+.visit-studio-palette address,
+.visit-studio-palette dl,
+.visit-studio-palette p.italic {
+  color: #726b63;
+}
+
+.visit-studio-palette address a {
+  color: #506558;
+}
+
+.visit-studio-palette address a:hover,
+.visit-studio-palette address a:focus-visible {
+  color: #403c38;
+}
+
+.visit-studio-palette dl > div {
+  border-color: rgba(185, 155, 121, .44);
+}
+
+.visit-studio-palette dl dt {
+  color: #403c38;
+}
+
+.visit-studio-palette dl dd {
+  color: #5e705f;
+}
