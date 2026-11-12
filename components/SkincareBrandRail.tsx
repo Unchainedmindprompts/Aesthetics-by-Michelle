@@ -3,7 +3,19 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-const brands = [
+type SkincareSlide = {
+  id: string;
+  name: string;
+  image: string;
+  imageAlt: string;
+  eyebrow?: string;
+  heading?: string;
+  copy?: string;
+  href?: string;
+  linkText?: string;
+};
+
+const brands: readonly SkincareSlide[] = [
   {
     id: "ringana",
     name: "RINGANA",
@@ -14,6 +26,12 @@ const brands = [
     imageAlt: "A collection of RINGANA Fresh bottles in soft mint, peach and amber tones",
     href: "https://5058049.ringana.us/",
     linkText: "Explore RINGANA",
+  },
+  {
+    id: "nature",
+    name: "Nature",
+    image: "/images/editorial/nature.jpg",
+    imageAlt: "Dew on sage and eucalyptus leaves in soft natural light",
   },
   {
     id: "ellie",
@@ -27,6 +45,12 @@ const brands = [
     linkText: "Explore EllieMD skincare",
   },
   {
+    id: "ritual",
+    name: "Ritual",
+    image: "/images/editorial/ritual.jpg",
+    imageAlt: "A serum dropper above fingertips beside ceramic and linen",
+  },
+  {
     id: "zo",
     name: "ZO Skin Health",
     eyebrow: "PROFESSIONAL SKINCARE",
@@ -37,7 +61,13 @@ const brands = [
     href: "https://zoskinhealth.com/",
     linkText: "Explore ZO Skin Health",
   },
-] as const;
+  {
+    id: "radiance",
+    name: "Radiance",
+    image: "/images/editorial/radiance.jpg",
+    imageAlt: "A woman's naturally textured skin in warm light",
+  },
+];
 
 export default function SkincareBrandRail() {
   const [active, setActive] = useState(0);
@@ -76,7 +106,7 @@ export default function SkincareBrandRail() {
 
   return (
     <div className="product-rail">
-      <div className="product-rail__track" ref={rail} onScroll={trackMobileScroll} aria-label="Explore Michelle's skincare product brands">
+      <div className="product-rail__track" ref={rail} onScroll={trackMobileScroll} aria-label="Explore Michelle's skincare edit">
         {brands.map((brand, index) => (
           <article
             key={brand.id}
@@ -89,38 +119,38 @@ export default function SkincareBrandRail() {
               src={brand.image}
               alt={brand.imageAlt}
               fill
-              sizes="(min-width: 1024px) 56vw, (min-width: 700px) 46vw, 86vw"
+              sizes="(min-width: 1024px) 50vw, (min-width: 701px) 66vw, 86vw"
             />
             <div className="product-rail__shade" aria-hidden="true" />
-            <span className="product-rail__index">0{index + 1} / 03</span>
+            <span className="product-rail__index">0{index + 1} / 0{brands.length}</span>
             <span className="product-rail__vertical" aria-hidden="true">{brand.name}</span>
             <button
               type="button"
               className="product-rail__trigger"
               onClick={() => navigate(index)}
-              aria-label={`Show ${brand.name} skincare collection`}
+              aria-label={`Show ${brand.name}${brand.href ? " skincare collection" : ""}`}
               aria-expanded={active === index}
             />
             <div className="product-rail__caption">
-              <span className="product-rail__eyebrow">{brand.eyebrow}</span>
+              {brand.eyebrow && <span className="product-rail__eyebrow">{brand.eyebrow}</span>}
               <h3>{brand.name}</h3>
-              <p className="product-rail__heading">{brand.heading}</p>
-              <p className="product-rail__copy">{brand.copy}</p>
-              <a href={brand.href} target="_blank" rel="noopener noreferrer" className="product-rail__link">
+              {brand.heading && <p className="product-rail__heading">{brand.heading}</p>}
+              {brand.copy && <p className="product-rail__copy">{brand.copy}</p>}
+              {brand.href && <a href={brand.href} target="_blank" rel="noopener noreferrer" className="product-rail__link">
                 {brand.linkText}
                 <span aria-hidden="true">↗</span>
-              </a>
+              </a>}
             </div>
           </article>
         ))}
       </div>
 
       <div className="product-rail__navigation">
-        <span>THREE BRANDS · THREE APPROACHES TO SKINCARE</span>
+        <span>NATURE · RITUAL · RADIANCE</span>
         <div className="product-rail__arrows">
-          <button type="button" aria-label="Previous skincare brand" onClick={() => navigate(active - 1)}>←</button>
-          <span className="product-rail__count">0{active + 1} / 03</span>
-          <button type="button" aria-label="Next skincare brand" onClick={() => navigate(active + 1)}>→</button>
+          <button type="button" aria-label="Previous skincare slide" onClick={() => navigate(active - 1)}>←</button>
+          <span className="product-rail__count">0{active + 1} / 0{brands.length}</span>
+          <button type="button" aria-label="Next skincare slide" onClick={() => navigate(active + 1)}>→</button>
         </div>
       </div>
     </div>
