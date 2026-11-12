@@ -51,7 +51,7 @@ export default function SkincareBrandRail() {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (window.matchMedia("(max-width: 1023px)").matches) {
         rail.current?.scrollTo({
-          left: panel.offsetLeft - (rail.current?.offsetLeft ?? 0),
+          left: panel.offsetLeft,
           behavior: reduceMotion ? "instant" : "smooth",
         });
       }
