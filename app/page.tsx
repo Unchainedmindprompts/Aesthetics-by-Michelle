@@ -175,74 +175,51 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4: THE MICHELLE DIFFERENCE — EDITORIAL FEATURE */}
-      <section className="difference-feature" aria-labelledby="difference-heading">
-        <div className="difference-feature__intro">
-          <svg className="difference-feature__ornament" viewBox="0 0 700 740" fill="none" aria-hidden="true" focusable="false">
-            <g stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity=".57">
-              <path d="M-80 627C126 620 236 474 297 304S475 21 737-48"/>
-              <path d="M-112 697C177 679 308 478 373 284S524 50 737-9"/>
-              <path d="M-134 562C92 550 160 431 220 276S394 15 637-60"/>
-              <path d="M411 222C363 199 348 162 362 126C404 141 426 174 421 208Z"/>
-              <path d="M474 135C500 78 540 60 584 69C577 111 535 137 474 135Z"/>
-              <path d="M316 366C264 339 244 297 259 260C316 278 336 320 316 366Z"/>
-              <path d="M226 515C174 475 150 447 153 404C210 418 245 462 226 515Z"/>
-              <path d="M422 208L362 126M474 135L584 69M316 366L259 260M226 515L153 404" opacity=".48"/>
-            </g>
-            <circle cx="455" cy="218" r="3" fill="currentColor" opacity=".45"/>
-            <circle cx="587" cy="196" r="2" fill="currentColor" opacity=".4"/>
-          </svg>
-
-          <div className="difference-feature__intro-inner">
-            <p className="difference-feature__eyebrow">THE MICHELLE DIFFERENCE</p>
-            <h2 id="difference-heading" className="difference-feature__headline">
-              The details are <em>everything.</em>
+      {/* SECTION 4: FULL-WIDTH GRASSCLOTH EDITORIAL FEATURE */}
+      <section className="grasscloth-feature" aria-labelledby="difference-heading">
+        <div className="grasscloth-feature__inner">
+          <header className="grasscloth-feature__header">
+            <p className="grasscloth-feature__eyebrow">THE MICHELLE DIFFERENCE</p>
+            <h2 id="difference-heading" className="grasscloth-feature__heading">
+              Beautiful care is <em>personal.</em>
             </h2>
-            <p className="difference-feature__dek">
-              From the first conversation to the finishing touches, thoughtful
-              care is part of every appointment.
+            <p className="grasscloth-feature__intro">
+              Thoughtful treatments, honest guidance, and attention to the
+              details that matter.
             </p>
-            <div className="difference-feature__intro-footer">
-              <span className="difference-feature__intro-rule" aria-hidden="true" />
-              A BEAUTIFUL EXPERIENCE, BUILT AROUND YOU
-            </div>
-          </div>
-        </div>
+          </header>
 
-        <div className="difference-feature__reasons">
-          <p className="difference-feature__reasons-label">THREE THINGS THAT SET THE EXPERIENCE APART</p>
-          <ol className="difference-feature__list">
-            <li className="difference-feature__item">
-              <span className="difference-feature__number" aria-hidden="true">01</span>
-              <div>
-                <h3 className="difference-feature__item-heading">Your appointment. Her attention.</h3>
-                <p className="difference-feature__item-description">
-                  No handoffs or rotating staff. Every appointment is personally
-                  handled by Michelle, from start to finish.
-                </p>
-              </div>
+          <ol className="grasscloth-feature__reasons">
+            <li className="grasscloth-feature__reason">
+              <span className="grasscloth-feature__number" aria-hidden="true">01</span>
+              <h3 className="grasscloth-feature__title">Always Michelle.</h3>
+              <p className="grasscloth-feature__description">
+                No rotating staff, no handoffs. Every appointment is with
+                Michelle herself, from the first conversation to the final touch.
+              </p>
             </li>
-            <li className="difference-feature__item">
-              <span className="difference-feature__number" aria-hidden="true">02</span>
-              <div>
-                <h3 className="difference-feature__item-heading">Skill with intention.</h3>
-                <p className="difference-feature__item-description">
-                  Years of beauty-industry experience, an Idaho esthetician license
-                  (EST-292960), and honest, thoughtful recommendations.
-                </p>
-              </div>
+            <li className="grasscloth-feature__reason">
+              <span className="grasscloth-feature__number" aria-hidden="true">02</span>
+              <h3 className="grasscloth-feature__title">Experience you can trust.</h3>
+              <p className="grasscloth-feature__description">
+                Years in the beauty industry, Idaho esthetician license
+                EST-292960, and honest recommendations without the pressure.
+              </p>
             </li>
-            <li className="difference-feature__item">
-              <span className="difference-feature__number" aria-hidden="true">03</span>
-              <div>
-                <h3 className="difference-feature__item-heading">Never one-size-fits-all.</h3>
-                <p className="difference-feature__item-description">
-                  Skin changes with the seasons and with life. Your treatment
-                  should reflect what yours needs right now.
-                </p>
-              </div>
+            <li className="grasscloth-feature__reason">
+              <span className="grasscloth-feature__number" aria-hidden="true">03</span>
+              <h3 className="grasscloth-feature__title">Made for your skin.</h3>
+              <p className="grasscloth-feature__description">
+                Skin changes with the seasons and with life. Your treatment
+                is shaped around what yours needs right now.
+              </p>
             </li>
           </ol>
+          <div className="grasscloth-feature__footer" aria-hidden="true">
+            <span></span>
+            CARE IN EVERY DETAIL
+            <span></span>
+          </div>
         </div>
       </section>
 
