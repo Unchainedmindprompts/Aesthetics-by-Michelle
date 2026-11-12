@@ -261,7 +261,7 @@ export default function HomePage() {
 
             <article className="product-edit__brand product-edit__brand--zo">
               <div className="product-edit__identity">
-                <p className="product-edit__edition">03 / DERMATOLOGIST-DEVELOPED SKINCARE</p>
+                <p className="product-edit__edition">03 / SKIN HEALTH SCIENCE</p>
                 <div className="product-edit__wordmark product-edit__wordmark--zo" aria-label="ZO Skin Health">
                   <span>ZO<sup>®</sup></span>
                   <small>SKIN HEALTH</small>
