@@ -415,6 +415,7 @@ body {
   position: relative;
   display: flex;
   width: 100%;
+  --word-width: clamp(64px, 6vw, 96px);
   height: clamp(400px, 32vw, 480px);
   overflow: hidden;
   background: #e7dfd3;
@@ -437,7 +438,7 @@ body {
 .product-rail__panel--zo { --rail-accent: #b0c8ef; background: #244c9b; }
 
 .product-rail__panel.is-active {
-  flex: 5 1 0;
+  flex: 2.5 1 0;
 }
 
 .product-rail__image {
@@ -670,7 +671,7 @@ body {
     border-right: 6px solid #f7f3ec;
   }
 
-  .product-rail__track::after { content: ""; flex: 0 0 34%; }
+  .product-rail__track::after { content: ""; flex: 0 0 max(0px, calc(34% - var(--word-width))); }
   .product-rail__panel:last-child { border-right: none; }
   .product-rail__vertical { display: none; }
   .product-rail__caption,
@@ -689,10 +690,10 @@ body {
   .product-edit__header { margin-bottom: 22px; padding-inline: 20px; }
   .product-edit__eyebrow { gap: 10px; font-size: .6rem; letter-spacing: .16em; }
   .product-edit__lead { font-size: .88rem; }
-  .product-rail__track { height: 460px; }
-  .product-rail__track::after { flex-basis: 14%; }
+  .product-rail__track { --word-width: 56px; height: 460px; }
+  .product-rail__track::after { flex-basis: 0; }
   .product-rail__panel,
-  .product-rail__panel.is-active { flex: 0 0 86%; }
+  .product-rail__panel.is-active { flex: 0 0 calc(100% - var(--word-width)); }
   .product-rail__caption { left: 20px; right: 20px; bottom: 22px; }
   .product-rail__caption h3 { font-size: clamp(1.6rem, 6vw, 2rem); }
   .product-rail__heading { font-size: .94rem; }
@@ -712,12 +713,30 @@ body {
   .product-rail__link { transition: none !important; transform: none; }
 }
 
-/* Color interludes alternate with the three product photographs. */
-.product-rail__panel--nature { background: #637640; color: #fff9e9; }
-.product-rail__panel--ritual { background: #e99b83; color: #402e29; }
-.product-rail__panel--radiance { background: #aabbea; color: #233a66; }
-.product-rail__panel--word .product-rail__index { color: inherit; text-shadow: none; }
-.product-rail__panel--word .product-rail__trigger:focus-visible { outline-color: currentColor; }
+/* Fixed frosted-glass dividers; only product photographs are interactive. */
+.product-rail__panel--nature { --glass-tint: 99, 118, 64; color: #2d3d20; }
+.product-rail__panel--ritual { --glass-tint: 233, 155, 131; color: #4b3029; }
+.product-rail__panel--radiance { --glass-tint: 170, 187, 234; color: #283b66; }
+.product-rail__panel.product-rail__panel--word {
+  flex: 0 0 var(--word-width);
+  scroll-snap-align: none;
+  border: 0;
+  background:
+    linear-gradient(115deg, rgba(255,255,255,.48), rgba(255,255,255,.08) 35%, rgba(255,255,255,.3) 63%, rgba(255,255,255,.12)),
+    linear-gradient(180deg, rgba(var(--glass-tint),.52), rgba(var(--glass-tint),.8));
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  backdrop-filter: blur(18px) saturate(125%);
+  box-shadow: inset 1px 0 0 rgba(255,255,255,.75), inset -1px 0 0 rgba(255,255,255,.55), inset 0 1px 0 rgba(255,255,255,.6);
+  transition: none;
+}
+.product-rail__panel--word::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(255,255,255,.3);
+  background: linear-gradient(145deg, rgba(255,255,255,.2), transparent 44%, rgba(255,255,255,.08));
+  pointer-events: none;
+}
 .product-rail__word {
   position: absolute;
   inset: 0;
@@ -725,31 +744,16 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 20px;
   font-family: var(--font-inter), sans-serif;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1rem, 1.4vw, 1.35rem);
   font-weight: 500;
   line-height: 1;
-  letter-spacing: .06em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
+  text-shadow: 0 1px 0 rgba(255,255,255,.32);
   pointer-events: none;
-}
-.product-rail__panel--word.is-active .product-rail__word {
-  writing-mode: horizontal-tb;
-  transform: none;
-  font-size: clamp(2.5rem, 5vw, 5.5rem);
-  letter-spacing: -.04em;
-}
-@media (max-width: 1023px) {
-  .product-rail__word,
-  .product-rail__panel--word.is-active .product-rail__word {
-    writing-mode: horizontal-tb;
-    transform: none;
-    font-size: clamp(2rem, 7vw, 4.5rem);
-    letter-spacing: -.04em;
-  }
 }
 
 /* Preview only: harmonize Visit the Studio with the homepage's light ivory,

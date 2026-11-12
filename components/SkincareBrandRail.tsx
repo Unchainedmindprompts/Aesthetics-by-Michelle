@@ -63,12 +63,14 @@ const brands: readonly SkincareSlide[] = [
   },
 ];
 
+const productIndexes = brands.flatMap((brand, index) => brand.image ? [index] : []);
+
 export default function SkincareBrandRail() {
   const [active, setActive] = useState(0);
   const rail = useRef<HTMLDivElement>(null);
 
   const navigate = (index: number) => {
-    const next = (index + brands.length) % brands.length;
+    const next = productIndexes[(index + productIndexes.length) % productIndexes.length];
     setActive(next);
     const panel = rail.current?.children.item(next);
     if (panel instanceof HTMLElement) {
@@ -89,6 +91,7 @@ export default function SkincareBrandRail() {
     let closestIndex = 0;
     let closestDistance = Number.POSITIVE_INFINITY;
     Array.from(track.children).forEach((node, index) => {
+      if (!brands[index].image) return;
       const distance = Math.abs((node as HTMLElement).offsetLeft - track.scrollLeft);
       if (distance < closestDistance) {
         closestDistance = distance;
@@ -105,26 +108,26 @@ export default function SkincareBrandRail() {
           <article
             key={brand.id}
             className={`product-rail__panel product-rail__panel--${brand.id} ${!brand.image ? "product-rail__panel--word" : ""} ${active === index ? "is-active" : ""}`}
-            onMouseEnter={() => setActive(index)}
-            onFocus={() => setActive(index)}
+            onMouseEnter={brand.image ? () => setActive(index) : undefined}
+            onFocus={brand.image ? () => setActive(index) : undefined}
           >
             {brand.image && <Image
               className="product-rail__image"
               src={brand.image}
               alt={brand.imageAlt ?? brand.name}
               fill
-              sizes="(min-width: 1024px) 50vw, (min-width: 701px) 66vw, 86vw"
+              sizes="(min-width: 1024px) 56vw, (min-width: 701px) 66vw, 100vw"
             />}
             {brand.image && <div className="product-rail__shade" aria-hidden="true" />}
-            <span className="product-rail__index">0{index + 1} / 0{brands.length}</span>
+            {brand.image && <span className="product-rail__index">0{productIndexes.indexOf(index) + 1} / 03</span>}
             {brand.image ? <span className="product-rail__vertical" aria-hidden="true">{brand.name}</span> : <h3 className="product-rail__word">{brand.name}</h3>}
-            <button
+            {brand.image && <button
               type="button"
               className="product-rail__trigger"
-              onClick={() => navigate(index)}
+              onClick={() => navigate(productIndexes.indexOf(index))}
               aria-label={`Show ${brand.name}${brand.href ? " skincare collection" : ""}`}
               aria-expanded={active === index}
-            />
+            />}
             {brand.image && <div className="product-rail__caption">
               {brand.eyebrow && <span className="product-rail__eyebrow">{brand.eyebrow}</span>}
               <h3>{brand.name}</h3>
@@ -142,9 +145,9 @@ export default function SkincareBrandRail() {
       <div className="product-rail__navigation">
         <span>NATURE · RITUAL · RADIANCE</span>
         <div className="product-rail__arrows">
-          <button type="button" aria-label="Previous skincare slide" onClick={() => navigate(active - 1)}>←</button>
-          <span className="product-rail__count">0{active + 1} / 0{brands.length}</span>
-          <button type="button" aria-label="Next skincare slide" onClick={() => navigate(active + 1)}>→</button>
+          <button type="button" aria-label="Previous skincare brand" onClick={() => navigate(productIndexes.indexOf(active) - 1)}>←</button>
+          <span className="product-rail__count">0{productIndexes.indexOf(active) + 1} / 03</span>
+          <button type="button" aria-label="Next skincare brand" onClick={() => navigate(productIndexes.indexOf(active) + 1)}>→</button>
         </div>
       </div>
     </div>
