@@ -47,8 +47,8 @@ const brands: readonly SkincareSlide[] = [
   {
     id: "ritual",
     name: "Ritual",
-    image: "/images/editorial/ritual.jpg",
-    imageAlt: "A serum dropper above fingertips beside ceramic and linen",
+    image: "/images/editorial/ritual-still-life.jpg",
+    imageAlt: "A glass serum bottle and pipette on an ivory ceramic dish beside folded linen",
   },
   {
     id: "zo",
