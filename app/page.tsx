@@ -188,8 +188,8 @@ export default function HomePage() {
               The care continues <em>at home.</em>
             </h2>
             <p className="product-edit__lead">
-              What you use between appointments matters, too. Explore two
-              distinct skincare collections Michelle shares with her clients.
+              What you use between appointments matters, too. Explore three
+              distinctive skincare collections Michelle shares with her clients.
             </p>
           </header>
 
@@ -252,6 +252,39 @@ export default function HomePage() {
                   aria-label="Explore EllieMD skincare on its official website (opens in a new tab)"
                 >
                   Explore EllieMD skincare
+                  <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
+                    <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article className="product-edit__brand product-edit__brand--zo">
+              <div className="product-edit__identity">
+                <p className="product-edit__edition">03 / DERMATOLOGIST-DEVELOPED SKINCARE</p>
+                <div className="product-edit__wordmark product-edit__wordmark--zo" aria-label="ZO Skin Health">
+                  <span>ZO<sup>®</sup></span>
+                  <small>SKIN HEALTH</small>
+                </div>
+                <p className="product-edit__origin">SKIN HEALTH · SCIENCE-BASED CARE</p>
+              </div>
+              <div className="product-edit__story">
+                <p className="product-edit__category">PROFESSIONAL SKINCARE</p>
+                <h4>Healthy skin, <em>backed by science.</em></h4>
+                <p>
+                  Founded by dermatologist Dr. Zein Obagi, ZO Skin Health offers
+                  advanced skincare, from cleansers and exfoliators to targeted
+                  serums, retinols, and sun protection. Ask Michelle which ZO
+                  products she carries and how they may fit your routine.
+                </p>
+                <a
+                  className="product-edit__link"
+                  href="https://zoskinhealth.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Explore ZO Skin Health on its official website (opens in a new tab)"
+                >
+                  Explore ZO Skin Health
                   <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
                     <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
