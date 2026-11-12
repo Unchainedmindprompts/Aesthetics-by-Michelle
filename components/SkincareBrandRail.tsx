@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import type { PointerEvent } from "react";
 
 type SkincareSlide = {
@@ -70,52 +70,6 @@ const brands: readonly SkincareSlide[] = [
 export default function SkincareBrandRail() {
   const [active, setActive] = useState(0);
   const rail = useRef<HTMLDivElement>(null);
-  const glassFrame = useRef<HTMLIFrameElement>(null);
-  const glassOverlay = useRef<HTMLDivElement>(null);
-  const [inView, setInView] = useState(false);
-  const [glassReady, setGlassReady] = useState(false);
-  const [glassFailed, setGlassFailed] = useState(false);
-  const showGlass = inView && !brands[active].image && !glassFailed;
-
-  useEffect(() => {
-    const track = rail.current;
-    if (!track) return;
-    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold: 0.05 });
-    observer.observe(track);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!showGlass) {
-      setGlassReady(false);
-      return;
-    }
-    const receive = (event: MessageEvent) => {
-      if (event.origin !== window.location.origin || event.source !== glassFrame.current?.contentWindow) return;
-      if (event.data?.type === "michelle-glass-ready") setGlassReady(true);
-      if (event.data?.type === "michelle-glass-error") setGlassFailed(true);
-    };
-    window.addEventListener("message", receive);
-    return () => window.removeEventListener("message", receive);
-  }, [showGlass]);
-
-  useEffect(() => {
-    const track = rail.current;
-    const panel = track?.children.item(active);
-    const overlay = glassOverlay.current;
-    if (!showGlass || !track || !(panel instanceof HTMLElement) || !overlay) return;
-    const sync = () => {
-      overlay.style.left = `${panel.offsetLeft - track.scrollLeft}px`;
-      overlay.style.width = `${panel.offsetWidth}px`;
-      overlay.style.height = `${track.clientHeight}px`;
-    };
-    sync();
-    const observer = new ResizeObserver(sync);
-    observer.observe(panel);
-    observer.observe(track);
-    track.addEventListener("scroll", sync, { passive: true });
-    return () => { observer.disconnect(); track.removeEventListener("scroll", sync); };
-  }, [active, showGlass]);
 
   const resetGlass = (event: PointerEvent<HTMLElement>) => {
     const style = event.currentTarget.style;
@@ -167,7 +121,7 @@ export default function SkincareBrandRail() {
   };
 
   return (
-    <div className={`product-rail ${showGlass && glassReady ? "has-spline" : ""}`}>
+    <div className="product-rail">
       <div className="product-rail__track" ref={rail} onScroll={trackMobileScroll} aria-label="Explore Michelle's skincare edit">
         {brands.map((brand, index) => (
           <article
@@ -213,21 +167,6 @@ export default function SkincareBrandRail() {
           </article>
         ))}
       </div>
-
-      {showGlass && <div
-        ref={glassOverlay}
-        className={`product-rail__spline ${glassReady ? "is-ready" : ""}`}
-        data-tone={brands[active].id}
-        aria-hidden="true"
-      >
-        <iframe
-          ref={glassFrame}
-          src="/skincare-glass.html"
-          title="Decorative floating glass"
-          tabIndex={-1}
-          allow="autoplay"
-        />
-      </div>}
 
       <div className="product-rail__navigation">
         <span>NATURE · RITUAL · RADIANCE</span>
