@@ -181,7 +181,7 @@ export default function HomePage() {
           <header className="product-edit__header">
             <p className="product-edit__eyebrow">
               <span aria-hidden="true" />
-              MICHELLE'S SKINCARE EDIT
+              MICHELLE&apos;S SKINCARE EDIT
               <span aria-hidden="true" />
             </p>
             <h2 id="product-edit-heading" className="product-edit__heading">
@@ -232,7 +232,7 @@ export default function HomePage() {
                 <div className="product-edit__wordmark product-edit__wordmark--ellie" aria-label="EllieMD">
                   <span>ellie</span><span className="product-edit__ellie-dot" aria-hidden="true" /><small>MD</small>
                 </div>
-                <p className="product-edit__origin">SKINCARE · HEALTH & WELLNESS</p>
+                <p className="product-edit__origin">SKINCARE · HEALTH &amp; WELLNESS</p>
               </div>
               <div className="product-edit__story">
                 <p className="product-edit__category">TARGETED SKINCARE OPTIONS</p>
