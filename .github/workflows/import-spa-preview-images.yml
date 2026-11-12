@@ -1,4 +1,4 @@
-name: Import editorial preview imagery
+name: Import approved editorial preview imagery
 on:
   push:
     branches:
