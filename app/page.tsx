@@ -175,59 +175,74 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4: WHY AESTHETICS BY MICHELLE */}
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <p className="font-sans text-sm uppercase tracking-widest text-gold">
-              Why Choose Aesthetics by Michelle
-            </p>
-            <h2 className="mt-6 font-serif text-4xl text-charcoal md:text-5xl">
-              A different kind of skincare studio.
+      {/* SECTION 4: THE MICHELLE DIFFERENCE — EDITORIAL FEATURE */}
+      <section className="difference-feature" aria-labelledby="difference-heading">
+        <div className="difference-feature__intro">
+          <svg className="difference-feature__ornament" viewBox="0 0 700 740" fill="none" aria-hidden="true" focusable="false">
+            <g stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity=".57">
+              <path d="M-80 627C126 620 236 474 297 304S475 21 737-48"/>
+              <path d="M-112 697C177 679 308 478 373 284S524 50 737-9"/>
+              <path d="M-134 562C92 550 160 431 220 276S394 15 637-60"/>
+              <path d="M411 222C363 199 348 162 362 126C404 141 426 174 421 208Z"/>
+              <path d="M474 135C500 78 540 60 584 69C577 111 535 137 474 135Z"/>
+              <path d="M316 366C264 339 244 297 259 260C316 278 336 320 316 366Z"/>
+              <path d="M226 515C174 475 150 447 153 404C210 418 245 462 226 515Z"/>
+              <path d="M422 208L362 126M474 135L584 69M316 366L259 260M226 515L153 404" opacity=".48"/>
+            </g>
+            <circle cx="455" cy="218" r="3" fill="currentColor" opacity=".45"/>
+            <circle cx="587" cy="196" r="2" fill="currentColor" opacity=".4"/>
+          </svg>
+
+          <div className="difference-feature__intro-inner">
+            <p className="difference-feature__eyebrow">THE MICHELLE DIFFERENCE</p>
+            <h2 id="difference-heading" className="difference-feature__headline">
+              The details are <em>everything.</em>
             </h2>
+            <p className="difference-feature__dek">
+              From the first conversation to the finishing touches, thoughtful
+              care is part of every appointment.
+            </p>
+            <div className="difference-feature__intro-footer">
+              <span className="difference-feature__intro-rule" aria-hidden="true" />
+              A BEAUTIFUL EXPERIENCE, BUILT AROUND YOU
+            </div>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-            <article>
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-sage/20">
-                <div className="h-4 w-4 rounded-full bg-sage" />
+        <div className="difference-feature__reasons">
+          <p className="difference-feature__reasons-label">THREE THINGS THAT SET THE EXPERIENCE APART</p>
+          <ol className="difference-feature__list">
+            <li className="difference-feature__item">
+              <span className="difference-feature__number" aria-hidden="true">01</span>
+              <div>
+                <h3 className="difference-feature__item-heading">Your appointment. Her attention.</h3>
+                <p className="difference-feature__item-description">
+                  No handoffs or rotating staff. Every appointment is personally
+                  handled by Michelle, from start to finish.
+                </p>
               </div>
-              <h3 className="font-serif text-2xl text-charcoal">
-                One-on-One Attention
-              </h3>
-              <p className="mt-4 font-sans leading-relaxed text-warmGray">
-                Every appointment is with Michelle directly. No handoffs, no
-                rotating staff, no generic service scripts.
-              </p>
-            </article>
-
-            <article>
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gold/20">
-                <div className="h-4 w-4 rounded-full bg-gold" />
+            </li>
+            <li className="difference-feature__item">
+              <span className="difference-feature__number" aria-hidden="true">02</span>
+              <div>
+                <h3 className="difference-feature__item-heading">Skill with intention.</h3>
+                <p className="difference-feature__item-description">
+                  Years of beauty-industry experience, an Idaho esthetician license
+                  (EST-292960), and honest, thoughtful recommendations.
+                </p>
               </div>
-              <h3 className="font-serif text-2xl text-charcoal">
-                Licensed &amp; Experienced
-              </h3>
-              <p className="mt-4 font-sans leading-relaxed text-warmGray">
-                Many years in the beauty industry. Idaho Esthetician license
-                EST-292960. Honest recommendations, every time.
-              </p>
-            </article>
-
-            <article>
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-taupe/30">
-                <div className="h-4 w-4 rounded-full bg-taupe" />
+            </li>
+            <li className="difference-feature__item">
+              <span className="difference-feature__number" aria-hidden="true">03</span>
+              <div>
+                <h3 className="difference-feature__item-heading">Never one-size-fits-all.</h3>
+                <p className="difference-feature__item-description">
+                  Skin changes with the seasons and with life. Your treatment
+                  should reflect what yours needs right now.
+                </p>
               </div>
-              <h3 className="font-serif text-2xl text-charcoal">
-                Tailored Treatments
-              </h3>
-              <p className="mt-4 font-sans leading-relaxed text-warmGray">
-                Your skin is different every season, every year, every stage.
-                Treatments are built around where you are right now — not where
-                you were last time.
-              </p>
-            </article>
-          </div>
+            </li>
+          </ol>
         </div>
       </section>
 
