@@ -112,3 +112,209 @@ body {
   }
   .editorial-hero__mobile-content { position: relative; z-index: 1; padding: 145px 24px 58px; }
 }
+
+
+/* Editorial "A Note from Michelle" — original art, not a stock photo. */
+.meet-feature {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 650px;
+  background:
+    radial-gradient(ellipse 68% 85% at 50% 14%, rgba(214, 187, 155, 0.14), transparent 78%),
+    linear-gradient(145deg, #657668 0%, #506558 48%, #3f5349 100%);
+  color: #f8f2e8;
+}
+
+.meet-feature::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: .28;
+  background:
+    repeating-linear-gradient(127deg, transparent 0, transparent 19px, rgba(254, 241, 222, .022) 19.5px, transparent 20px),
+    radial-gradient(ellipse at 80% 74%, rgba(37, 58, 45, .36), transparent 65%);
+}
+
+.meet-feature__botanical {
+  position: absolute;
+  z-index: 0;
+  color: #e8c2a0;
+  pointer-events: none;
+  opacity: .34;
+}
+
+.meet-feature__botanical--left {
+  width: min(48vw, 640px);
+  top: -18%;
+  left: -8%;
+  transform: rotate(2deg);
+}
+
+.meet-feature__botanical--right {
+  width: min(46vw, 610px);
+  right: -8%;
+  top: -6%;
+  opacity: .26;
+}
+
+.meet-feature__glow {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 52% 40%, rgba(103, 125, 107, .16), transparent 61%);
+}
+
+.meet-feature__watermark {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  bottom: -.15em;
+  width: max-content;
+  transform: translateX(-50%);
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(11rem, 23vw, 26rem);
+  line-height: .78;
+  letter-spacing: -.065em;
+  white-space: nowrap;
+  color: rgba(244, 229, 209, .085);
+  pointer-events: none;
+  user-select: none;
+}
+
+.meet-feature__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 1060px);
+  margin-inline: auto;
+  padding: clamp(104px, 12vw, 170px) 28px clamp(156px, 18vw, 260px);
+  text-align: center;
+}
+
+.meet-feature__eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: #e6d1b6;
+  font-family: var(--font-inter), sans-serif;
+  font-size: .72rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: .29em;
+}
+
+.meet-feature__rule {
+  width: clamp(20px, 5vw, 62px);
+  height: 1px;
+  flex: 0 0 auto;
+  background: rgba(225, 202, 172, .64);
+}
+
+.meet-feature__heading {
+  max-width: 1000px;
+  margin: 34px 0 0;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: clamp(3.65rem, 7.25vw, 7.45rem);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+  text-shadow: 0 1px 16px rgba(38, 56, 46, .08);
+}
+
+.meet-feature__heading-accent {
+  display: block;
+  margin-top: .07em;
+  font-style: italic;
+  font-weight: 400;
+  color: #f9ede0;
+}
+
+.meet-feature__description {
+  max-width: 660px;
+  margin: 32px auto 0;
+  color: #f3ece1;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(1rem, 1.55vw, 1.18rem);
+  line-height: 1.9;
+}
+
+.meet-feature__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 42px;
+  padding: 0 3px 12px;
+  border-bottom: 1px solid rgba(246, 230, 207, .7);
+  color: #fff8eb;
+  font-family: var(--font-inter), sans-serif;
+  font-size: .88rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+  text-decoration: none;
+  transition: gap 240ms ease, border-color 240ms ease, color 240ms ease;
+}
+
+.meet-feature__link:hover,
+.meet-feature__link:focus-visible {
+  gap: 22px;
+  border-color: #fff8eb;
+  color: #fff;
+}
+
+.meet-feature__link:focus-visible {
+  outline: 2px solid #f2d7ae;
+  outline-offset: 7px;
+}
+
+@media (max-width: 767px) {
+  .meet-feature {
+    min-height: 600px;
+  }
+  .meet-feature__content {
+    padding: 92px 22px 174px;
+  }
+  .meet-feature__botanical--left {
+    width: 310px;
+    top: 2%;
+    left: -175px;
+    opacity: .7;
+  }
+  .meet-feature__botanical--right {
+    width: 345px;
+    top: 13%;
+    right: -215px;
+    opacity: .5;
+  }
+  .meet-feature__eyebrow {
+    gap: 11px;
+    font-size: .62rem;
+    letter-spacing: .2em;
+  }
+  .meet-feature__heading {
+    margin-top: 32px;
+    font-size: clamp(3.4rem, 10vw, 4.6rem);
+  }
+  .meet-feature__description {
+    max-width: 36ch;
+    margin-top: 27px;
+    line-height: 1.78;
+  }
+  .meet-feature__watermark {
+    font-size: clamp(7rem, 30vw, 13rem);
+    bottom: -.05em;
+    opacity: .85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meet-feature__link { transition: none; }
+}
