@@ -1,0 +1,58 @@
+name: Import skincare brand product photography for preview
+
+on:
+  push:
+    branches:
+      - preview/michelle-spa-editorial-20261111
+    paths:
+      - .github/workflows/preview-skincare-photos.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import-brand-photos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout preview
+        uses: actions/checkout@v4
+      - name: Store three real product photographs
+        run: |
+          python -m pip install --quiet Pillow
+          python - <<'PY'
+          import io
+          import urllib.request
+          from pathlib import Path
+          from PIL import Image
+
+          photos = {
+             "ringana-collection": "https://i.ringana.com/2020/05/Lieblingsprodukte-Svenja_Gruszeczka02.jpg",
+             "elliemd-serum": "https://elliemd.com/skincare/skincare-video-background.png",
+             "zo-skincare-collection": "https://thewellnessatelier.co.uk/cdn/shop/files/ZO_SKIN_HEALTH_PRODUCTS.jpg?v=1724070856&width=1080",
+          }
+          dest = Path("public/images/editorial")
+          dest.mkdir(parents=True, exist_ok=True)
+          for name, url in photos.items():
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              with urllib.request.urlopen(req, timeout=30) as response:
+                  payload = response.read()
+              if len(payload) < 6000:
+                  raise RuntimeError(f"Unexpectedly small product image: {name}")
+              with Image.open(io.BytesIO(payload)) as im:
+                  rgb = im.convert("RGB")
+                  if rgb.width > 1600:
+                      height = round(rgb.height * 1600 / rgb.width)
+                      rgb = rgb.resize((1600, height), Image.Resampling.LANCZOS)
+                  path = dest / (name + ".webp")
+                  rgb.save(path, "WEBP", quality=88, method=6)
+                  print(name, rgb.size, path.stat().st_size)
+          PY
+      - name: Commit preview images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/editorial/ringana-collection.webp public/images/editorial/elliemd-serum.webp public/images/editorial/zo-skincare-collection.webp
+          if ! git diff --cached --quiet; then
+            git commit -m "Store branded skincare photographs for horizontal preview"
+            git push
+          fi
