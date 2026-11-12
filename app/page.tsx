@@ -175,69 +175,96 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4: FULL-WIDTH GRASSCLOTH EDITORIAL FEATURE */}
-      <section className="grasscloth-feature" aria-labelledby="difference-heading">
-        <div className="grasscloth-feature__inner">
-          <span className="grasscloth-feature__ghost" aria-hidden="true">CARE</span>
-          <header className="grasscloth-feature__header">
-            <p className="grasscloth-feature__eyebrow">
+      {/* SECTION 4: MICHELLE'S CURATED PRODUCT LINES */}
+      <section id="skincare-products" className="product-edit" aria-labelledby="product-edit-heading">
+        <div className="product-edit__inner">
+          <header className="product-edit__header">
+            <p className="product-edit__eyebrow">
               <span aria-hidden="true" />
-              THE MICHELLE DIFFERENCE
+              MICHELLE'S SKINCARE EDIT
               <span aria-hidden="true" />
             </p>
-            <h2 id="difference-heading" className="grasscloth-feature__heading">
-              <span className="grasscloth-feature__heading-first">Beautiful care is</span>
-              <em className="grasscloth-feature__heading-accent">
-                personal.
-                <svg className="grasscloth-feature__flourish" viewBox="0 0 560 34" fill="none" aria-hidden="true" focusable="false">
-                  <path d="M7 23C125 6 347 9 553 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M155 28C278 21 398 20 495 27" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" opacity=".65" />
-                </svg>
-              </em>
+            <h2 id="product-edit-heading" className="product-edit__heading">
+              The care continues <em>at home.</em>
             </h2>
-            <p className="grasscloth-feature__intro">
-              Thoughtful treatments, honest guidance, and attention to the
-              details that matter.
+            <p className="product-edit__lead">
+              What you use between appointments matters, too. Explore two
+              distinct skincare collections Michelle shares with her clients.
             </p>
           </header>
 
-          <ol className="grasscloth-feature__reasons">
-            <li className="grasscloth-feature__reason">
-              <span className="grasscloth-feature__number" aria-hidden="true">01</span>
-              <h3 className="grasscloth-feature__title">
-                Always <em>Michelle.</em>
-              </h3>
-              <p className="grasscloth-feature__description">
-                No rotating staff, no handoffs. Every appointment is with
-                Michelle herself, from the first conversation to the final touch.
-              </p>
-            </li>
-            <li className="grasscloth-feature__reason">
-              <span className="grasscloth-feature__number" aria-hidden="true">02</span>
-              <h3 className="grasscloth-feature__title">
-                Experience you can <em>trust.</em>
-              </h3>
-              <p className="grasscloth-feature__description">
-                Years in the beauty industry, Idaho esthetician license
-                EST-292960, and honest recommendations without the pressure.
-              </p>
-            </li>
-            <li className="grasscloth-feature__reason">
-              <span className="grasscloth-feature__number" aria-hidden="true">03</span>
-              <h3 className="grasscloth-feature__title">
-                Made for <em>your skin.</em>
-              </h3>
-              <p className="grasscloth-feature__description">
-                Skin changes with the seasons and with life. Your treatment
-                is shaped around what yours needs right now.
-              </p>
-            </li>
-          </ol>
-          <div className="grasscloth-feature__footer" aria-hidden="true">
-            <span />
-            THE ART OF PERSONAL CARE
-            <span />
+          <div className="product-edit__brands">
+            <article className="product-edit__brand product-edit__brand--ringana">
+              <div className="product-edit__identity">
+                <p className="product-edit__edition">01 / FRESH BY DESIGN</p>
+                <svg className="product-edit__botanical" viewBox="0 0 90 90" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M26 77C43 58 47 37 59 10M39 55C27 57 19 48 19 36C33 37 40 43 41 49M50 34C45 24 48 13 58 8M47 43C59 36 68 39 72 48C60 53 52 51 46 48" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <h3 className="product-edit__wordmark product-edit__wordmark--ringana">RINGANA</h3>
+                <p className="product-edit__origin">FRESH SKINCARE · AUSTRIA</p>
+              </div>
+              <div className="product-edit__story">
+                <p className="product-edit__category">FRESH, PLANT-BASED SKINCARE</p>
+                <h4>Fresh skincare, <em>made differently.</em></h4>
+                <p>
+                  An Austrian approach to beauty: freshly produced, vegan
+                  cosmetics made in smaller batches, with plant-based
+                  ingredients and a focus on everyday face and body care.
+                </p>
+                <a
+                  className="product-edit__link"
+                  href="https://5058049.ringana.us/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Explore RINGANA through Michelle's shared shop link (opens in a new tab)"
+                >
+                  Explore RINGANA
+                  <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
+                    <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article className="product-edit__brand product-edit__brand--ellie">
+              <div className="product-edit__identity">
+                <p className="product-edit__edition">02 / SCIENCE-LED SKINCARE</p>
+                <div className="product-edit__wordmark product-edit__wordmark--ellie" aria-label="EllieMD">
+                  <span>ellie</span><span className="product-edit__ellie-dot" aria-hidden="true" /><small>MD</small>
+                </div>
+                <p className="product-edit__origin">SKINCARE · HEALTH & WELLNESS</p>
+              </div>
+              <div className="product-edit__story">
+                <p className="product-edit__category">TARGETED SKINCARE OPTIONS</p>
+                <h4>A more <em>science-led routine.</em></h4>
+                <p>
+                  EllieMD offers targeted skincare, including EllieVate Skin+,
+                  a provider-prescribed topical serum formulated with tretinoin,
+                  copper peptides, niacinamide and other skincare ingredients.
+                  Medical assessment and prescribing are handled by licensed
+                  healthcare providers through EllieMD, not by Michelle.
+                </p>
+                <a
+                  className="product-edit__link"
+                  href="https://elliemd.com/product/skincare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Explore EllieMD skincare on its official website (opens in a new tab)"
+                >
+                  Explore EllieMD skincare
+                  <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
+                    <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              </div>
+            </article>
           </div>
+
+          <p className="product-edit__disclaimer">
+            Product selection and availability are determined by the respective
+            brands. Prescription skincare requires a separate medical
+            assessment through the provider.
+          </p>
         </div>
       </section>
 
