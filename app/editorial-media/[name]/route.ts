@@ -11,13 +11,7 @@ const assets: Record<string, string> = {
   "reiki": "https://d2jqrm6oza8nb6.cloudfront.net/datasets/316384b9-0850-4431-8d70-67254debd6b9.png?_jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlIYXNoIjoiNzdkM2EyYzFhNTUxMjExYiIsImJ1Y2tldCI6InJ1bndheS1kYXRhc2V0cyIsImV4cCI6MTc5NDYxNzY2NX0.SsNqMGzma25fRQP-nQBVsbAVRkc5A3uqhoyhw-VFW0Q"
 };
 
-export const dynamic = "force-static";
-export const dynamicParams = false;
-export const revalidate = false;
-
-export function generateStaticParams() {
-  return Object.keys(assets).map((name) => ({ name }));
-}
+export const dynamic = "force-dynamic";
 
 export async function GET(
   _request: Request,
