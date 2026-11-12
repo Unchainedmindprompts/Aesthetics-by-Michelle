@@ -325,14 +325,14 @@ body {
   isolation: isolate;
   width: 100%;
   overflow: hidden;
-  background-color: #F7F3EC;
+  background-color: #dbcfbd;
   background-image:
-    linear-gradient(180deg, rgba(250, 247, 241, .87), rgba(247, 243, 236, .77)),
+    linear-gradient(180deg, rgba(255, 251, 242, .55), rgba(245, 237, 224, .28)),
     url("/images/grasscloth-texture.svg");
   background-position: center, left top;
   background-repeat: no-repeat, repeat;
   background-size: cover, 512px 384px;
-  color: #2C2A27;
+  color: #403c38;
 }
 
 .product-edit::before {
@@ -361,7 +361,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 18px;
-  color: #7A7569;
+  color: #837a70;
   font-family: var(--font-inter), sans-serif;
   font-weight: 600;
   font-size: .71rem;
@@ -372,7 +372,7 @@ body {
 .product-edit__eyebrow span {
   height: 1px;
   width: clamp(28px, 5vw, 65px);
-  background: rgba(201, 168, 118, .72);
+  background: rgba(185, 155, 121, .8);
 }
 
 .product-edit__heading {
@@ -388,7 +388,7 @@ body {
 .product-edit__heading em {
   display: block;
   margin-top: -.01em;
-  color: #506558;
+  color: #5e705f;
   font-size: 1.25em;
   font-style: italic;
   font-weight: 400;
@@ -398,14 +398,14 @@ body {
 .product-edit__lead {
   max-width: 590px;
   margin: 35px auto 0;
-  color: #7A7569;
+  color: #706960;
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(1rem, 1.42vw, 1.2rem);
   line-height: 1.85;
 }
 
 .product-edit__brands {
-  border-top: 1px solid rgba(157, 168, 148, .43);
+  border-top: 1px solid rgba(108, 96, 81, .45);
 }
 
 .product-edit__brand {
@@ -415,7 +415,7 @@ body {
   column-gap: clamp(38px, 6vw, 116px);
   align-items: center;
   padding: clamp(57px, 6.6vw, 100px) clamp(12px, 2vw, 33px);
-  border-bottom: 1px solid rgba(157, 168, 148, .43);
+  border-bottom: 1px solid rgba(108, 96, 81, .45);
 }
 
 .product-edit__brand::before {
@@ -424,7 +424,7 @@ body {
   position: absolute;
   inset: 12px 0;
   z-index: -1;
-  background: linear-gradient(100deg, rgba(253, 252, 248, .34), rgba(253, 252, 248, .09) 75%);
+  background: linear-gradient(100deg, rgba(255, 255, 251, .22), rgba(255, 255, 251, .05) 75%);
   border-radius: 22px;
 }
 
@@ -444,7 +444,7 @@ body {
 }
 
 .product-edit__edition {
-  color: #9B7C50;
+  color: #a78660;
   white-space: nowrap;
 }
 
@@ -453,11 +453,11 @@ body {
   width: 74px;
   height: 74px;
   margin: 20px 0 -8px;
-  color: #657668;
+  color: #6e7d69;
 }
 
 .product-edit__wordmark {
-  color: #2C2A27;
+  color: #373b36;
   margin: 0;
   white-space: nowrap;
 }
@@ -472,7 +472,7 @@ body {
 
 .product-edit__origin {
   margin-top: 17px;
-  color: #7A7569;
+  color: #837a70;
   font-size: .64rem;
   letter-spacing: .17em;
 }
@@ -512,12 +512,12 @@ body {
 }
 
 .product-edit__category {
-  color: #9B7C50;
+  color: #8e7458;
 }
 
 .product-edit__story h4 {
   margin-top: 16px;
-  color: #2C2A27;
+  color: #403c38;
   font-family: var(--font-cormorant), Georgia, serif;
   font-size: clamp(2.7rem, 4vw, 4.65rem);
   font-weight: 500;
@@ -527,7 +527,7 @@ body {
 }
 
 .product-edit__story h4 em {
-  color: #506558;
+  color: #5e705f;
   font-weight: 400;
   font-style: italic;
 }
@@ -535,7 +535,7 @@ body {
 .product-edit__story > p:not(.product-edit__category) {
   max-width: 54ch;
   margin-top: 22px;
-  color: #716C63;
+  color: #676259;
   font-family: var(--font-inter), sans-serif;
   font-size: clamp(.97rem, 1.13vw, 1.05rem);
   line-height: 1.82;
@@ -547,8 +547,8 @@ body {
   gap: 14px;
   margin-top: 30px;
   padding-bottom: 11px;
-  border-bottom: 1px solid #C9A876;
-  color: #2C2A27;
+  border-bottom: 1px solid #a78660;
+  color: #403c38;
   font-family: var(--font-inter), sans-serif;
   font-size: .91rem;
   font-weight: 600;
@@ -559,19 +559,19 @@ body {
 .product-edit__link:hover,
 .product-edit__link:focus-visible {
   gap: 23px;
-  color: #506558;
-  border-color: #506558;
+  color: #5e705f;
+  border-color: #5e705f;
 }
 
 .product-edit__link:focus-visible {
-  outline: 2px solid #506558;
+  outline: 2px solid #5e705f;
   outline-offset: 6px;
 }
 
 .product-edit__disclaimer {
   max-width: 840px;
   margin: 38px auto 0;
-  color: #7A7569;
+  color: #777168;
   font-family: var(--font-inter), sans-serif;
   font-size: .77rem;
   line-height: 1.7;
