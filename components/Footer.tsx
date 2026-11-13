@@ -1,85 +1,47 @@
 import Link from "next/link";
-import StudioAddress from "@/components/StudioAddress";
 
 export default function Footer() {
   return (
-    <footer className="mt-24 bg-sage text-cream">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-3">
-        <div>
-          <h3 className="font-serif text-2xl tracking-wide">Aesthetics by Michelle</h3>
-          <address className="mt-4 not-italic font-sans text-sm leading-relaxed">
-            <StudioAddress />
-            <br />
-            <a href="tel:+14257654116" className="transition-colors hover:text-gold">
-              (425) 765-4116
-            </a>
-            <br />
-            <a
-              href="mailto:aestheticsbymichellehoffman@gmail.com"
-              className="transition-colors hover:text-gold"
-            >
-              aestheticsbymichellehoffman@gmail.com
-            </a>
-          </address>
-        </div>
-
-        <div>
-          <h4 className="font-serif text-xl">Hours</h4>
-          <ul className="mt-4 space-y-1 font-sans text-sm">
-            <li>Tuesday: 9 AM – 5 PM</li>
-            <li>Thursday: 9 AM – 5 PM</li>
-            <li>Friday: 9 AM – 3 PM</li>
-            <li>Saturday: 9 AM – 3 PM</li>
-          </ul>
-          <p className="mt-4 font-sans text-xs italic text-cream/80">
-            Appointments required.
-          </p>
-        </div>
-
-        <div>
-          <h4 className="font-serif text-xl">Connect</h4>
-          <ul className="mt-4 space-y-2 font-sans text-sm">
-            <li>
-              <a
-                href="https://www.instagram.com/aestheticsbymichellehoffman"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-gold"
-              >
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.facebook.com/profile.php?id=61559290697737"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-gold"
-              >
-                Facebook
-              </a>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="transition-colors hover:text-gold"
-              >
-                Request an Appointment
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="border-t border-cream/20">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 font-sans text-xs text-cream/80 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Aesthetics by Michelle. All rights reserved.</p>
-          <p>
-            Licensed Idaho Esthetician · EST-292960 ·{" "}
-            <Link href="/contact" className="transition-colors hover:text-gold">
-              Contact
+    <footer className="editorial-footer">
+      <div className="editorial-footer__inner">
+        <div className="editorial-footer__main">
+          <div className="editorial-footer__brand">
+            <Link href="/" className="editorial-footer__brand-name">
+              Aesthetics by Michelle
             </Link>
-          </p>
+            <p>ONE-ON-ONE SKINCARE · COEUR D&apos;ALENE, IDAHO</p>
+          </div>
+
+          <nav className="editorial-footer__links" aria-label="Footer navigation">
+            <p>EXPLORE</p>
+            <Link href="/about">Meet Michelle</Link>
+            <Link href="/services">Treatments</Link>
+            <Link href="/contact">Contact</Link>
+          </nav>
+
+          <div className="editorial-footer__links">
+            <p>STAY IN TOUCH</p>
+            <a href="mailto:aestheticsbymichellehoffman@gmail.com">Email Michelle</a>
+            <a
+              href="https://www.instagram.com/aestheticsbymichellehoffman"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61559290697737"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Facebook <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="editorial-footer__base">
+          <p>© {new Date().getFullYear()} Aesthetics by Michelle</p>
+          <p>Licensed Idaho Esthetician · EST-292960</p>
         </div>
       </div>
     </footer>
