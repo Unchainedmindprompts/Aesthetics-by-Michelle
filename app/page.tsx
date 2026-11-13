@@ -1,7 +1,7 @@
-import { treatmentById } from "@/lib/treatments";
 import Image from "next/image";
 import Link from "next/link";
 import StudioAddress from "@/components/StudioAddress";
+import SkincareBrandRail from "@/components/SkincareBrandRail";
 import { webPageGraph } from "@/lib/schema";
 
 const BOOKING_URL = "/contact";
@@ -14,238 +14,217 @@ const homePageGraph = webPageGraph({
 });
 
 const services = [
-  {
-    title: "Facials Built Around Your Skin Today — Not a Generic Menu",
-    description:
-      "Most facials are a script. Yours shouldn't be. Every facial at Aesthetics by Michelle starts with a real conversation and a close look at what your skin is doing right now — because the skin you walked in with last spring isn't the skin you have today.",
-    href: "/facials",
-  },
-  {
-    title: "Chemical Peel — Smoother Tone, Softer Texture, Less Damage",
-    description:
-      "A precision chemical exfoliation that lifts away damaged surface skin to reveal smoother tone and softer texture underneath. Michelle selects the right solution and strength for your skin during consultation, then applies and neutralizes carefully.",
-    href: "/chemical-peel",
-  },
-  {
-    title: "Lifted Lashes, Shaped Brows, Zero Daily Maintenance",
-    description:
-      "Wake up looking like you already did your makeup. Michelle offers two signature brow and lash services — eyelash lift and tint, and eyebrow lamination — designed to enhance what you already have and save you fifteen minutes every morning.",
-    href: "/brow-lash",
-  },
-  {
-    title: "Clean, Precise, Comfortable Waxing — Done Right the First Time",
-    description:
-      "Waxing should be quick, clean, and over before you've thought twice about it. Michelle offers precise brow, lip, nostril, facial, and underarm waxing using high-quality wax and a gentle, experienced hand.",
-    href: "/waxing",
-  },
-  {
-    title: "Reiki Body Healing — Aligning Energy and Flow",
-    description:
-      "A gentle, hands-on practice for aligning your body's energy and flow. Forty-five quiet minutes designed to help your nervous system settle and your body find a more balanced place to rest.",
-    href: "/reiki",
-  },
+  { title: "Microneedling", href: "/microneedling", image: "/images/editorial/microneedling.webp" },
+  { title: "Facials", href: "/facials", image: "/images/editorial/facials.webp" },
+  { title: "Chemical Peels", href: "/chemical-peel", image: "/images/editorial/chemical-peels.webp" },
+  { title: "Brow & Lash", href: "/brow-lash", image: "/images/editorial/brow-lash.webp" },
+  { title: "Waxing", href: "/waxing", image: "/images/editorial/waxing.webp" },
+  { title: "Reiki", href: "/reiki", image: "/images/editorial/reiki.webp" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* SECTION 1: HERO */}
-      <section className="michelle-hero" aria-labelledby="hero-heading">
-        <div className="michelle-hero__photo">
+      {/* SECTION 1: EDITORIAL HERO — desktop image reference, mobile accessible layout */}
+      <section className="editorial-hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading" className="sr-only">Skincare, done with intention.</h1>
+        <div className="editorial-hero__desktop">
           <Image
-            src="/images/michelle-hero.png"
-            alt="Michelle Hoffman, licensed esthetician, in her skincare studio"
+            src="/images/editorial/hero.webp"
+            alt="Calm skincare still life with serum bottles, stacked stones, white vase and folded towel; the words Skincare, done with intention"
             fill
             priority
-            quality={90}
-            sizes="(min-width: 1024px) 140vw, (min-width: 640px) 100vw, 180vw"
-            className="michelle-hero__image"
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-bottom"
           />
+          <Link href={BOOKING_URL} className="editorial-hero__button" aria-label="Request an Appointment">
+            <span className="sr-only">Request an Appointment</span>
+          </Link>
         </div>
-        <div className="michelle-hero__fade" aria-hidden="true" />
-        <div className="michelle-hero__inner">
-          <div className="michelle-hero__copy">
-            <p className="font-sans text-sm uppercase tracking-widest text-gold">
-              Licensed Esthetician • Coeur d&apos;Alene, Idaho
+        <div className="editorial-hero__mobile">
+          {/* Dedicated crop of the approved desktop still-life — no baked-in text. */}
+          <div className="editorial-hero__mobile-visual">
+            <Image
+              src="/images/editorial/hero-mobile.webp"
+              alt="Serum bottles, stacked stones, a ceramic vase and soft linen — Michelle's skincare still life"
+              fill
+              priority
+              sizes="100vw"
+              className="editorial-hero__mobile-image"
+            />
+          </div>
+          <div className="editorial-hero__mobile-content">
+            <p className="editorial-hero__mobile-eyebrow">
+              Aesthetics by Michelle · Coeur d&apos;Alene, Idaho
             </p>
-            <h1 id="hero-heading" className="mt-6 font-serif text-5xl leading-tight text-charcoal md:text-6xl">
-              Microneedling + Advanced Skincare in Coeur d&apos;Alene
-            </h1>
-            <p className="mt-6 font-sans text-lg leading-relaxed text-charcoal/80 md:text-xl">
-              Licensed skincare and aesthetics in Coeur d&apos;Alene — personal,
-              attentive, and built around what your skin actually needs.
+            <p className="editorial-hero__mobile-heading">Skincare, done with intention.</p>
+            <p className="editorial-hero__mobile-description">
+              One-on-one treatments and fresh, natural products, built around
+              what your skin actually needs.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href={BOOKING_URL}
-                className="inline-block rounded-none bg-charcoal px-8 py-4 font-sans text-cream transition-colors duration-300 hover:bg-warmGray"
-              >
-                Request an Appointment
-              </Link>
-              <a
-                href="#services"
-                className="inline-block rounded-none border border-charcoal bg-cream/50 px-8 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-charcoal hover:text-cream"
-              >
-                Explore Services
-              </a>
-            </div>
-            <p className="mt-8 font-sans text-sm text-charcoal/80">
-              Idaho Esthetician License EST-292960 • Many years of experience
+            <Link href={BOOKING_URL} className="editorial-hero__mobile-cta">
+              Request an Appointment
+            </Link>
+            <p className="editorial-hero__mobile-license">
+              Licensed Esthetician · ID License EST-292960
             </p>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2: INTRO — MEET MICHELLE */}
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            About
-          </p>
-          <h2 className="mt-6 font-serif text-4xl text-charcoal md:text-5xl">
-            Skincare, done with intention.
+      {/* SECTION 2: EDITORIAL MEET MICHELLE */}
+      <section
+        id="meet-michelle"
+        className="meet-feature"
+        aria-labelledby="meet-michelle-heading"
+      >
+        {/* Original botanical and abstract portrait line art, purely decorative. */}
+        <svg
+          className="meet-feature__botanical meet-feature__botanical--left"
+          viewBox="0 0 560 780"
+          fill="none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <g stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M-15 750C112 612 128 455 216 335S329 125 397-36" />
+            <path d="M100 629C44 622 22 582 24 537C88 545 125 572 140 596" />
+            <path d="M155 481C83 468 67 417 78 365C146 389 173 420 181 449" />
+            <path d="M228 324C165 300 147 244 169 196C228 230 250 269 248 295" />
+            <path d="M286 218C343 178 384 189 409 229C358 264 316 259 274 249" />
+            <path d="M344 106C305 52 325 8 364-23C404 31 395 69 366 112" />
+            <path d="M111 590C158 548 198 550 226 582C183 622 139 622 106 611" />
+            <path d="M202 376C251 329 294 329 323 363C276 408 237 408 199 395" />
+            <path d="M374 51C423 36 468 56 479 92C434 122 402 109 377 91" />
+            <path d="M24 537C61 568 96 586 140 596M78 365C118 406 146 424 181 449M169 196C207 241 232 268 248 295" opacity=".56"/>
+          </g>
+          <g fill="currentColor" opacity=".42">
+            <circle cx="397" cy="22" r="3.1" />
+            <circle cx="429" cy="134" r="2" />
+            <circle cx="247" cy="154" r="2.3" />
+          </g>
+        </svg>
+
+        <svg
+          className="meet-feature__botanical meet-feature__botanical--right"
+          viewBox="0 0 650 820"
+          fill="none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <g stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            {/* A single abstract facial silhouette rather than stock wellness art. */}
+            <path d="M452-34C346 12 309 108 328 184C338 221 369 246 381 277C397 316 382 336 359 351C342 362 339 374 356 389L390 414C403 425 403 437 387 452L373 462C371 480 398 496 396 525C393 569 347 613 261 633C212 643 195 672 195 722" />
+            <path d="M361 306C386 297 404 304 426 325" />
+            <path d="M366 309C390 328 406 331 426 325" />
+            <path d="M380 302L373 284M390 300L389 282M401 305L406 290M413 311L421 300" />
+            <path d="M373 462C397 455 413 460 431 470" />
+            <path d="M293 634C307 689 341 729 393 766" />
+            <path d="M482 90C538 174 549 248 538 309" />
+            <path d="M480 609C543 666 583 728 628 793" />
+            <path d="M474 614C507 606 526 574 521 542C486 552 473 572 474 614Z" />
+            <path d="M521 683C563 675 592 641 588 604C552 613 524 640 521 683Z" />
+            <path d="M571 743C602 734 625 714 643 678" />
+          </g>
+        </svg>
+
+        <div className="meet-feature__glow" aria-hidden="true" />
+        <div className="meet-feature__watermark" aria-hidden="true">MICHELLE</div>
+
+        <div className="meet-feature__content">
+          <div className="meet-feature__eyebrow">
+            <span className="meet-feature__rule" aria-hidden="true" />
+            A NOTE FROM MICHELLE
+            <span className="meet-feature__rule" aria-hidden="true" />
+          </div>
+
+          <h2 id="meet-michelle-heading" className="meet-feature__heading">
+            Good skincare starts with
+            <span className="meet-feature__heading-accent">being heard.</span>
           </h2>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            Aesthetics by Michelle is a solo-practitioner skincare studio in
-            Coeur d&apos;Alene, serving Hayden, Post Falls, and the Spokane
-            Valley area. Every appointment is one-on-one — no revolving door of
-            staff, no rushed treatments, no generic service menu. Just
-            Michelle, her many years of experience, and a treatment plan
-            tailored to your skin.
+
+          <p className="meet-feature__description">
+            Every face is different. Every story is different. I believe great
+            skincare begins with taking the time to listen, understand your
+            goals, and create an experience that&apos;s genuinely yours.
           </p>
-          <p className="mt-6 font-sans text-lg leading-relaxed text-warmGray">
-            Whether you&apos;re new to professional skincare or you&apos;ve been
-            around the industry long enough to know the difference, the goal is
-            the same: treatments that work, honest recommendations, and visible
-            results.
-          </p>
-          <Link
-            href="/about"
-            className="mt-10 inline-block font-sans text-charcoal underline underline-offset-4 transition-colors duration-300 hover:text-sage"
-          >
-            Learn more about Michelle →
+
+          <Link href="/about" className="meet-feature__link">
+            Meet Michelle
+            <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
+              <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </Link>
         </div>
       </section>
 
-      {/* SECTION 3: SERVICES OVERVIEW */}
-      <section id="services" className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <p className="font-sans text-sm uppercase tracking-widest text-gold">
-              Services
-            </p>
-            <h2 className="mt-6 font-serif text-4xl text-charcoal md:text-5xl">
-              Treatments built around your skin.
-            </h2>
-            <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-              Every treatment at Aesthetics by Michelle starts with listening —
-              to your goals, your concerns, and what your skin is telling us.
-              Then we build the right plan from there.
-            </p>
+      {/* SECTION 3: IMAGE-FIRST SERVICE CARDS */}
+      <section id="services" className="bg-[#f8f5ef] py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-5 md:px-10">
+          <div className="mb-10 flex items-center justify-center gap-6 md:mb-14 md:gap-10">
+            <span className="h-px flex-1 bg-sage/40" aria-hidden="true" />
+            <h2 className="font-serif text-4xl text-charcoal md:text-5xl">Services</h2>
+            <span className="h-px flex-1 bg-sage/40" aria-hidden="true" />
           </div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article className="flex flex-col border-t-4 border-gold bg-sage p-8 shadow-sm transition-all duration-300 hover:shadow-md">
-              <p className="font-sans text-xs uppercase tracking-widest text-gold">
-                Hero Service
-              </p>
-              <h3 className="mt-4 font-serif text-2xl leading-tight text-cream">
-                Collagen-Building Microneedling for Skin That Looks Like You,
-                Just Better
-              </h3>
-              <p className="mt-4 font-sans text-cream/80">
-                {treatmentById("microneedling").description}
-              </p>
-              <Link
-                href="/microneedling"
-                className="mt-auto pt-6 font-sans text-cream transition-colors duration-300 hover:text-gold"
-              >
-                Learn more →
-              </Link>
-            </article>
-
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <article
+              <Link
                 key={service.href}
-                className="flex flex-col bg-sage p-8 shadow-sm transition-all duration-300 hover:shadow-md"
+                href={service.href}
+                className="group overflow-hidden rounded-2xl bg-[#f8f5ef] shadow-md transition duration-300 hover:-translate-y-1 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage"
+                aria-label={`Explore ${service.title}`}
               >
-                <h3 className="font-serif text-2xl leading-tight text-cream">
+                <div className="relative aspect-[3/2] w-full overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} treatment imagery`}
+                    fill
+                    unoptimized
+                    sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <h3 className="px-4 py-5 text-center font-serif text-2xl text-charcoal">
                   {service.title}
                 </h3>
-                <p className="mt-4 font-sans text-cream/80">
-                  {service.description}
-                </p>
-                <Link
-                  href={service.href}
-                  className="mt-auto pt-6 font-sans text-cream transition-colors duration-300 hover:text-gold"
-                >
-                  Learn more →
-                </Link>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: WHY AESTHETICS BY MICHELLE */}
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="mx-auto mb-16 max-w-3xl text-center">
-            <p className="font-sans text-sm uppercase tracking-widest text-gold">
-              Why Choose Aesthetics by Michelle
+      {/* SECTION 4: MICHELLE'S CURATED PRODUCT LINES */}
+      <section id="skincare-products" className="product-edit" aria-labelledby="product-edit-heading">
+        <div className="product-edit__inner">
+          <header className="product-edit__header">
+            <p className="product-edit__eyebrow">
+              <span aria-hidden="true" />
+              MICHELLE&apos;S SKINCARE EDIT
+              <span aria-hidden="true" />
             </p>
-            <h2 className="mt-6 font-serif text-4xl text-charcoal md:text-5xl">
-              A different kind of skincare studio.
+            <h2 id="product-edit-heading" className="product-edit__heading">
+              The care continues <em>at home.</em>
             </h2>
-          </div>
+            <p className="product-edit__lead">
+              What you use between appointments matters, too. Explore three
+              distinctive skincare collections Michelle shares with her clients.
+            </p>
+          </header>
 
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-            <article>
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-sage/20">
-                <div className="h-4 w-4 rounded-full bg-sage" />
-              </div>
-              <h3 className="font-serif text-2xl text-charcoal">
-                One-on-One Attention
-              </h3>
-              <p className="mt-4 font-sans leading-relaxed text-warmGray">
-                Every appointment is with Michelle directly. No handoffs, no
-                rotating staff, no generic service scripts.
-              </p>
-            </article>
+          <SkincareBrandRail />
 
-            <article>
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gold/20">
-                <div className="h-4 w-4 rounded-full bg-gold" />
-              </div>
-              <h3 className="font-serif text-2xl text-charcoal">
-                Licensed &amp; Experienced
-              </h3>
-              <p className="mt-4 font-sans leading-relaxed text-warmGray">
-                Many years in the beauty industry. Idaho Esthetician license
-                EST-292960. Honest recommendations, every time.
-              </p>
-            </article>
-
-            <article>
-              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-taupe/30">
-                <div className="h-4 w-4 rounded-full bg-taupe" />
-              </div>
-              <h3 className="font-serif text-2xl text-charcoal">
-                Tailored Treatments
-              </h3>
-              <p className="mt-4 font-sans leading-relaxed text-warmGray">
-                Your skin is different every season, every year, every stage.
-                Treatments are built around where you are right now — not where
-                you were last time.
-              </p>
-            </article>
-          </div>
+          <p className="product-edit__disclaimer">
+            Brand product photographs illustrate the collections, not Michelle&apos;s
+            current inventory. Please confirm availability with Michelle.
+            Prescription skincare requires a separate medical assessment
+            through the prescribing provider.
+          </p>
         </div>
       </section>
 
       {/* SECTION 5: LOCATION & HOURS */}
-      <section className="bg-ivory py-20 md:py-28">
+      <section className="visit-studio-palette bg-ivory py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-2 md:px-12">
           <div>
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
@@ -292,7 +271,7 @@ export default function HomePage() {
 
           <div className="relative aspect-video w-full overflow-hidden rounded-sm">
             <Image
-              src="/images/michelle-studio.png"
+              src="/images/michelle-studio-4k.webp"
               alt="Michelle Hoffman inside her skincare studio"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -302,22 +281,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 6: FINAL CTA */}
-      <section className="bg-sage">
-        <div className="mx-auto max-w-2xl px-6 py-24 text-center md:px-12">
-          <h2 className="font-serif text-4xl text-cream md:text-5xl">
-            Ready to see what your skin is capable of?
-          </h2>
-          <p className="mt-6 font-sans text-lg text-cream/80">
-            Schedule a consultation with Michelle and let&apos;s build the right
-            plan for you.
-          </p>
-          <Link
-            href={BOOKING_URL}
-            className="mt-10 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
-          >
-            Request an Appointment
-          </Link>
+      {/* SECTION 6: ONE CONTINUOUS EDITORIAL CLOSING */}
+      <section className="home-closing" aria-labelledby="home-closing-heading">
+        <div className="home-closing__inner">
+          <div className="home-closing__message">
+            <p className="home-closing__eyebrow">
+              <span aria-hidden="true" />
+              YOUR TIME, YOUR SKIN
+            </p>
+            <h2 id="home-closing-heading" className="home-closing__heading">
+              A little time, <em>just for you.</em>
+            </h2>
+          </div>
+          <div className="home-closing__invitation">
+            <p>
+              A thoughtful, one-on-one experience starts with a conversation.
+              Tell Michelle what your skin needs, and find the treatment
+              that feels right for you.
+            </p>
+            <Link href={BOOKING_URL} className="home-closing__button">
+              Request an Appointment
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
+                <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 

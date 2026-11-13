@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384" viewBox="0 0 512 384">
+  <defs>
+    <filter id="grasscloth-fiber" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.52" numOctaves="3" seed="17" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="0.48" intercept="0.26"/>
+        <feFuncG type="linear" slope="0.48" intercept="0.26"/>
+        <feFuncB type="linear" slope="0.48" intercept="0.26"/>
+      </feComponentTransfer>
+    </filter>
+    <pattern id="horizontal-fibers" width="24" height="17" patternUnits="userSpaceOnUse">
+      <path d="M0 1.2H24 M0 3.8H24 M0 6.9H24 M0 10.8H24 M0 14.7H24" stroke="#6f6658" stroke-width=".38" opacity=".28"/>
+      <path d="M2 2.6H20 M7 8.3H24 M0 12.7H14 M14 16.1H24" stroke="#fff9e9" stroke-width=".55" opacity=".48"/>
+      <path d="M0 0V17 M12 0V17" stroke="#837764" stroke-width=".35" opacity=".12"/>
+    </pattern>
+    <linearGradient id="warmth" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e4d9c8"/>
+      <stop offset=".55" stop-color="#d5c9b6"/>
+      <stop offset="1" stop-color="#ddd2bf"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="384" fill="url(#warmth)"/>
+  <rect width="512" height="384" filter="url(#grasscloth-fiber)" opacity=".21"/>
+  <rect width="512" height="384" fill="url(#horizontal-fibers)" opacity=".7"/>
+  <g stroke-linecap="round" fill="none">
+    <path d="M7 47h112 M133 47h71 M214 47h267 M33 103h163 M209 103h173 M398 103h111 M10 159h235 M254 159h226 M44 217h193 M244 217h259 M3 275h181 M200 275h285 M17 333h259 M290 333h220" stroke="#857862" stroke-width=".65" opacity=".20"/>
+    <path d="M3 46h49 M57 46h145 M216 46h287 M22 161h165 M191 161h261 M17 278h147 M174 278h311 M8 336h259 M279 336h227" stroke="#fffbef" stroke-width=".75" opacity=".42"/>
+  </g>
+</svg>
