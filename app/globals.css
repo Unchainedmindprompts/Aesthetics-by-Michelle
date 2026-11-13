@@ -1166,3 +1166,76 @@ body {
   .editorial-footer__links a { transition: none; }
   .home-closing__button:hover { transform: none; }
 }
+
+
+/* Match the Meet Michelle patterned sage, reusing its botanical line-art without its text. */
+.editorial-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 68% 85% at 50% 14%, rgba(214, 187, 155, .14), transparent 78%),
+    linear-gradient(145deg, #657668 0%, #506558 48%, #3f5349 100%);
+}
+
+.editorial-footer::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: .28;
+  background:
+    repeating-linear-gradient(127deg, transparent 0, transparent 19px, rgba(254, 241, 222, .022) 19.5px, transparent 20px),
+    radial-gradient(ellipse at 80% 74%, rgba(37, 58, 45, .36), transparent 65%);
+}
+
+.editorial-footer__pattern {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  color: #e8c2a0;
+}
+
+.editorial-footer__botanical {
+  position: absolute;
+  pointer-events: none;
+  color: inherit;
+  height: auto;
+  opacity: .34;
+}
+
+.editorial-footer__botanical--left {
+  width: min(44vw, 640px);
+  top: -235px;
+  left: -110px;
+  transform: rotate(2deg);
+}
+
+.editorial-footer__botanical--right {
+  width: min(43vw, 610px);
+  top: -185px;
+  right: -100px;
+  opacity: .26;
+}
+
+.editorial-footer__inner {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .editorial-footer__botanical--left {
+    width: 370px;
+    left: -220px;
+    top: -165px;
+  }
+  .editorial-footer__botanical--right {
+    width: 340px;
+    right: -220px;
+    top: -20px;
+  }
+  .editorial-footer__botanical { opacity: .26; }
+}
