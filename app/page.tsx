@@ -253,7 +253,7 @@ export default function HomePage() {
 
           <div className="relative aspect-video w-full overflow-hidden rounded-sm">
             <Image
-              src="/images/michelle-studio.png"
+              src="/images/michelle-studio-4k.webp"
               alt="Michelle Hoffman inside her skincare studio"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
