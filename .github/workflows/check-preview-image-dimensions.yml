@@ -1,0 +1,31 @@
+name: Check four preview image dimensions
+on:
+  push:
+    branches:
+      - preview/michelle-spa-editorial-20261111
+    paths:
+      - .github/workflows/check-preview-image-dimensions.yml
+  workflow_dispatch:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check photo size, pixels and expected sources
+        run: |
+          python -m pip install -q Pillow
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          paths=[
+            'public/images/editorial/ringana-collection.webp',
+            'public/images/editorial/elliemd-serum.webp',
+            'public/images/editorial/zo-skincare-collection.webp',
+            'public/images/michelle-studio.png',
+          ]
+          for item in paths:
+              path=Path(item)
+              with Image.open(path) as im:
+                  print('SOURCE_DIMENSIONS',path.name,im.size,im.mode,path.stat().st_size,flush=True)
+          PY
