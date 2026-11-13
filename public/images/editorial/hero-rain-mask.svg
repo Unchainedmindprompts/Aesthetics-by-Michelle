@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1099 616.6" preserveAspectRatio="none">
+<defs>
+ <filter id="soft"><feGaussianBlur stdDeviation="15"/></filter>
+ <filter id="edge"><feGaussianBlur stdDeviation="1.2"/></filter>
+ <mask id="scene">
+ <path fill="white" filter="url(#edge)" d="M0 0H1099V325 C1077 327 1046 343 991 365 L991 294 C991 253 977 232 954 216 C939 205 938 195 944 185 C949 169 931 165 906 165 H832 C807 165 796 171 799 184 C806 200 800 207 782 218 C754 238 748 267 749 303 L751 428 L741 427 C734 416 717 413 704 411 C738 404 748 392 741 379 C735 365 716 362 702 361 C732 353 742 340 737 326 C733 311 717 304 695 303 C721 294 726 282 719 272 C710 257 689 257 666 260 C630 263 609 274 605 287 C600 300 606 306 623 309 C595 315 581 329 580 343 C578 356 593 364 615 367 C584 370 568 383 566 397 L557 398 V363 C555 358 548 356 541 355 L539 326 C538 312 534 308 527 308 C516 309 511 315 510 325 L509 355 C501 356 497 359 495 363 V411 L492 411 V235 C487 228 443 226 425 233 V346 C416 342 383 343 374 350 V405 H0Z"/>
+ <rect x="42" y="152" width="385" height="250" rx="30" fill="black" filter="url(#soft)"/>
+ <rect x="48" y="108" width="621" height="34" rx="15" fill="black" filter="url(#soft)"/>
+ </mask>
+</defs><rect width="1099" height="616.6" fill="white" mask="url(#scene)"/>
+</svg>

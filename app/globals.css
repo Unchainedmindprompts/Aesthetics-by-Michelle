@@ -917,3 +917,12 @@ body {
 .visit-studio-palette dl dd {
   color: #5e705f;
 }
+
+/* Rain is masked to the wall above the counter, preserving the original art. */
+.editorial-hero__desktop { isolation: isolate; }
+.hero-rain { position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0; transition:opacity 1.5s ease; mix-blend-mode:multiply; -webkit-mask: url("/images/editorial/hero-rain-mask.svg") 0 0 / 100% 100% no-repeat; mask: url("/images/editorial/hero-rain-mask.svg") 0 0 / 100% 100% no-repeat; }
+.hero-rain--ready { opacity:.38; }
+.hero-rain video { display:block; width:100%; height:100%; object-fit:cover; filter:brightness(1.65) saturate(.3); }
+.hero-rain__toggle { position:absolute; z-index:3; right:18px; bottom:16px; border:1px solid rgba(70,85,72,.22); border-radius:999px; padding:7px 12px; background:rgba(248,247,241,.85); color:#435447; font:11px/1.2 Arial,sans-serif; cursor:pointer; }
+.hero-rain__toggle:focus-visible { outline:2px solid #3f604a; outline-offset:4px; }
+@media (max-width:767px), (prefers-reduced-motion:reduce) { .hero-rain, .hero-rain__toggle { display:none; } }
