@@ -43,14 +43,32 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="editorial-hero__mobile">
-          <Image src="/images/editorial/facials.webp" alt="Clean white spa towels and a ceramic bowl" fill priority unoptimized sizes="100vw" className="object-cover" />
-          <div className="editorial-hero__mobile-shade" />
+          {/* Dedicated crop of the approved desktop still-life — no baked-in text. */}
+          <div className="editorial-hero__mobile-visual">
+            <Image
+              src="/images/editorial/hero-mobile.webp"
+              alt="Serum bottles, stacked stones, a ceramic vase and soft linen — Michelle's skincare still life"
+              fill
+              priority
+              sizes="100vw"
+              className="editorial-hero__mobile-image"
+            />
+          </div>
           <div className="editorial-hero__mobile-content">
-            <p className="text-xs uppercase tracking-[0.2em] text-sage">Aesthetics by Michelle · Coeur d&apos;Alene, Idaho</p>
-            <p className="mt-5 font-serif text-4xl leading-tight text-charcoal">Skincare, done with intention.</p>
-            <p className="mt-5 max-w-xs text-base leading-relaxed text-warmGray">One-on-one treatments and fresh, natural products, built around what your skin actually needs.</p>
-            <Link href={BOOKING_URL} className="mt-7 inline-block rounded-full bg-[#3f604a] px-7 py-3 font-sans text-white">Request an Appointment</Link>
-            <p className="mt-5 text-xs text-warmGray">Licensed Esthetician · ID License EST-292960</p>
+            <p className="editorial-hero__mobile-eyebrow">
+              Aesthetics by Michelle · Coeur d&apos;Alene, Idaho
+            </p>
+            <p className="editorial-hero__mobile-heading">Skincare, done with intention.</p>
+            <p className="editorial-hero__mobile-description">
+              One-on-one treatments and fresh, natural products, built around
+              what your skin actually needs.
+            </p>
+            <Link href={BOOKING_URL} className="editorial-hero__mobile-cta">
+              Request an Appointment
+            </Link>
+            <p className="editorial-hero__mobile-license">
+              Licensed Esthetician · ID License EST-292960
+            </p>
           </div>
         </div>
       </section>
