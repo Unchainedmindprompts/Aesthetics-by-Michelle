@@ -1,5 +1,4 @@
 import Image from "next/image";
-import HeroRain from "@/components/HeroRain";
 import Link from "next/link";
 import StudioAddress from "@/components/StudioAddress";
 import SkincareBrandRail from "@/components/SkincareBrandRail";
@@ -39,7 +38,6 @@ export default function HomePage() {
             sizes="100vw"
             className="object-cover object-bottom"
           />
-          <HeroRain />
           <Link href={BOOKING_URL} className="editorial-hero__button" aria-label="Request an Appointment">
             <span className="sr-only">Request an Appointment</span>
           </Link>
