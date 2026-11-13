@@ -77,7 +77,8 @@ body {
 }
 
 
-/* November editorial preview: screenshot crop excludes original mockup's navbar. */
+/* Homepage hero: desktop composition unchanged; mobile uses a separate,
+   readable photo-first layout featuring the same approved 4K still life. */
 .editorial-hero { overflow: hidden; background: #f5f3ee; }
 .editorial-hero__desktop { position: relative; width: 100%; aspect-ratio: 1515 / 850; }
 .editorial-hero__desktop > img { display: block; }
@@ -96,23 +97,97 @@ body {
   outline-offset: 4px;
 }
 .editorial-hero__mobile { display: none; }
+
 @media (max-width: 767px) {
   .editorial-hero__desktop { display: none; }
   .editorial-hero__mobile {
-    display: flex;
+    display: block;
+    width: 100%;
+    background: #f7f3ec;
+  }
+  .editorial-hero__mobile-visual {
     position: relative;
-    min-height: 650px;
-    align-items: flex-end;
+    width: 100%;
+    aspect-ratio: 1.24;
+    min-height: 258px;
+    max-height: 455px;
     overflow: hidden;
+    background: #e8e3dc;
   }
-  .editorial-hero__mobile > img { object-position: 50% 50%; }
-  .editorial-hero__mobile-shade {
-    position: absolute; inset: 0;
-    background: linear-gradient(180deg, rgba(248,245,239,.3) 0%,rgba(248,245,239,.84) 42%,rgba(248,245,239,.99) 78%);
+  .editorial-hero__mobile-image {
+    object-fit: cover;
+    object-position: 50% 52%;
   }
-  .editorial-hero__mobile-content { position: relative; z-index: 1; padding: 145px 24px 58px; }
+  .editorial-hero__mobile-content {
+    position: relative;
+    z-index: 1;
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 31px 25px 51px;
+    background: #f7f3ec;
+  }
+  .editorial-hero__mobile-eyebrow {
+    color: #68786c;
+    font-family: var(--font-inter), sans-serif;
+    font-size: .67rem;
+    font-weight: 600;
+    letter-spacing: .15em;
+    line-height: 1.7;
+    text-transform: uppercase;
+  }
+  .editorial-hero__mobile-heading {
+    margin-top: 17px;
+    color: #2c3830;
+    font-family: var(--font-cormorant), Georgia, serif;
+    font-size: clamp(3.6rem, 12vw, 5rem);
+    font-weight: 500;
+    letter-spacing: -.032em;
+    line-height: .93;
+    text-wrap: balance;
+  }
+  .editorial-hero__mobile-description {
+    max-width: 34ch;
+    margin-top: 20px;
+    color: #657067;
+    font-family: var(--font-inter), sans-serif;
+    font-size: .99rem;
+    line-height: 1.75;
+  }
+  .editorial-hero__mobile-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    margin-top: 25px;
+    padding: 13px 25px;
+    border-radius: 100px;
+    background: #3f604a;
+    color: #fffdf8;
+    font-family: var(--font-inter), sans-serif;
+    font-size: .91rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s ease;
+  }
+  .editorial-hero__mobile-cta:hover {
+    background: #304a39;
+  }
+  .editorial-hero__mobile-cta:focus-visible {
+    outline: 3px solid #c9a876;
+    outline-offset: 4px;
+  }
+  .editorial-hero__mobile-license {
+    margin-top: 20px;
+    color: #7a8277;
+    font-family: var(--font-inter), sans-serif;
+    font-size: .7rem;
+    line-height: 1.6;
+  }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .editorial-hero__mobile-cta { transition: none; }
+}
 
 /* Editorial "A Note from Michelle" — original art, not a stock photo. */
 .meet-feature {
