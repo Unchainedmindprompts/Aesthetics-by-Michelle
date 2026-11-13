@@ -263,22 +263,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 6: FINAL CTA */}
-      <section className="bg-sage">
-        <div className="mx-auto max-w-2xl px-6 py-24 text-center md:px-12">
-          <h2 className="font-serif text-4xl text-cream md:text-5xl">
-            Ready to see what your skin is capable of?
-          </h2>
-          <p className="mt-6 font-sans text-lg text-cream/80">
-            Schedule a consultation with Michelle and let&apos;s build the right
-            plan for you.
-          </p>
-          <Link
-            href={BOOKING_URL}
-            className="mt-10 inline-block bg-cream px-10 py-4 font-sans text-charcoal transition-colors duration-300 hover:bg-ivory"
-          >
-            Request an Appointment
-          </Link>
+      {/* SECTION 6: ONE CONTINUOUS EDITORIAL CLOSING */}
+      <section className="home-closing" aria-labelledby="home-closing-heading">
+        <div className="home-closing__inner">
+          <div className="home-closing__message">
+            <p className="home-closing__eyebrow">
+              <span aria-hidden="true" />
+              YOUR TIME, YOUR SKIN
+            </p>
+            <h2 id="home-closing-heading" className="home-closing__heading">
+              A little time, <em>just for you.</em>
+            </h2>
+          </div>
+          <div className="home-closing__invitation">
+            <p>
+              A thoughtful, one-on-one experience starts with a conversation.
+              Tell Michelle what your skin needs, and find the treatment
+              that feels right for you.
+            </p>
+            <Link href={BOOKING_URL} className="home-closing__button">
+              Request an Appointment
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="none" aria-hidden="true">
+                <path d="M5 12h13m-6-6 6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
         </div>
       </section>
 
