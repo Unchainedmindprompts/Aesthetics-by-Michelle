@@ -25,7 +25,7 @@ const brands: readonly SkincareSlide[] = [
     copy: "Freshly produced, vegan skincare with plant-based ingredients, from everyday cleansers to nourishing face and body care.",
     image: "/images/editorial/ringana-collection-4k.webp",
     imageAlt: "A collection of RINGANA Fresh bottles in soft mint, peach and amber tones",
-    href: "https://5058049.ringana.us/",
+    href: "https://5058049.ringana.us/?lang=en",
     linkText: "Explore RINGANA",
   },
   {
@@ -41,7 +41,7 @@ const brands: readonly SkincareSlide[] = [
     copy: "Meet EllieVate Skin+, a targeted skincare serum featuring prescription tretinoin. Medical evaluation and prescribing are handled through EllieMD's healthcare providers, not Michelle.",
     image: "/images/editorial/elliemd-serum-4k.webp",
     imageAlt: "EllieMD's matte pink skincare serum container on a teal and coral studio backdrop",
-    href: "https://elliemd.com/product/skincare",
+    href: "https://elliemd.com/Aestheticsbymichelle",
     linkText: "Explore EllieMD skincare",
   },
   {
