@@ -1,5 +1,5 @@
 .hero {
-  --nav-height: 89px;
+  --nav-height: 69px;
   --ivory: #f5f1e8;
   --ink: #303a33;
   position: relative;
@@ -101,7 +101,7 @@
   backdrop-filter: blur(6px);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .hero { --nav-height: 73px; }
 }
 
