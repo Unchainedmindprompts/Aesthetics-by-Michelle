@@ -1,4 +1,5 @@
-import InteriorHero from "@/components/InteriorHero";
+import Image from "next/image";
+import styles from "./about.module.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -14,14 +15,29 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <InteriorHero
-        label="About"
-        title="Helping you feel confident and beautiful in your own skin."
-        image="michelle-at-work"
-        alt="Michelle treating a client beside the windows and studio sign."
-      />
+      <section className={styles.hero} aria-labelledby="about-title">
+        <div className={styles.photograph}>
+          <Image
+            src="/images/interior/michelle-at-work.jpg"
+            alt="Michelle treating a client beside the windows in her studio."
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className={styles.content}>
+          <p className={styles.byline}>Meet Michelle Hoffman</p>
+          <h1 id="about-title" className={styles.title}>
+            Helping you feel <span>confident and <span className={styles.beautiful}>beautiful</span></span>{" "}
+            <em>in your own skin.</em>
+          </h1>
+          <a className={styles.storyLink} href="#michelles-story">
+            Her story <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
 
-      <section className="bg-ivory py-20 md:py-28">
+      <section id="michelles-story" className="scroll-mt-24 bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-12">
           <div className="space-y-6 font-sans text-lg leading-relaxed text-warmGray">
             <p>
