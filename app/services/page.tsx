@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 const categories = [
   {
     label: "Skin",
+    photo: "facials",
     items: [
       { name: "Microneedling", href: "/microneedling" },
       { name: "Mini Facial", href: "/facials" },
@@ -30,6 +31,7 @@ const categories = [
   },
   {
     label: "Brow & Lash",
+    photo: "brow-lash",
     items: [
       { name: "Eyelash Lift & Tint", href: "/brow-lash" },
       { name: "Eyebrow Lamination", href: "/brow-lash" },
@@ -37,6 +39,7 @@ const categories = [
   },
   {
     label: "Waxing",
+    photo: "waxing",
     items: [
       { name: "Eyebrow Wax", href: "/waxing" },
       { name: "Lip", href: "/waxing" },
@@ -47,6 +50,7 @@ const categories = [
   },
   {
     label: "Healing",
+    photo: "reiki",
     items: [{ name: "Reiki Body Healing", href: "/reiki" }],
   },
 ];
@@ -80,28 +84,41 @@ export default function ServicesIndexPage() {
         </div>
       </section>
 
-      <section id="treatment-menu" aria-label="Treatment menu" tabIndex={-1} className={`bg-sage py-20 md:py-28 ${styles.menu}`}>
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-16 lg:grid-cols-4">
-            {categories.map((category) => (
-              <div key={category.label}>
-                <p className="font-sans text-sm uppercase tracking-widest text-cream/80">
-                  {category.label}
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {category.items.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        href={item.href}
-                        className="block font-serif text-3xl leading-tight text-cream transition-colors duration-300 hover:text-gold md:text-4xl"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+      <section id="treatment-menu" aria-labelledby="menu-title" tabIndex={-1} className={styles.menu}>
+        <div className={styles.menuInner}>
+          <h2 id="menu-title" className={styles.menuTitle}>
+            Treatment <em className={accentSerif.className}>menu</em>
+          </h2>
+          <div className={styles.spread}>
+            {categories.map((category) => {
+              const featured = category.label === "Skin";
+              return (
+                <section
+                  key={category.label}
+                  aria-labelledby={`category-${category.photo}`}
+                  className={featured ? styles.featured : styles.category}
+                >
+                  <div className={styles.categoryPhoto}>
+                    <Image
+                      src={`/images/interior/${category.photo}.jpg`}
+                      alt=""
+                      fill
+                      sizes={featured ? "(min-width: 960px) 45vw, 90vw" : "(min-width: 960px) 12vw, 27vw"}
+                    />
+                  </div>
+                  <h3 className={styles.categoryTitle} id={`category-${category.photo}`}>
+                    {category.label}
+                  </h3>
+                  <ul className={`${styles.treatments} ${category.items.length > 3 ? styles.columns : ""}`}>
+                    {category.items.map((item) => (
+                      <li key={item.name}>
+                        <Link href={item.href}>{item.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              );
+            })}
           </div>
         </div>
       </section>
