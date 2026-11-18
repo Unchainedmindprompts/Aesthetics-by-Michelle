@@ -1,12 +1,9 @@
-import { Instrument_Serif } from "next/font/google";
-import styles from "./notes.module.css";
+import hero from "@/components/EditorialPageHero.module.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { articlesNewestFirst, formatArticleDate } from "@/lib/articles";
 import { blogIndexGraph } from "@/lib/schema";
-
-const inkItalic = Instrument_Serif({ subsets: ["latin"], weight: "400", style: "italic", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Notes — Skincare from Michelle Hoffman",
@@ -20,9 +17,9 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className={styles.cover} aria-labelledby="notes-title">
-        <picture className={styles.photograph}>
-          <source media="(orientation: portrait)" srcSet="/images/interior/journal-page.webp" />
+      <section className={`${hero.hero} ${hero.notes}`} aria-labelledby="notes-title">
+        <picture className={hero.art}>
+          <source media="(max-width: 767px), (orientation: portrait)" srcSet="/images/interior/journal-page.webp" />
           <img
             src="/images/interior/journal-spread.webp"
             alt="Sunlit journal paper with a penciled evergreen sketch, an amber vial, and a wooden pencil."
@@ -33,17 +30,17 @@ export default function BlogPage() {
           />
         </picture>
 
-        <div className={styles.copy}>
-          <p className={styles.kicker}>Notes</p>
-          <h1 id="notes-title" className={styles.title}>
-            Skincare, <em className={inkItalic.className}>written down.</em>
+        <div className={hero.copy}>
+          <p className={hero.label}>Notes</p>
+          <h1 id="notes-title" className={hero.heading}>
+            Skincare, written down.
           </h1>
-          <p className={styles.summary}>
+          <p className={hero.summary}>
             What&apos;s working, what isn&apos;t, and the timing questions clients ask most.
           </p>
           {articles[0] && (
-            <Link href={`/blog/${articles[0].slug}`} className={styles.readLink}>
-              Read the latest note <span aria-hidden="true">→</span>
+            <Link href={`/blog/${articles[0].slug}`} className={hero.action}>
+              Read the latest note
             </Link>
           )}
         </div>

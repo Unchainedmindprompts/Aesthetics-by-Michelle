@@ -1,12 +1,10 @@
 import Image from "next/image";
-import { Instrument_Serif } from "next/font/google";
+import hero from "@/components/EditorialPageHero.module.css";
 import styles from "./services.module.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
-const accentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: "italic", display: "swap" });
-
 export const metadata: Metadata = {
   title: "All Services & Pricing",
   description:
@@ -58,8 +56,8 @@ const categories = [
 export default function ServicesIndexPage() {
   return (
     <>
-      <section className={styles.hero} aria-labelledby="services-heading">
-        <div className={styles.photo}>
+      <section className={`${hero.hero} ${hero.services}`} aria-labelledby="services-heading">
+        <div className={hero.art}>
           <Image
             src="/images/interior/treatment-room-editorial.webp"
             alt="Soft daylight falls across the linen treatment bed and oak cabinets in Michelle’s studio."
@@ -68,18 +66,17 @@ export default function ServicesIndexPage() {
             sizes="100vw"
           />
         </div>
-        <div className={styles.copy}>
-          <p className={styles.eyebrow}>Services</p>
-          <h1 id="services-heading" className={styles.title}>
-            Treatments{" "}<br />built around{" "}
-            <em className={accentSerif.className}>your skin.</em>
+        <div className={hero.copy}>
+          <p className={hero.label}>Services</p>
+          <h1 id="services-heading" className={hero.heading}>
+            Treatments built around your skin.
           </h1>
-          <p className={styles.intro}>
+          <p className={hero.summary}>
             Personalized skin, brow &amp; lash, waxing, and healing services — every
             appointment one-on-one with Michelle.
           </p>
-          <a className={styles.explore} href="#treatment-menu">
-            Explore treatments <span aria-hidden="true">↓</span>
+          <a className={hero.action} href="#treatment-menu">
+            Explore treatments
           </a>
         </div>
       </section>
@@ -87,7 +84,7 @@ export default function ServicesIndexPage() {
       <section id="treatment-menu" aria-labelledby="menu-title" tabIndex={-1} className={styles.menu}>
         <div className={styles.menuInner}>
           <h2 id="menu-title" className={styles.menuTitle}>
-            Treatment <em className={accentSerif.className}>menu</em>
+            Treatment menu
           </h2>
           <div className={styles.spread}>
             {categories.map((category) => {
