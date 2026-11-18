@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./about.module.css";
+import hero from "@/components/EditorialPageHero.module.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className={styles.hero} aria-labelledby="about-title">
-        <div className={styles.photograph}>
+      <section className={`${hero.hero} ${hero.about}`} aria-labelledby="about-title">
+        <div className={hero.art}>
           <Image
             src="/images/interior/michelle-at-work-enhanced.webp"
             alt="Michelle treating a client beside the windows in her studio."
@@ -26,14 +26,13 @@ export default function AboutPage() {
             sizes="100vw"
           />
         </div>
-        <div className={styles.content}>
-          <p className={styles.byline}>Meet Michelle Hoffman</p>
-          <h1 id="about-title" className={styles.title}>
-            Helping you feel <span>confident and <span className={styles.beautiful}>beautiful</span></span>{" "}
-            <em>in your own skin.</em>
+        <div className={hero.copy}>
+          <p className={hero.label}>Meet Michelle Hoffman</p>
+          <h1 id="about-title" className={hero.heading}>
+            Helping you feel confident and beautiful in your own skin.
           </h1>
-          <a className={styles.storyLink} href="#michelles-story">
-            Her story <span aria-hidden="true">↓</span>
+          <a className={hero.action} href="#michelles-story">
+            Her story
           </a>
         </div>
       </section>

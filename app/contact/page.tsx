@@ -1,3 +1,4 @@
+import InteriorHero from "@/components/InteriorHero";
 import type { Metadata } from "next";
 import StudioAddress from "@/components/StudioAddress";
 
@@ -9,7 +10,6 @@ export const metadata: Metadata = {
 };
 
 const hours = [
-  { day: "Tuesday", time: "9 AM – 5 PM" },
   { day: "Thursday", time: "9 AM – 5 PM" },
   { day: "Friday", time: "9 AM – 3 PM" },
   { day: "Saturday", time: "9 AM – 3 PM" },
@@ -18,25 +18,21 @@ const hours = [
 export default function ContactPage() {
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            Contact
-          </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
-            Request an Appointment
-          </h1>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            Call or send a note and Michelle will get back to you with
-            availability. Every appointment is one-on-one, so there is always a
-            real conversation before your first visit.
-          </p>
-        </div>
-      </section>
+      <InteriorHero
+        label="Contact"
+        title="Request an Appointment"
+        arrival
+      >
+        <p>
+          Call or send a note and Michelle will get back to you with
+          availability. Every appointment is one-on-one, so there is always a
+          real conversation before your first visit.
+        </p>
+      </InteriorHero>
 
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
+          <div id="contact-options" className="grid scroll-mt-28 grid-cols-1 gap-8 md:grid-cols-12">
             <a
               href="tel:+14257654116"
               className="block border-t-4 border-gold bg-softWhite p-6 shadow-sm transition-shadow duration-300 hover:shadow-md md:col-span-5 md:p-8"

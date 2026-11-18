@@ -1,0 +1,127 @@
+.page {
+  --ink: #112033;
+  --blue: #092d92;
+  --muted: #475568;
+  color: var(--ink);
+  background: white;
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 47fr 53fr;
+  background: #f1f5f9;
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(3rem, 6vw, 7rem) clamp(2rem, 4.2vw, 5rem) clamp(3rem, 6vw, 7rem) clamp(2rem, 6.25vw, 8rem);
+}
+.eyebrow {
+  color: var(--blue);
+  font-size: .72rem;
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.heading {
+  margin: .28em 0 .24em;
+  font-size: clamp(3.6rem, 6.7vw, 7.8rem);
+  font-weight: 400;
+  line-height: .99;
+  letter-spacing: -.066em;
+}
+.heading sup { position: relative; top: -.77em; margin-left: .14em; font-size: .24em; line-height: 0; vertical-align: baseline; }
+.lead, .benefitCopy dd, .studio p, .visit address {
+  font-size: clamp(1rem, 1.18vw, 1.14rem);
+  line-height: 1.68;
+}
+.lead { max-width: 37ch; color: var(--muted); }
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem 1.5rem;
+  margin-top: clamp(1.35rem, 2.4vw, 2.2rem);
+}
+.primary, .textLink, .lightButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  font-size: .9rem;
+  font-weight: 600;
+}
+.primary, .lightButton { padding: .85rem 1.25rem; }
+.primary { color: white; background: var(--blue); }
+.primary:hover { background: #071f67; }
+.textLink { gap: .6rem; color: var(--blue); }
+.textLink:hover { text-decoration: underline; text-underline-offset: .35em; }
+.page a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+.page .primary:focus-visible { outline-color: var(--blue); }
+.collection, .texture { position: relative; overflow: hidden; }
+.collection { min-height: clamp(32rem, min(50vw, 82svh), 52rem); background: #092489; }
+.collection img { object-fit: cover; object-position: 50% 55%; }
+
+.benefits {
+  max-width: 94rem;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: .95fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 7.5vw, 8.2rem);
+  padding: clamp(4rem, 7.5vw, 8rem) clamp(2rem, 6.25vw, 8rem);
+  scroll-margin-top: 89px;
+}
+.texture { aspect-ratio: 1; background: #eef4fa; }
+.texture img { object-fit: cover; }
+.benefitCopy h2, .studio h2 {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 3.8vw, 4.1rem);
+  line-height: 1.05;
+  font-weight: 400;
+  letter-spacing: -.055em;
+  text-wrap: balance;
+}
+.concerns { margin-top: 1.8rem; }
+.concerns > div { padding: 1.07rem 0; border-top: 1px solid #cdd6df; }
+.concerns dt { margin-bottom: .24rem; color: var(--blue); font-size: 1.1rem; font-weight: 600; letter-spacing: -.02em; }
+.concerns dd { max-width: 47ch; color: var(--muted); }
+
+.studio {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  align-items: center;
+  gap: clamp(2rem, 10vw, 12rem);
+  padding: clamp(3rem, 6.5vw, 7rem) max(6.25vw, calc((100vw - 78rem) / 2));
+  background: #092473;
+  color: white;
+}
+.studioCopy p { max-width: 48ch; margin-top: 1rem; color: #e2eaff; }
+.lightButton { margin-top: 1.5rem; background: white; color: #092473; }
+.lightButton:hover { background: #dce7ff; }
+.page .lightButton:focus-visible { outline-color: white; }
+.visit { padding-left: clamp(1.5rem, 3.5vw, 4rem); border-left: 1px solid #8499ce; }
+.visit h3 { font-size: 1.25rem; font-weight: 600; }
+.visit p { max-width: 35ch; margin: .65rem 0 1.1rem; color: #e2eaff; }
+.visit address { font-style: normal; }
+
+@media (max-width: 760px) {
+  .hero, .benefits, .studio { grid-template-columns: minmax(0, 1fr); }
+  .collection { grid-row: 1; min-height: 0; height: clamp(13rem, 65vw, 24rem); }
+  .collection img { object-position: 50% 59%; }
+  .intro { padding: 2rem 1.5rem 2.5rem; }
+  .heading { margin-block: .24em; font-size: clamp(3.05rem, 10vw, 4.7rem); }
+  .heading br { display: none; }
+  .heading sup { margin-right: .15em; }
+  .lead { max-width: 50ch; }
+  .actions { gap: .2rem 1.1rem; }
+  .benefits { padding: 3.25rem 1.5rem; gap: 1.65rem; scroll-margin-top: 73px; }
+  .texture { aspect-ratio: 1.9; }
+  .texture img { object-position: 50% 54%; }
+  .concerns { margin-top: 1.25rem; }
+  .studio { gap: 2rem; padding: 3rem 1.5rem; }
+  .visit { border-left: 0; border-top: 1px solid #8499ce; padding: 1.5rem 0 0; }
+}

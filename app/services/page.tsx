@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
 import Image from "next/image";
+import hero from "@/components/EditorialPageHero.module.css";
+import styles from "./services.module.css";
+import type { Metadata } from "next";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
-
 export const metadata: Metadata = {
   title: "All Services & Pricing",
   description:
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 const categories = [
   {
     label: "Skin",
+    photo: "facials",
     items: [
       { name: "Microneedling", href: "/microneedling" },
       { name: "Mini Facial", href: "/facials" },
@@ -27,6 +29,7 @@ const categories = [
   },
   {
     label: "Brow & Lash",
+    photo: "brow-lash",
     items: [
       { name: "Eyelash Lift & Tint", href: "/brow-lash" },
       { name: "Eyebrow Lamination", href: "/brow-lash" },
@@ -34,6 +37,7 @@ const categories = [
   },
   {
     label: "Waxing",
+    photo: "waxing",
     items: [
       { name: "Eyebrow Wax", href: "/waxing" },
       { name: "Lip", href: "/waxing" },
@@ -44,6 +48,7 @@ const categories = [
   },
   {
     label: "Healing",
+    photo: "reiki",
     items: [{ name: "Reiki Body Healing", href: "/reiki" }],
   },
 ];
@@ -51,61 +56,66 @@ const categories = [
 export default function ServicesIndexPage() {
   return (
     <>
-      <section className="bg-cream pb-14 pt-20 md:pb-20 md:pt-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            Services
-          </p>
-          <h1 className="mt-6 font-serif text-5xl text-charcoal md:text-6xl">
+      <section className={`${hero.hero} ${hero.services}`} aria-labelledby="services-heading">
+        <div className={hero.art}>
+          <Image
+            src="/images/interior/treatment-room-editorial.webp"
+            alt="Soft daylight falls across the linen treatment bed and oak cabinets in Michelle’s studio."
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className={hero.copy}>
+          <p className={hero.label}>Services</p>
+          <h1 id="services-heading" className={hero.heading}>
             Treatments built around your skin.
           </h1>
-        </div>
-
-        <div className="mx-auto mt-12 max-w-7xl px-6 md:mt-16 md:px-12">
-          <div className="relative">
-            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm md:aspect-[16/9]">
-              <Image
-                src="/images/michelle-facial-treatment.png"
-                alt="Michelle Hoffman applying a facial treatment to a client in her studio"
-                fill
-                priority
-                sizes="(min-width: 1280px) 1280px, 100vw"
-                className="object-cover"
-              />
-            </div>
-
-            <div className="md:absolute md:inset-y-0 md:left-0 md:flex md:w-[46%] md:items-center md:p-10 lg:p-14">
-              <p className="mt-6 font-sans text-base leading-relaxed text-warmGray md:mt-0 md:text-xl md:text-charcoal">
-                Personalized skin, brow &amp; lash, waxing, and healing
-                services — every appointment one-on-one with Michelle.
-              </p>
-            </div>
-          </div>
+          <p className={hero.summary}>
+            Personalized skin, brow &amp; lash, waxing, and healing services — every
+            appointment one-on-one with Michelle.
+          </p>
+          <a className={hero.action} href="#treatment-menu">
+            Explore treatments
+          </a>
         </div>
       </section>
 
-      <section className="bg-sage py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-16 lg:grid-cols-4">
-            {categories.map((category) => (
-              <div key={category.label}>
-                <p className="font-sans text-sm uppercase tracking-widest text-cream/80">
-                  {category.label}
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {category.items.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        href={item.href}
-                        className="block font-serif text-3xl leading-tight text-cream transition-colors duration-300 hover:text-gold md:text-4xl"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+      <section id="treatment-menu" aria-labelledby="menu-title" tabIndex={-1} className={styles.menu}>
+        <div className={styles.menuInner}>
+          <h2 id="menu-title" className={styles.menuTitle}>
+            Treatment menu
+          </h2>
+          <div className={styles.spread}>
+            {categories.map((category) => {
+              const featured = category.label === "Skin";
+              return (
+                <section
+                  key={category.label}
+                  aria-labelledby={`category-${category.photo}`}
+                  className={featured ? styles.featured : styles.category}
+                >
+                  <div className={styles.categoryPhoto}>
+                    <Image
+                      src={`/images/interior/${category.photo}.jpg`}
+                      alt=""
+                      fill
+                      sizes={featured ? "(min-width: 960px) 45vw, 90vw" : "(min-width: 960px) 12vw, 27vw"}
+                    />
+                  </div>
+                  <h3 className={styles.categoryTitle} id={`category-${category.photo}`}>
+                    {category.label}
+                  </h3>
+                  <ul className={`${styles.treatments} ${category.items.length > 3 ? styles.columns : ""}`}>
+                    {category.items.map((item) => (
+                      <li key={item.name}>
+                        <Link href={item.href}>{item.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              );
+            })}
           </div>
         </div>
       </section>

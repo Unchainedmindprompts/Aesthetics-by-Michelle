@@ -14,6 +14,7 @@ const routes = [
   "/reiki",
   "/brow-lash",
   "/waxing",
+  "/zo-skin-health",
   "/contact",
   "/blog",
 ];

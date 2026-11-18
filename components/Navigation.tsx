@@ -18,11 +18,11 @@ export default function Navigation() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-sage">
+    <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-[#f7f7f5]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="flex items-center gap-2 font-serif text-2xl tracking-wide text-charcoal transition-colors hover:text-cream md:gap-3"
+          className="flex items-center gap-3 font-serif text-2xl text-charcoal transition-colors hover:text-sage md:gap-4 md:text-4xl"
           onClick={() => setOpen(false)}
         >
           <Image
@@ -31,7 +31,7 @@ export default function Navigation() {
             width={512}
             height={518}
             priority
-            className="h-7 w-auto md:h-9"
+            className="h-9 w-auto md:h-14"
           />
           Aesthetics by Michelle
         </Link>
@@ -41,7 +41,7 @@ export default function Navigation() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="transition-colors hover:text-cream"
+                className="transition-colors hover:text-sage"
               >
                 {link.label}
               </Link>
@@ -51,7 +51,7 @@ export default function Navigation() {
 
         <Link
           href={BOOKING_URL}
-          className="hidden rounded-full bg-cream px-5 py-2 font-sans text-sm text-charcoal transition-colors hover:bg-ivory lg:inline-block"
+          className="sr-only"
         >
           Request an Appointment
         </Link>
@@ -91,7 +91,7 @@ export default function Navigation() {
       </nav>
 
       {open && (
-        <div className="border-t border-charcoal/10 bg-sage lg:hidden">
+        <div className="border-t border-charcoal/10 bg-[#f7f7f5] lg:hidden">
           <ul className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4 font-sans text-base text-charcoal">
             {navLinks.map((link) => (
               <li key={link.href}>

@@ -1,3 +1,4 @@
+import hero from "@/components/EditorialPageHero.module.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,18 +17,32 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            Notes
-          </p>
-          <h1 className="mt-6 font-serif text-5xl text-charcoal md:text-6xl">
+      <section className={`${hero.hero} ${hero.notes}`} aria-labelledby="notes-title">
+        <picture className={hero.art}>
+          <source media="(max-width: 767px), (orientation: portrait)" srcSet="/images/interior/journal-page.webp" />
+          <img
+            src="/images/interior/journal-spread.webp"
+            alt="Sunlit journal paper with a penciled evergreen sketch, an amber vial, and a wooden pencil."
+            width={1672}
+            height={941}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
+
+        <div className={hero.copy}>
+          <p className={hero.label}>Notes</p>
+          <h1 id="notes-title" className={hero.heading}>
             Skincare, written down.
           </h1>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            What&apos;s working, what isn&apos;t, and the timing questions
-            clients ask most.
+          <p className={hero.summary}>
+            What&apos;s working, what isn&apos;t, and the timing questions clients ask most.
           </p>
+          {articles[0] && (
+            <Link href={`/blog/${articles[0].slug}`} className={hero.action}>
+              Read the latest note
+            </Link>
+          )}
         </div>
       </section>
 

@@ -1,3 +1,4 @@
+import InteriorHero from "@/components/InteriorHero";
 import type { Metadata } from "next";
 import { servicePageGraph } from "@/lib/schema";
 import { treatmentById } from "@/lib/treatments";
@@ -56,22 +57,18 @@ const pageGraph = servicePageGraph({
 export default function MicroneedlingPage() {
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            Hero Service
-          </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
-            Collagen-Building Microneedling for Skin That Looks Like You, Just
-            Better
-          </h1>
-          <p className="mt-8 font-sans text-warmGray">
-            <span className="text-xl text-charcoal">${treatment.price}</span>
-            <span className="mx-2">•</span>
-            <span>{treatment.minutes} minutes</span>
-          </p>
-        </div>
-      </section>
+      <InteriorHero
+        label="Services"
+        title="Collagen-Building Microneedling for Skin That Looks Like You, Just Better"
+        image="microneedling"
+        alt="A gloved hand holding a microneedling pen with a clear cartridge."
+      >
+        <p>
+          <span className="text-xl text-charcoal">${treatment.price}</span>
+          <span className="mx-2">•</span>
+          <span>{treatment.minutes} minutes</span>
+        </p>
+      </InteriorHero>
 
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-12">
