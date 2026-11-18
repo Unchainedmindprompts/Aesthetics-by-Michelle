@@ -1,9 +1,12 @@
-import InteriorHero from "@/components/InteriorHero";
+import { Instrument_Serif } from "next/font/google";
+import styles from "./notes.module.css";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { articlesNewestFirst, formatArticleDate } from "@/lib/articles";
 import { blogIndexGraph } from "@/lib/schema";
+
+const inkItalic = Instrument_Serif({ subsets: ["latin"], weight: "400", style: "italic", display: "swap" });
 
 export const metadata: Metadata = {
   title: "Notes — Skincare from Michelle Hoffman",
@@ -17,17 +20,34 @@ export default function BlogPage() {
 
   return (
     <>
-      <InteriorHero
-        label="Notes"
-        title="Skincare, written down."
-        image="notes"
-        alt="A notebook with a botanical sketch, pencil, and amber skincare vial on oak."
-      >
-        <p>
-          What&apos;s working, what isn&apos;t, and the timing questions
-          clients ask most.
-        </p>
-      </InteriorHero>
+      <section className={styles.cover} aria-labelledby="notes-title">
+        <picture className={styles.photograph}>
+          <source media="(orientation: portrait)" srcSet="/images/interior/journal-page.webp" />
+          <img
+            src="/images/interior/journal-spread.webp"
+            alt="Sunlit journal paper with a penciled evergreen sketch, an amber vial, and a wooden pencil."
+            width={1672}
+            height={941}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
+
+        <div className={styles.copy}>
+          <p className={styles.kicker}>Notes</p>
+          <h1 id="notes-title" className={styles.title}>
+            Skincare, <em className={inkItalic.className}>written down.</em>
+          </h1>
+          <p className={styles.summary}>
+            What&apos;s working, what isn&apos;t, and the timing questions clients ask most.
+          </p>
+          {articles[0] && (
+            <Link href={`/blog/${articles[0].slug}`} className={styles.readLink}>
+              Read the latest note <span aria-hidden="true">→</span>
+            </Link>
+          )}
+        </div>
+      </section>
 
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6 md:px-12">
