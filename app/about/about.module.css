@@ -60,17 +60,49 @@
 }
 
 .title {
-  font: 500 clamp(3rem, min(5.5vw, 10.5vh), 7.2rem)/.95 var(--font-cormorant), Georgia, serif;
-  letter-spacing: -.047em;
+  --display-size: clamp(3.5rem, min(6.1vw, 10.5svh), 6.7rem);
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
 }
 
-.title span, .title em { display: block; }
+.opening, .confident, .accent, .closing { display: block; }
 
-.title em {
-  margin-top: .1em;
-  color: #676447;
+.opening, .closing {
+  font-size: calc(var(--display-size) * .44);
+  line-height: 1.1;
+  letter-spacing: -.023em;
+}
+
+.confident {
+  margin-top: .13em;
+  color: #2d4036;
+  font-size: var(--display-size);
+  letter-spacing: -.05em;
+  line-height: .99;
+}
+
+.and {
+  display: inline-block;
+  margin-left: .06em;
+  font-size: .43em;
+  font-style: italic;
   font-weight: 400;
+  letter-spacing: -.035em;
+  vertical-align: .06em;
 }
+
+.accent {
+  width: fit-content;
+  padding-right: .1em;
+  margin: -.045em 0 .055em .14em;
+  color: #a13f51;
+  font-size: calc(var(--display-size) * 1.46);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.036em;
+}
+
+.closing { margin-left: .52em; }
 
 .storyLink {
   display: inline-flex;
@@ -139,13 +171,12 @@
 
   .byline { margin-bottom: .75rem; font-size: .65rem; }
   .byline::before { width: 1.9rem; }
-  .title { font-size: clamp(2.5rem, min(11vw, 7svh), 4.75rem); line-height: .97; }
-  .title .beautiful { display: inline; }
+  .title { --display-size: clamp(3.05rem, min(12.9vw, 7.5svh), 5.25rem); }
   .storyLink { margin-top: .85rem; }
 }
 
 @media (max-height: 550px) and (orientation: landscape) {
   .content { padding-block: calc(var(--nav-height) + 1.25rem) 1rem; }
-  .title { font-size: clamp(2rem, 4.4vw, 3.25rem); }
+  .title { --display-size: clamp(2.25rem, 5.4vw, 3.4rem); }
   .byline, .storyLink { margin-block: .5rem; }
 }

@@ -1,7 +1,15 @@
 import Image from "next/image";
+import { Instrument_Serif } from "next/font/google";
 import styles from "./about.module.css";
 import type { Metadata } from "next";
 import Link from "next/link";
+
+const accentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: "italic",
+  display: "swap",
+});
 
 const BOOKING_URL = "/contact";
 
@@ -29,8 +37,10 @@ export default function AboutPage() {
         <div className={styles.content}>
           <p className={styles.byline}>Meet Michelle Hoffman</p>
           <h1 id="about-title" className={styles.title}>
-            Helping you feel <span>confident and <span className={styles.beautiful}>beautiful</span></span>{" "}
-            <em>in your own skin.</em>
+            <span className={styles.opening}>Helping you feel</span>{" "}
+            <span className={styles.confident}>confident <span className={styles.and}>and</span></span>{" "}
+            <em className={`${styles.accent} ${accentSerif.className}`}>beautiful</em>{" "}
+            <span className={styles.closing}>in your own skin.</span>
           </h1>
           <a className={styles.storyLink} href="#michelles-story">
             Her story <span aria-hidden="true">↓</span>
