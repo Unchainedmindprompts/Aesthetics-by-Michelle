@@ -18,10 +18,11 @@ export default function AboutPage() {
       <section className={styles.hero} aria-labelledby="about-title">
         <div className={styles.photograph}>
           <Image
-            src="/images/interior/michelle-at-work.jpg"
+            src="/images/interior/michelle-at-work-enhanced.webp"
             alt="Michelle treating a client beside the windows in her studio."
             fill
             priority
+            quality={92}
             sizes="100vw"
           />
         </div>
