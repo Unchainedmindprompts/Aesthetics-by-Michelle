@@ -1,5 +1,5 @@
+import InteriorHero from "@/components/InteriorHero";
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
@@ -51,38 +51,18 @@ const categories = [
 export default function ServicesIndexPage() {
   return (
     <>
-      <section className="bg-cream pb-14 pt-20 md:pb-20 md:pt-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            Services
-          </p>
-          <h1 className="mt-6 font-serif text-5xl text-charcoal md:text-6xl">
-            Treatments built around your skin.
-          </h1>
-        </div>
-
-        <div className="mx-auto mt-12 max-w-7xl px-6 md:mt-16 md:px-12">
-          <div className="relative">
-            <div className="relative aspect-[3/2] w-full overflow-hidden rounded-sm md:aspect-[16/9]">
-              <Image
-                src="/images/michelle-facial-treatment.png"
-                alt="Michelle Hoffman applying a facial treatment to a client in her studio"
-                fill
-                priority
-                sizes="(min-width: 1280px) 1280px, 100vw"
-                className="object-cover"
-              />
-            </div>
-
-            <div className="md:absolute md:inset-y-0 md:left-0 md:flex md:w-[46%] md:items-center md:p-10 lg:p-14">
-              <p className="mt-6 font-sans text-base leading-relaxed text-warmGray md:mt-0 md:text-xl md:text-charcoal">
-                Personalized skin, brow &amp; lash, waxing, and healing
-                services — every appointment one-on-one with Michelle.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <InteriorHero
+        label="Services"
+        title="Treatments built around your skin."
+        image="treatment-room"
+        alt="Michelle’s treatment room with a linen-covered bed and pale wood cabinets."
+        treatmentRoom
+      >
+        <p>
+          Personalized skin, brow &amp; lash, waxing, and healing services — every
+          appointment one-on-one with Michelle.
+        </p>
+      </InteriorHero>
 
       <section className="bg-sage py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 md:px-12">

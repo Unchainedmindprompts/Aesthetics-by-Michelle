@@ -1,3 +1,4 @@
+import InteriorHero from "@/components/InteriorHero";
 import type { Metadata } from "next";
 import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
@@ -62,16 +63,12 @@ const pageGraph = servicePageGraph({
 export default function BrowLashPage() {
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            Services
-          </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
-            Lifted Lashes, Shaped Brows, Zero Daily Maintenance
-          </h1>
-        </div>
-      </section>
+      <InteriorHero
+        label="Services"
+        title="Lifted Lashes, Shaped Brows, Zero Daily Maintenance"
+        image="brow-lash"
+        alt="A spoolie brushing an eyebrow above natural lashes."
+      />
 
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-12">

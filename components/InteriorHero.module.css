@@ -1,0 +1,91 @@
+.hero {
+  background: #f6f2eb;
+  color: #2c3830;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.97fr) minmax(0, 1.03fr);
+  align-items: center;
+  gap: clamp(1.75rem, 4.5vw, 5rem);
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 5rem);
+}
+
+.copy { max-width: 37rem; }
+
+.label {
+  color: #526557;
+  font: 600 .7rem/1.5 var(--font-inter), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+}
+
+.heading {
+  margin-top: .85rem;
+  font: 500 clamp(2.35rem, 4.1vw, 4.15rem)/1.02 var(--font-cormorant), Georgia, serif;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.details {
+  max-width: 40ch;
+  margin-top: 1.25rem;
+  color: #47554b;
+  font: 400 1rem/1.65 var(--font-inter), sans-serif;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.55;
+  overflow: hidden;
+  background: #e4ddd1;
+}
+
+.image img { object-fit: cover; }
+.room, .arrival { background: #e9e6dc url("/images/grasscloth-texture.svg"); }
+
+.room {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  padding: clamp(1.5rem, 3.4vw, 3.5rem);
+  min-height: clamp(14rem, 25vw, 22rem);
+}
+
+.room img {
+  width: min(100%, 320px);
+  height: auto;
+  box-shadow: 0 .5rem 1.5rem rgb(44 56 48 / 12%);
+}
+
+.room figcaption, .gallery figcaption {
+  color: #49544a;
+  font: 500 .77rem/1.4 var(--font-inter), sans-serif;
+}
+
+.room figcaption { margin-top: .8rem; }
+.arrival { padding: clamp(1rem, 2.4vw, 2rem); }
+.arrivalTitle { margin-bottom: .9rem; font: 500 1.8rem/1.1 var(--font-cormorant), Georgia, serif; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.4rem, 1vw, 1rem);
+}
+
+.gallery figure { min-width: 0; }
+.gallery img { width: 100%; height: auto; }
+.gallery figcaption { margin-top: .5rem; }
+
+@media (max-width: 700px) {
+  .layout { grid-template-columns: 1fr; gap: 1.35rem; padding: 1.8rem 1.25rem 1.5rem; }
+  .heading { font-size: clamp(2.15rem, 8.25vw, 3.3rem); }
+  .details { margin-top: .8rem; }
+  .image { aspect-ratio: 1.65; max-height: 19rem; }
+  .room { min-height: 0; padding: 1.25rem; }
+  .arrival { padding: 1rem .8rem; }
+  .gallery figcaption { font-size: .72rem; }
+}

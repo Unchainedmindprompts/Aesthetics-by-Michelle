@@ -1,3 +1,4 @@
+import InteriorHero from "@/components/InteriorHero";
 import type { Metadata } from "next";
 import { servicePageGraph } from "@/lib/schema";
 import Link from "next/link";
@@ -22,19 +23,16 @@ const pageGraph = servicePageGraph({
 export default function ChemicalPeelPage() {
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            Services
-          </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
-            Chemical Peel — Smoother Tone, Softer Texture, Less Damage
-          </h1>
-          <p className="mt-8 font-sans text-warmGray">
-            <span className="text-xl text-charcoal">$110</span>
-          </p>
-        </div>
-      </section>
+      <InteriorHero
+        label="Services"
+        title="Chemical Peel — Smoother Tone, Softer Texture, Less Damage"
+        image="chemical-peel"
+        alt="A white fan brush and clear solution in a shallow stoneware dish."
+      >
+        <p>
+          <span className="text-xl text-charcoal">$110</span>
+        </p>
+      </InteriorHero>
 
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-12">

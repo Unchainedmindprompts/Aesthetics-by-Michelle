@@ -1,3 +1,4 @@
+import InteriorHero from "@/components/InteriorHero";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,20 +17,17 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            Notes
-          </p>
-          <h1 className="mt-6 font-serif text-5xl text-charcoal md:text-6xl">
-            Skincare, written down.
-          </h1>
-          <p className="mt-8 font-sans text-lg leading-relaxed text-warmGray">
-            What&apos;s working, what isn&apos;t, and the timing questions
-            clients ask most.
-          </p>
-        </div>
-      </section>
+      <InteriorHero
+        label="Notes"
+        title="Skincare, written down."
+        image="notes"
+        alt="A notebook with a botanical sketch, pencil, and amber skincare vial on oak."
+      >
+        <p>
+          What&apos;s working, what isn&apos;t, and the timing questions
+          clients ask most.
+        </p>
+      </InteriorHero>
 
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6 md:px-12">

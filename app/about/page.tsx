@@ -1,3 +1,4 @@
+import InteriorHero from "@/components/InteriorHero";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -13,16 +14,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-cream py-20 md:py-28">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="font-sans text-sm uppercase tracking-widest text-gold">
-            About
-          </p>
-          <h1 className="mt-6 font-serif text-4xl leading-tight text-charcoal md:text-6xl">
-            Helping you feel confident and beautiful in your own skin.
-          </h1>
-        </div>
-      </section>
+      <InteriorHero
+        label="About"
+        title="Helping you feel confident and beautiful in your own skin."
+        image="michelle-at-work"
+        alt="Michelle treating a client beside the windows and studio sign."
+      />
 
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-12">
