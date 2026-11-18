@@ -247,10 +247,6 @@ export default function HomePage() {
             <h3 className="mt-8 font-serif text-xl text-charcoal">Hours</h3>
             <dl className="mt-4 space-y-2 font-sans text-warmGray">
               <div className="flex justify-between border-b border-taupe/30 py-2">
-                <dt>Tuesday</dt>
-                <dd>9 AM – 5 PM</dd>
-              </div>
-              <div className="flex justify-between border-b border-taupe/30 py-2">
                 <dt>Thursday</dt>
                 <dd>9 AM – 5 PM</dd>
               </div>

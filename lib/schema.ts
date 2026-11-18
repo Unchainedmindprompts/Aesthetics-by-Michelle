@@ -61,7 +61,6 @@ const areaServed = [
 ];
 
 const openingHoursSpecification = [
-  { day: "Tuesday", opens: "09:00", closes: "17:00" },
   { day: "Thursday", opens: "09:00", closes: "17:00" },
   { day: "Friday", opens: "09:00", closes: "15:00" },
   { day: "Saturday", opens: "09:00", closes: "15:00" },
