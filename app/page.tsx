@@ -224,7 +224,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 5: LOCATION & HOURS */}
-      <section className="visit-studio-palette bg-ivory py-20 md:py-28">
+      <section id="visit-the-studio" className="visit-studio-palette scroll-mt-24 bg-ivory py-20 md:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-2 md:px-12">
           <div>
             <p className="font-sans text-sm uppercase tracking-widest text-gold">
@@ -267,8 +267,8 @@ export default function HomePage() {
 
           <div className="relative aspect-video w-full overflow-hidden rounded-sm">
             <Image
-              src="/images/michelle-studio-4k.webp"
-              alt="Michelle Hoffman inside her skincare studio"
+              src="/images/michelle-in-treatment-room.jpg"
+              alt="Michelle Hoffman standing beside the treatment bed in her Coeur d’Alene studio."
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
