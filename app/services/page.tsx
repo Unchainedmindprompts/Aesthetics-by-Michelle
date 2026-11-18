@@ -1,8 +1,11 @@
-import InteriorHero from "@/components/InteriorHero";
+import Image from "next/image";
+import { Instrument_Serif } from "next/font/google";
+import styles from "./services.module.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 const BOOKING_URL = "/contact";
+const accentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: "italic", display: "swap" });
 
 export const metadata: Metadata = {
   title: "All Services & Pricing",
@@ -51,20 +54,33 @@ const categories = [
 export default function ServicesIndexPage() {
   return (
     <>
-      <InteriorHero
-        label="Services"
-        title="Treatments built around your skin."
-        image="treatment-room"
-        alt="Michelle’s treatment room with a linen-covered bed and pale wood cabinets."
-        treatmentRoom
-      >
-        <p>
-          Personalized skin, brow &amp; lash, waxing, and healing services — every
-          appointment one-on-one with Michelle.
-        </p>
-      </InteriorHero>
+      <section className={styles.hero} aria-labelledby="services-heading">
+        <div className={styles.photo}>
+          <Image
+            src="/images/interior/treatment-room-editorial.webp"
+            alt="Soft daylight falls across the linen treatment bed and oak cabinets in Michelle’s studio."
+            fill
+            priority
+            sizes="100vw"
+          />
+        </div>
+        <div className={styles.copy}>
+          <p className={styles.eyebrow}>Services</p>
+          <h1 id="services-heading" className={styles.title}>
+            Treatments{" "}<br />built around{" "}
+            <em className={accentSerif.className}>your skin.</em>
+          </h1>
+          <p className={styles.intro}>
+            Personalized skin, brow &amp; lash, waxing, and healing services — every
+            appointment one-on-one with Michelle.
+          </p>
+          <a className={styles.explore} href="#treatment-menu">
+            Explore treatments <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
 
-      <section className="bg-sage py-20 md:py-28">
+      <section id="treatment-menu" aria-label="Treatment menu" tabIndex={-1} className={`bg-sage py-20 md:py-28 ${styles.menu}`}>
         <div className="mx-auto max-w-7xl px-6 md:px-12">
           <div className="grid grid-cols-1 gap-14 md:grid-cols-2 md:gap-16 lg:grid-cols-4">
             {categories.map((category) => (
