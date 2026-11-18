@@ -144,6 +144,9 @@
   color: var(--ink);
 }
 
+.menu:focus { outline: none; }
+.menu:focus-visible .menuTitle::after { background: #8a3c4c; }
+
 .menuInner {
   max-width: 90rem;
   margin-inline: auto;
