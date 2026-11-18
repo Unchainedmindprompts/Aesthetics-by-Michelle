@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import type { PointerEvent } from "react";
 
@@ -54,10 +55,10 @@ const brands: readonly SkincareSlide[] = [
     name: "ZO Skin Health",
     eyebrow: "PROFESSIONAL SKINCARE",
     heading: "Skin health, thoughtfully.",
-    copy: "Explore the advanced cleansers, serums and targeted skin treatments from dermatologist-founded ZO Skin Health. Ask Michelle which products she currently carries.",
+    copy: "Explore the advanced cleansers, serums and targeted skin treatments from dermatologist-founded ZO Skin Health. Available for purchase in Michelle’s studio by appointment.",
     image: "/images/editorial/zo-skincare-collection-4k.webp",
     imageAlt: "ZO Skin Health's white and cobalt-blue cleanser tubes, bottles and skincare jars",
-    href: "https://zoskinhealth.com/",
+    href: "/zo-skin-health",
     linkText: "Explore ZO Skin Health",
   },
   {
@@ -159,10 +160,11 @@ export default function SkincareBrandRail() {
               <h3>{brand.name}</h3>
               {brand.heading && <p className="product-rail__heading">{brand.heading}</p>}
               {brand.copy && <p className="product-rail__copy">{brand.copy}</p>}
-              {brand.href && <a href={brand.href} target="_blank" rel="noopener noreferrer" className="product-rail__link">
+              {brand.href && <Link href={brand.href} className="product-rail__link"
+                {...(brand.href.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })}>
                 {brand.linkText}
-                <span aria-hidden="true">↗</span>
-              </a>}
+                <span aria-hidden="true">{brand.href.startsWith("/") ? "→" : "↗"}</span>
+              </Link>}
             </div>}
           </article>
         ))}

@@ -33,7 +33,7 @@ export default function ContactPage() {
 
       <section className="bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-5xl px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
+          <div id="contact-options" className="grid scroll-mt-28 grid-cols-1 gap-8 md:grid-cols-12">
             <a
               href="tel:+14257654116"
               className="block border-t-4 border-gold bg-softWhite p-6 shadow-sm transition-shadow duration-300 hover:shadow-md md:col-span-5 md:p-8"
